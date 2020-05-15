@@ -7,15 +7,15 @@ class Pendanaan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('master/m_instansi');
+		$this->load->model('master/m_pendanaan');
 	}
 
 	public function index()
 	{
-		$this->fungsi->check_previleges('instansi');
-		$data['row'] = $this->m_instansi->getEdit('1')->row();
-		$this->load->view('master/instansi/v_instansi',$data);
+		$this->fungsi->check_previleges('pendanaan');
+		$data['row'] = $this->m_pendanaan->getEdit('1')->row();
+		$this->load->view('master/pendanaan/v_pendanaan',$data);
 	}
 }
-/* End of file instansi.php */
-/* Location: ./application/controllers/master/instansi.php */
+/* End of file pendanaan.php */
+/* Location: ./application/controllers/master/pendanaan.php */
