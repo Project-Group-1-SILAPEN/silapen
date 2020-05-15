@@ -20,9 +20,9 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+                <th>id_lab</th>
                 <th>Kode</th>
-                <th>Tipe Lab</th>
+                <th>Nama Tipe Lab</th>
                 <th>Keterangan</th>
                 <th>Act</th>
               </thead>
@@ -33,13 +33,14 @@
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->kode?></td>
-            <td align="center"><?=$row->tipe_lab?></td>
+            <td align="center"><?=$row->nama_tipe_lab?></td>
             <td align="center"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
                 echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
