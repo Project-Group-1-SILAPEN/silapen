@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class satuan extends CI_Controller {
+class tipe_lab extends CI_Controller {
 
 	public function __construct()
 	{
@@ -12,9 +12,9 @@ class satuan extends CI_Controller {
 
 	public function index()
 	{
-		$this->fungsi->check_previleges('tipr_lab');
-		$data['tipe_lab'] = $this->m_tipe_lab->getData();
-		$this->load->view('master/tipe_lab/v_tipe_lab_list',$data);
+		$this->fungsi->check_previleges('tipe_lab');
+		// $data['tipe_lab'] = $this->m_tipe_lab->getData(); 
+		$this->load->view('master/tipe_lab/v_tipe_lab_list');
     }
     public function form($param='')
 	{
@@ -37,8 +37,8 @@ class satuan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'tipe_lab',
-					'label' => 'tipe_lab',
+					'field'	=> 'nama_tipe_lab',
+					'label' => 'nama_tipe_lab',
 					'rules' => 'required'
 				)
 			);
@@ -52,7 +52,7 @@ class satuan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','nama_tipe_lab','keterangan','id_lab'));
+			$datapost = get_post_data(array('kode','nama_tipe_lab','keterangan','id'));
 			$this->m_tipe_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
 			$this->fungsi->message_box("Data Master Tipe Lab sukses disimpan...","success");
