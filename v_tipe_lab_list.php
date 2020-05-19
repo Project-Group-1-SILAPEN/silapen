@@ -29,7 +29,7 @@
               <tbody>
           <?php 
           $i = 1;
-          foreach($tipe_alat->result() as $row): ?>
+          foreach($tipe_lab->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->kode?></td>
