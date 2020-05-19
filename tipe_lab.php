@@ -58,5 +58,39 @@ class tipe_lab extends CI_Controller {
 			$this->fungsi->message_box("Data Master Tipe Lab sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master tipe lab dengan data sbb:",true);
 		}
+    }
+    public function show_editForm($id='')
+	{
+		$this->fungsi->check_previleges('tipe_lab');
+		$this->load->library('form_validation');
+		$config = array(
+				array(
+					'field'	=> 'id',
+					'label' => 'wes mbarke',
+					'rules' => ''
+				),
+				array(
+					'field'	=> 'tipe_lab',
+					'label' => 'tipe_lab',
+					'rules' => 'required'
+				)
+			);
+		$this->form_validation->set_rules($config);
+		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['edit'] = $this->db->get_where('tipe_lab',array('id'=>$id));
+			$data['status']='';
+			$this->load->view('master/tipe_lab/v_tipe_lab_edit',$data);
+		}
+		else
+		{
+			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan'));
+			$this->m_tipe_lab->updateData($datapost);
+			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
+			$this->fungsi->message_box("Data Master tipe lab sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit tipe dengan data sbb:",true);
+		}
 	}
 }
