@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mata_kuliah extends CI_Controller {
+class mata_kuliah extends CI_Controller {
 
 	public function __construct()
 	{
@@ -13,11 +13,10 @@ class Mata_kuliah extends CI_Controller {
 	public function index()
 	{
 		$this->fungsi->check_previleges('mata_kuliah');
-		$data['mata_kuliah'] = $this->m_mata_kuliah->getData();
-		$this->load->view('master/mata_kuliah/v_mata_kuliah_list',$data);
-	}
-
-	public function form($param='')
+		// $data['mata_kuliah'] = $this->mata_kuliah->getData(); 
+		$this->load->view('master/mata_kuliah/v_mata_kuliah_list');
+    }
+    public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
 		$header    = "Form Master Mata Kuliah";
@@ -34,12 +33,12 @@ class Mata_kuliah extends CI_Controller {
 
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('mata_kuliah');
+		$this->fungsi->check_previleges('tipe_lab');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'mata_kuliah',
-					'label' => 'mata_kuliah',
+					'field'	=> 'nama_mata_kuliah',
+					'label' => 'nama_mata_kuliah',
 					'rules' => 'required'
 				)
 			);
@@ -53,24 +52,19 @@ class Mata_kuliah extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_mk','jml_sks','keterangan'));
-			$this->m_mata_kuliah->insertData($datapost);
+			$datapost = get_post_data(array('nama_mk','jml_sks','keterangan','id'));
+			$this->m_tipe_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/mata_kuliah","#content")');
 			$this->fungsi->message_box("Data Master Mata Kuliah sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Master mata_kuliah dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Menambah Master Mata Kuliah dengan data sbb:",true);
 		}
-	}
-
-	public function show_editForm($id='')
+    }
+    public function show_editForm($id='')
 	{
 		$this->fungsi->check_previleges('mata_kuliah');
 		$this->load->library('form_validation');
 		$config = array(
-				array(
-					'field'	=> 'id',
-					'label' => 'wes mbarke',
-					'rules' => ''
-				),
+				
 				array(
 					'field'	=> 'mata_kuliah',
 					'label' => 'mata_kuliah',
@@ -82,20 +76,17 @@ class Mata_kuliah extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('master_mata_kuliah',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('mata_kuliah',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('master/mata_kuliah/v_mata_kuliah_edit',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id','nama_mk','jml_sks','keterangan'));
-			$this->m_mata_kuliah->updateData($datapost);
+			$this->m_tipe_lab->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/mata_kuliah","#content")');
-			$this->fungsi->message_box("Data Master Mata Kuliah sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Master mata_kuliah dengan data sbb:",true);
+			$this->fungsi->message_box("Data Master mata kuliah sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit mata kuliah dengan data sbb:",true);
 		}
 	}
 }
-
-/* End of file mata_kuliah.php */
-/* Location: ./application/controllers/master/mata_kuliah.php */
