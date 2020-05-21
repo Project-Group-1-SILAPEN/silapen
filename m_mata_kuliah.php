@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_mata_kuliah extends CI_Model {
+class master_mata_kuliah extends CI_Model {
 
 	public function getData($value='')
 	{
@@ -31,5 +31,3 @@ class M_mata_kuliah extends CI_Model {
 
 }
 
-/* End of file m_mata_kuliah.php */
-/* Location: ./application/models/master/m_mata_kuliah.php */
