@@ -62,7 +62,7 @@ class satuan extends CI_Controller {
 	
 	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('nama_satuan');
+		$this->fungsi->check_previleges('satuan');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
