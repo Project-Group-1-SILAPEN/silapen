@@ -81,7 +81,7 @@ class satuan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('satuan',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('master_satuan',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('master/satuan/v_satuan_edit',$data);
 		}
