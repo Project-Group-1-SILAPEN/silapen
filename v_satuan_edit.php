@@ -6,10 +6,10 @@
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Satuan</label>
             <div class="col-sm-8">
+            <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'nama_satuan','value'=>$row->nama_satuan,'class'=>'form-control'));?>
             <?php echo form_error('nama_satuan');?>
             </div>
