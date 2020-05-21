@@ -37,8 +37,8 @@ class satuan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'satuan',
-					'label' => 'satuan',
+					'field'	=> 'nama_satuan',
+					'label' => 'nama_satuan',
 					'rules' => 'required'
 				)
 			);
@@ -67,8 +67,8 @@ class satuan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'nama_satuan',
-					'rules' => 'keterangan'
+					'label' => '',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'nama_satuan',
@@ -87,8 +87,8 @@ class satuan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','snama_satuan','keterangan'));
-			$this->m_nama_alat->updateData($datapost);
+			$datapost = get_post_data(array('id','nama_satuan','keterangan'));
+			$this->m_satuan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/satuan","#content")');
 			$this->fungsi->message_box("Data Master satuan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master satuan dengan data sbb:",true);
