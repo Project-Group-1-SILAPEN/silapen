@@ -59,4 +59,40 @@ class satuan extends CI_Controller {
 			$this->fungsi->catat($datapost,"Menambah Master satuan dengan data sbb:",true);
 		}
 	}
+	
+	public function show_editForm($id='')
+	{
+		$this->fungsi->check_previleges('nama_satuan');
+		$this->load->library('form_validation');
+		$config = array(
+				array(
+					'field'	=> 'id',
+					'label' => 'nama_satuan',
+					'rules' => 'keterangan'
+				),
+				array(
+					'field'	=> 'nama_satuan',
+					'label' => 'nama_satuan',
+					'rules' => 'required'
+				)
+			);
+		$this->form_validation->set_rules($config);
+		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['edit'] = $this->db->get_where('satuan',array('id'=>$id));
+			$data['status']='';
+			$this->load->view('master/satuan/v_satuan_edit',$data);
+		}
+		else
+		{
+			$datapost = get_post_data(array('id','snama_satuan','keterangan'));
+			$this->m_nama_alat->updateData($datapost);
+			$this->fungsi->run_js('load_silent("master/satuan","#content")');
+			$this->fungsi->message_box("Data Master satuan sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit Master satuan dengan data sbb:",true);
+	
+		}
+	}
 }
