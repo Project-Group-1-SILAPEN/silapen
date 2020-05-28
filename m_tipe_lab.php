@@ -5,7 +5,7 @@ class M_tipe_lab extends CI_Model {
 
 	public function getData($value='')
 	{
-		$this->db->from('master_tipe_lab ma');
+		$this->db->from('tipe_lab ma');
 		$this->db->order_by('ma.id', 'desc');
 		return $this->db->get();
 	}
@@ -13,20 +13,20 @@ class M_tipe_lab extends CI_Model {
 	public function insertData($data='')
 	{
 		
-        $this->db->insert('master_tipe_lab',$data);
+        $this->db->insert('tipe_lab',$data);
        
 	}
 
 	public function updateData($data='')
 	{
 		 $this->db->where('id',$data['id']);
-            $this->db->update('master_tipe_lab',$data);
+            $this->db->update('tipe_lab',$data);
 	}
 
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('master_tipe_lab');
+        $this->db->delete('tipe_lab');
 	}
 
 }
