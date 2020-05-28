@@ -4,13 +4,13 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Master Tipe Lab</h3>
+            <h3 class="box-title">tipe lab</h3>
 
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/tipe_lab/form/base","#modal")','Add New Tipe Lab','btn btn-success');
+                echo button('load_silent("master/tipe_lab/form/base","#modal")','Add New tipe_lab','btn btn-success');
               } else {
                 # code...
               }
@@ -20,8 +20,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>id_lab</th>
-                <th>Kode</th>
+                <th>kode</th>
                 <th>Nama Tipe Lab</th>
                 <th>Keterangan</th>
                 <th>Act</th>
@@ -39,7 +38,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
                 echo button('load_silent("master/tipe_lab/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
