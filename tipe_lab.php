@@ -13,8 +13,8 @@ class tipe_lab extends CI_Controller {
 	public function index()
 	{
 		$this->fungsi->check_previleges('tipe_lab');
-		// $data['tipe_lab'] = $this->m_tipe_lab->getData(); 
-		$this->load->view('master/tipe_lab/v_tipe_lab_list');
+		$data['tipe_lab'] = $this->m_tipe_lab->getData();
+		$this->load->view('master/tipe_lab/v_tipe_lab_list',$data);
     }
     public function form($param='')
 	{
@@ -37,8 +37,8 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'nama_tipe_lab',
-					'label' => 'nama_tipe_lab',
+					'field'	=> 'kode',
+					'label' => 'kode',
 					'rules' => 'required'
 				)
 			);
@@ -52,26 +52,27 @@ class tipe_lab extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','nama_tipe_lab','keterangan','id'));
-			$this->m_tipe_lab->insertData($datapost);
+			$datapost = get_post_data(array('kode','nama_tipe_lab','keterangan','id_status'));
+			$this->m_satuan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
 			$this->fungsi->message_box("Data Master Tipe Lab sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master tipe lab dengan data sbb:",true);
 		}
-    }
-    public function show_editForm($id='')
+	}
+	
+	public function show_editForm($id='')
 	{
 		$this->fungsi->check_previleges('tipe_lab');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'wes mbarke',
+					'label' => '',
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'tipe_lab',
-					'label' => 'tipe_lab',
+					'field'	=> 'kode',
+					'label' => 'kode',
 					'rules' => 'required'
 				)
 			);
@@ -82,15 +83,16 @@ class tipe_lab extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('tipe_lab',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('master/tipe_lab/v_tipe_lab_edit',$data);
+			$this->load->view('master/tie_lab/v_tipe_lab_edit',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan'));
-			$this->m_tipe_lab->updateData($datapost);
+			$this->m_satuan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
 			$this->fungsi->message_box("Data Master tipe lab sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit tipe dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Mengedit Master tipe lab dengan data sbb:",true);
+	
 		}
 	}
 }
