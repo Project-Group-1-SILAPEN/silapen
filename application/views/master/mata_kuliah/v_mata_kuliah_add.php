@@ -5,7 +5,7 @@
         
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Mk</label>
+            <label class="col-sm-4 control-label">Nama Mata Kuliah</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'nama_mk','class'=>'form-control'));?>
             <?php echo form_error('nama_mk');?>
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Jml Sks</label>
+            <label class="col-sm-4 control-label">Jumlah SKS</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'jml_sks','class'=>'form-control'));?>
             <?php echo form_error('jml_sks');?>

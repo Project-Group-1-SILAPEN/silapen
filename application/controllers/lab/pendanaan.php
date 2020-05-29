@@ -81,7 +81,7 @@ class pendanaan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('master_pendanaan',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('lab_pendanaan',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('lab/pendanaan/v_pendanaan_edit',$data);
 		}

@@ -7,7 +7,7 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Mk</label>
+            <label class="col-sm-4 control-label">Nama Mata Kuliah</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'nama_mk','value'=>$row->nama_mk,'class'=>'form-control'));?>
@@ -15,8 +15,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Jml Sks</label>
+            <label class="col-sm-4 control-label">Jumlah SKS</label>
             <div class="col-sm-8">
+            <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'jml_sks','value'=>$row->jml_sks,'class'=>'form-control'));?>
             <?php echo form_error('jml_sks');?>
             </div>
@@ -29,10 +30,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Simpan</label>
+            <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/mata_kuliah/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/mata_kuliah/show_editForm/","#divsubcontent")','Yes','btn btn-success')." ";
             ?>
             </div>
         </div>

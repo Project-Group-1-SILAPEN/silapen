@@ -24,6 +24,7 @@
                 <th>nama_mk</th>
                 <th>jml_sks</th>
                 <th>Keterangan</th>
+                <th>Act</th>
               </thead>
               <tbody>
           <?php 

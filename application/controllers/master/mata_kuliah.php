@@ -33,7 +33,7 @@ class mata_kuliah extends CI_Controller {
 
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('tipe_lab');
+		$this->fungsi->check_previleges('mata_kuliah');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -52,8 +52,8 @@ class mata_kuliah extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('nama_mk','jml_sks','keterangan','id'));
-			$this->m_tipe_lab->insertData($datapost);
+			$datapost = get_post_data(array('id','nama_mk','jml_sks','keterangan'));
+			$this->m_mata_kuliah->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/mata_kuliah","#content")');
 			$this->fungsi->message_box("Data Master Mata Kuliah sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master Mata Kuliah dengan data sbb:",true);
