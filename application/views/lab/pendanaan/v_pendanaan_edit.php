@@ -7,19 +7,21 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">kode</label>
+            <label class="col-sm-4 control-label">Sumber Pendanaan</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'kode','value'=>$row->kode,'class'=>'form-control'));?>
-            <?php echo form_error('kode');?>
+            <?php echo form_input(array('name'=>'sumber_pendanaan','value'=>$row->sumber_pendanaan,'class'=>'form-control'));?>
+            <?php echo form_error('sumber_pendanaan');?>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Tipe Lab</label>
+            <label class="col-sm-4 control-label">Jumlah</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_tipe_lab','value'=>$row->nama_tipe_lab,'class'=>'form-control'));?>
-            <?php echo form_error('nama_tipe_lab');?>
+            <?php echo form_hidden('id',$row->id); ?>
+            <?php echo form_input(array('name'=>'jumlah','value'=>$row->jumlah,'class'=>'form-control'));?>
+            <?php echo form_error('jumlah');?>
             </div>
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
             <div class="col-sm-8">
@@ -31,7 +33,7 @@
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/tipe_lab/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"lab/pendanaan/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>

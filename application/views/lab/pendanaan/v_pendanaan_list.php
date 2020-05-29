@@ -4,13 +4,13 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Master Pendanaan</h3>
+            <h3 class="box-title">Lab Pendanaan</h3>
 
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/pendanaan/form/base","#modal")','Add New pendanaan','btn btn-success');
+                echo button('load_silent("lab/pendanaan/form/base","#modal")','Add New pendanaan','btn btn-success');
               } else {
                 # code...
               }
@@ -21,9 +21,10 @@
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
                 <th>id</th>
-                <th>sumber_pendanaan</th>
-                <th>jumlah</th>
-                <th>keterangan</th>
+                <th>Sumber Pendanaan</th>
+                <th>Jumlah</th>
+                <th>Keterangan</th>
+                <th>Act</th>
               </thead>
               <tbody>
           <?php 
@@ -38,7 +39,8 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("lab/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("lab/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }

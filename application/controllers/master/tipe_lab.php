@@ -66,8 +66,8 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'id',
-					'label' => '',
+					'field'	=> 'kode',
+					'label' => 'keterangan',
 					'rules' => ''
 				),
 				array(
