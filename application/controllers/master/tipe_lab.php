@@ -37,8 +37,8 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'kode',
-					'label' => 'kode',
+					'field'	=> 'nama_tipe_lab',
+					'label' => 'nama_tipe_lab',
 					'rules' => 'required'
 				)
 			);
@@ -53,7 +53,7 @@ class tipe_lab extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('kode','nama_tipe_lab','keterangan','id_status'));
-			$this->m_satuan->insertData($datapost);
+			$this->m_tipe_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
 			$this->fungsi->message_box("Data Master Tipe Lab sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master tipe lab dengan data sbb:",true);
@@ -66,13 +66,13 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'kode',
-					'label' => 'keterangan',
+					'field'	=> 'id',
+					'label' => '',
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'kode',
-					'label' => 'kode',
+					'field'	=> 'nama_tipe_lab',
+					'label' => 'nama_tipe_lab',
 					'rules' => 'required'
 				)
 			);
@@ -88,7 +88,7 @@ class tipe_lab extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan'));
-			$this->m_satuan->updateData($datapost);
+			$this->m_tipe_lab->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
 			$this->fungsi->message_box("Data Master tipe lab sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Master tipe lab dengan data sbb:",true);
