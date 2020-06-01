@@ -20,7 +20,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+                
                 <th>Id</th>
                 <th>Nama Alat</th>
                 <th>jenis Alat</th>
@@ -34,7 +34,7 @@
           foreach($pengajuan_alat->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->id?></td>
+         
             <td align="center"><?=$row->nama_alat?></td>
             <td align="center"><?=$row->jenis_alat?></td>
             <td align="center"><?=$row->tahun?></td>

@@ -5,8 +5,8 @@ class M_pengajuan_alat extends CI_Model {
 
 	public function getData($value='')
 	{
-		$this->db->from('pengajuan_alat ma');
-		$this->db->order_by('ma.id', 'desc');
+		$this->db->from('pengajuan_alat ');
+		$this->db->order_by('pengajuan_alat.id', 'desc');
 		return $this->db->get();
 	}
 
