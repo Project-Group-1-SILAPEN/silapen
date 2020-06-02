@@ -15,24 +15,24 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Alat</label>
+            <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_alat','value'=>$row->nama_alat,'class'=>'form-control'));?>
-            <?php echo form_error('nama_alat');?>
+            <?php echo form_input(array('name'=>'nama_bahan','value'=>$row->nama_bahan,'class'=>'form-control'));?>
+            <?php echo form_error('nama_bahan');?>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Jenis Alat</label>
+            <label class="col-sm-4 control-label">Jenis Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'jenis_alat','value'=>$row->jenis_alat,'class'=>'form-control'));?>
-            <?php echo form_error('jenis_alat');?>
+            <?php echo form_input(array('name'=>'jenis_bahan','value'=>$row->jenis_bahan,'class'=>'form-control'));?>
+            <?php echo form_error('jenis_bahan');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Tahun</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tahun_alat','value'=>$row->tahun_alat,'class'=>'form-control'));?>
-            <?php echo form_error('tahun_alat');?>
+            <?php echo form_input(array('name'=>'tahun_bahan','value'=>$row->tahun_bahan,'class'=>'form-control'));?>
+            <?php echo form_error('tahun_bahan');?>
             </div>   
         </div>
         <div class="form-group">
@@ -46,7 +46,7 @@
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"pengajuan/pengajuan_alat/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"pengajuan/pengajuan_bahan/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>

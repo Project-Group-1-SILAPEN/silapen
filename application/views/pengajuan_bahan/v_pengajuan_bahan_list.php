@@ -4,13 +4,13 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Pengajuan Alat</h3>
+            <h3 class="box-title">Pengajuan Bahan</h3>
 
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("pengajuan/pengajuan_alat/form/base","#modal")','Add New pengajuan_alat','btn btn-success');
+                echo button('load_silent("pengajuan/pengajuan_bahan/form/base","#modal")','Add New pengajuan bahan','btn btn-success');
               } else {
                 # code...
               }
@@ -22,8 +22,8 @@
               <thead>
                 
                 <th>Id</th>
-                <th>Nama Alat</th>
-                <th>jenis Alat</th>
+                <th>Nama Bahan</th>
+                <th>jenis Bahan</th>
                 <th>Tahun</th>
                 <th>keterangan</th>
                 <th>Act</th>
@@ -31,20 +31,20 @@
               <tbody>
           <?php 
           $i = 1;
-          foreach($pengajuan_alat->result() as $row): ?>
+          foreach($pengajuan_bahan->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
          
-            <td align="center"><?=$row->nama_alat?></td>
-            <td align="center"><?=$row->jenis_alat?></td>
-            <td align="center"><?=$row->tahun_alat?></td>
+            <td align="center"><?=$row->nama_bahan?></td>
+            <td align="center"><?=$row->jenis_bahan?></td>
+            <td align="center"><?=$row->tahun_bahan?></td>
             <td align="center"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("pengajuan/pengajuan_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("pengajuan/pengajuan_alat/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+                echo button('load_silent("pengajuan/pengajuan_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("pengajuan/pengajuan_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }

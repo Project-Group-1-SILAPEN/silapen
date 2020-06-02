@@ -13,7 +13,7 @@ class pengajuan_alat extends CI_Controller {
 	public function index()
 	{
 		$this->fungsi->check_previleges('pengajuan_alat');
-		$data['pengajuan'] = $this->m_pengajuan_alat->getData();
+		$data['pengajuan_alat'] = $this->m_pengajuan_alat->getData();
 		$this->load->view('pengajuan_alat/v_pengajuan_alat_list',$data);
     }
     public function form($param='')
@@ -33,7 +33,7 @@ class pengajuan_alat extends CI_Controller {
 
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('pengajuan');
+		$this->fungsi->check_previleges('pengajuan_alat');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -48,15 +48,15 @@ class pengajuan_alat extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('pengajuan_alat/v_pengajuan_add',$data);
+			$this->load->view('pengajuan_alat/v_pengajuan_alat_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('nama_alat','jenis_alat','tahun','keterangan'));
+			$datapost = get_post_data(array('nama_alat','jenis_alat','tahun_alat','keterangan'));
 			$this->m_pengajuan_alat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
-			$this->fungsi->message_box("Data pengajuan alat sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah pengajuan alat dengan data sbb:",true);
+			$this->fungsi->message_box("Data pengajuan_alat sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah pengajuan_alat dengan data sbb:",true);
 		}
 	}
 	
@@ -83,15 +83,15 @@ class pengajuan_alat extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('pengajuan_alat',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_edit',$data);
+			$this->load->view('pengajuan_alat/v_pengajuan_alat_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_alat', 'jenis_alat','tahun','keterangan'));
+			$datapost = get_post_data(array('id','nama_alat', 'jenis_alat','tahun_alat','keterangan'));
 			$this->m_pengajan_alat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
 			$this->fungsi->message_box("Data pengajuan_alat sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit pengajuan alat dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Mengedit pengajuan_alat dengan data sbb:",true);
 	
 		}
 	}

@@ -55,8 +55,8 @@ class tipe_lab extends CI_Controller {
 			$datapost = get_post_data(array('kode','nama_tipe_lab','keterangan','id_status'));
 			$this->m_tipe_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
-			$this->fungsi->message_box("Data Master Tipe Lab sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Master tipe lab dengan data sbb:",true);
+			$this->fungsi->message_box("Data tipe_lab sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah  tipe_lab dengan data sbb:",true);
 		}
 	}
 	
@@ -90,8 +90,8 @@ class tipe_lab extends CI_Controller {
 			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan'));
 			$this->m_tipe_lab->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
-			$this->fungsi->message_box("Data Master tipe lab sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Master tipe lab dengan data sbb:",true);
+			$this->fungsi->message_box("Data  tipe_lab sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit  tipe_lab dengan data sbb:",true);
 	
 		}
 	}
