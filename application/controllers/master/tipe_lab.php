@@ -19,8 +19,8 @@ class tipe_lab extends CI_Controller {
     public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form Master Tipe Lab";
-		$subheader = "tipe_lab";
+		$header    = "Form  Tipe Lab";
+		$subheader = "tipe lab";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
@@ -37,8 +37,8 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'nama_tipe_lab',
-					'label' => 'nama_tipe_lab',
+					'field'	=> 'tipe_lab',
+					'label' => 'tipe_lab',
 					'rules' => 'required'
 				)
 			);
@@ -71,8 +71,8 @@ class tipe_lab extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'nama_tipe_lab',
-					'label' => 'nama_tipe_lab',
+					'field'	=> 'tipe_lab',
+					'label' => 'tipe_lab',
 					'rules' => 'required'
 				)
 			);

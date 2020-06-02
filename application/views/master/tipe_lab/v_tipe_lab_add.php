@@ -5,6 +5,14 @@
         
         
     <div class="form-group">
+            <label class="col-sm-4 control-label">Id</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'id','class'=>'form-control'));?>
+            <?php echo form_error('id');?>
+            <span id="check_data"></span>
+            </div>
+            </div>
+    <div class="form-group">
             <label class="col-sm-4 control-label">Kode</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'kode','class'=>'form-control'));?>

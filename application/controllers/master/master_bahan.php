@@ -25,16 +25,16 @@ class Master_bahan extends CI_Controller {
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
-			$this->fungsi->run_js('load_silent("master/nama_alat/show_addForm/","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/master_bahan/show_addForm/","#divsubcontent")');	
 		}else{
 			$base_kom=$this->uri->segment(5);
-			$this->fungsi->run_js('load_silent("master/nama_alat/show_editForm/'.$base_kom.'","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/master_bahan/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
 	}
 
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('master_bahan');
+		$this->fungsi->check_previleges('nama_bahan');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -56,19 +56,19 @@ class Master_bahan extends CI_Controller {
 			$datapost = get_post_data(array('no','kode','jenis_bahan','nama_bahan','tahun','pengarang'));
 			$this->m_master_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
-			$this->fungsi->message_box("Data Master Nama Bahan sukses disimpan...","success");
+			$this->fungsi->message_box("Data Master Nama_bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Master master_bahan dengan data sbb:",true);
 		}
 	}
 
 	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('master_bahan');
+		$this->fungsi->check_previleges('nama_bahan');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'wes mbarke',
+					'label' => '',
 					'rules' => ''
 				),
 				array(
@@ -82,9 +82,9 @@ class Master_bahan extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('master_master_bahan',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('master_bahan',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('master/nama_bahan/v_master_bahan_edit',$data);
+			$this->load->view('master/master_bahan/v_master_bahan_edit',$data);
 		}
 		else
 		{

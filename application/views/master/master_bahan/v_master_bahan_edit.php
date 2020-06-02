@@ -6,6 +6,14 @@
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
+    <div class="form-group">
+            <label class="col-sm-4 control-label">Id</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'id','class'=>'form-control'));?>
+            <?php echo form_error('id');?>
+            <span id="check_data"></span>
+            </div>
+            </div>
 <div class="form-group">
             <label class="col-sm-4 control-label">No</label>
             <div class="col-sm-8">
@@ -37,8 +45,8 @@
             <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'master_bahan','value'=>$row->master_bahan,'class'=>'form-control'));?>
-            <?php echo form_error('master_bahan');?>
+            <?php echo form_input(array('name'=>'nama_bahan','value'=>$row->nama_bahan,'class'=>'form-control'));?>
+            <?php echo form_error('nama_bahan');?>
             </div>
         </div>
 
