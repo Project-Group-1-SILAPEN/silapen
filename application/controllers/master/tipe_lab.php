@@ -62,7 +62,7 @@ class tipe_lab extends CI_Controller {
 	
 	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('tipe_lab');
+		$this->fungsi->check_previleges('nama_lab');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -71,8 +71,8 @@ class tipe_lab extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'tipe_lab',
-					'label' => 'tipe_lab',
+					'field'	=> 'nama_lab',
+					'label' => 'nama_lab',
 					'rules' => 'required'
 				)
 			);

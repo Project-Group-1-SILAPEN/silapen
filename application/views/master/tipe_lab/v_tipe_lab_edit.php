@@ -13,13 +13,14 @@
             <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
             <?php echo form_error('id');?>
             </div>
-            <div class="form-group">
+
+            <div  class="form-group">
             <label class="col-sm-4 control-label">Kode</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'kode','value'=>$row->kode,'class'=>'form-control'));?>
             <?php echo form_error('kode');?>
-            </div
-        </div>
+            </div>
+       
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Tipe Lab</label>
             <div class="col-sm-8">
