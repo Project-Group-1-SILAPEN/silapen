@@ -6,7 +6,7 @@ class M_peminjaman_alat extends CI_Model {
 	public function getData($value='')
 	{
 		$this->db->from('peminjaman_alat');
-		$this->db->order_by('ma.id', 'desc');
+		$this->db->order_by('peminjaman_alat.id', 'desc');
 		return $this->db->get();
 	}
 

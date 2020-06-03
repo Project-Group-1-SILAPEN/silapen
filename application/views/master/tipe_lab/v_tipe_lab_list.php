@@ -20,6 +20,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
+              <th>id</th>
                 <th>kode</th>
                 <th>Nama Tipe Lab</th>
                 <th>Keterangan</th>

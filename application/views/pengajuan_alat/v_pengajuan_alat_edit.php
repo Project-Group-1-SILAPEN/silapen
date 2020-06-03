@@ -6,30 +6,37 @@
 <div class="box-body big">
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
-    <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-4 control-label">Id</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
             <?php echo form_error('id');?>
             </div>
-
-            <div  class="form-group">
-            <label class="col-sm-4 control-label">Kode</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kode','value'=>$row->kode,'class'=>'form-control'));?>
-            <?php echo form_error('kode');?>
-            </div>
-       
+        </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Tipe Lab</label>
+            <label class="col-sm-4 control-label">Nama Alat</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_tipe_lab','value'=>$row->nama_tipe_lab,'class'=>'form-control'));?>
-            <?php echo form_error('nama_tipe_lab');?>
+            <?php echo form_input(array('name'=>'nama_alat','value'=>$row->nama_alat,'class'=>'form-control'));?>
+            <?php echo form_error('nama_alat');?>
             </div>
-            
+        </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Keterangan</label>
+            <label class="col-sm-4 control-label">Jenis Alat</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'jenis_alat','value'=>$row->jenis_alat,'class'=>'form-control'));?>
+            <?php echo form_error('jenis_alat');?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Tahun</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tahun_alat','value'=>$row->tahun_alat,'class'=>'form-control'));?>
+            <?php echo form_error('tahun_alat');?>
+            </div>   
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">keterangan</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
             <?php echo form_error('keterangan');?>
@@ -39,7 +46,7 @@
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/tipe_lab/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"pengajuan/pengajuan_alat/show_editForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>

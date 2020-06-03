@@ -50,8 +50,12 @@
       <?php echo form_error('captcha', '<span class="error-span">', '</span>'); ?>
 		  </div>
 
-          <div class="row">
-            <div class="col-xs-4">
+      <div class="row">
+            <div class="col-xs-6"> 
+              <a href=" https://api.whatsapp.com/send?phone=628990714789&text=saya%20lupa%20password." target="_blank"> Lupa Password? </a>
+    </div>
+      <div class="row">
+            <div class="col-xs-6">
               <button type="submit" class="btn btn-primary btn-block btn-flat">LOGIN</button>
             </div><!-- /.col -->
           </div>
