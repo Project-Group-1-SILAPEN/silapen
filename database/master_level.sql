@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2020 at 04:49 PM
+-- Generation Time: Jun 03, 2020 at 05:08 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -37,13 +37,13 @@ CREATE TABLE `master_level` (
 
 INSERT INTO `master_level` (`id`, `level`) VALUES
 (1, 'Super Admin'),
-(2, NULL),
-(3, NULL),
-(4, NULL),
-(5, NULL),
-(6, NULL),
-(7, NULL),
-(8, NULL);
+(2, 'Level 1'),
+(3, 'Level 2'),
+(4, 'Level 3'),
+(5, 'Level 4'),
+(6, 'Level 5'),
+(7, 'Level 6'),
+(8, 'Level 7');
 
 --
 -- Indexes for dumped tables
