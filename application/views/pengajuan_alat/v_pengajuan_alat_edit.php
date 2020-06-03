@@ -24,21 +24,21 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Jenis Alat</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'jenis_alat','value'=>$row->nama_peminjam,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'jenis_alat','value'=>$row->jenis_alat,'class'=>'form-control'));?>
             <?php echo form_error('jenis_alat');?>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Tahun</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tahun','value'=>$row->tanggal_pinjam,'class'=>'form-control'));?>
-            <?php echo form_error('tahun');?>
+            <?php echo form_input(array('name'=>'tahun_alat','value'=>$row->tahun_alat,'class'=>'form-control'));?>
+            <?php echo form_error('tahun_alat');?>
             </div>   
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">keterangan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'satuan','value'=>$row->keterangan,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
             <?php echo form_error('keterangan');?>
             </div>
         </div>
