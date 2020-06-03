@@ -17,7 +17,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Bahan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_bahan','value'=>$row->nama_alat,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'nama_bahan','value'=>$row->nama_bahan,'class'=>'form-control'));?>
             <?php echo form_error('nama_bahan');?>
             </div>
         </div>
