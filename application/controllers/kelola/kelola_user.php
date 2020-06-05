@@ -1,34 +1,34 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class kelola_user extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('cms/m_user');
+		$this->load->model('model/m_kelola_user');
 	}
 
 	public function index()
 	{
-		$this->fungsi->check_previleges('user');
-		$data['user'] = $this->m_user->getList();
-		$this->load->view('cms/user/v_user_list',$data);
+		$this->fungsi->check_previleges('kelola_user');
+		$data['kelola_user'] = $this->m_kelola_user->getList();
+		$this->load->view('kelola/kelola_user/v_kelola_user_list',$data);
 	}
 
 
 	public function formadd($value='')
 	{
-		$this->fungsi->check_previleges('user');
+		$this->fungsi->check_previleges('kelola_user');
 		$data['level']  = get_options($this->db->query('select id, level from master_level'),true);
 		$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-		$this->load->view('cms/user/v_user_addd',$data);
+		$this->load->view('kelola/kelola_user/v_kelola_user_add',$data);
 	}
 
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('user');
+		$this->fungsi->check_previleges('kelola_user');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -74,7 +74,7 @@ class User extends CI_Controller {
 		{
 			$data['level']  = get_options($this->db->query('select id, level from master_level where id !=1'),true);
 			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_addd',$data);
+			$this->load->view('kelola/kelola_user/v_kelola_user_add',$data);
 		}
 		else
 		{
@@ -139,7 +139,7 @@ class User extends CI_Controller {
 
 	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('user');
+		$this->fungsi->check_previleges('kelola_user');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -186,7 +186,7 @@ class User extends CI_Controller {
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level where id !=1'),true);
 			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_editt',$data);
+			$this->load->view('kelola/kelola_user/v_kelola_user_edit',$data);
 		}
 		else
 		{
@@ -217,14 +217,14 @@ class User extends CI_Controller {
 		      	
 			$this->m_user->insertData($datapost,false);
 			$this->fungsi->catat($datapost,"Mengubah user dengan data sbb:",true);
-			$data['msg'] = "user Diperbarui....";
+			$data['msg'] = "user berhasil Diperbarui....";
 			echo json_encode($data);
 		}
 	}
 
 	public function show_editForm_file($id='')
 	{
-		$this->fungsi->check_previleges('user');
+		$this->fungsi->check_previleges('kelola_user');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -276,11 +276,11 @@ class User extends CI_Controller {
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level'),true);
 			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_editt',$data);
+			$this->load->view('kelola/kelola_user/v_kelola_user_edit_file',$data);
 		}
 		else
 		{
-			$upload_folder = get_upload_folder('./files/');
+			$upload_folder = get_upload_folder('./file/');
 
 			$config['upload_path']   = $upload_folder;
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
@@ -394,7 +394,7 @@ class User extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level where id !=1'),true);
-			$this->load->view('cms/user/v_user_edit_user',$data);
+			$this->load->view('kelola/kelola_user/v_kelola_user_editform_user',$data);
 		}
 		else
 		{

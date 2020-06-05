@@ -4,10 +4,10 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">User</h3>
+            <h3 class="box-title">Kelola User</h3>
 
             <div class="box-tools pull-right">
-              <?php echo button('load_silent("cms/user/show_addForm/","#content")','Add New User','btn btn-success','data-toggle="tooltip" title="Add New User"');?> 
+              <?php echo button('load_silent("kelola/kelola_user/show_addForm/","#content")','Add New User','btn btn-success','data-toggle="tooltip" title="Add New User"');?> 
             </div>
           </div>
 
@@ -38,7 +38,7 @@
             <td><?=$row->no_hp?></td>
             <td><?=$row->alamat?></td>
             <td>
-            <?php echo button('load_silent("cms/user/show_editForm/'.$row->id.'","#content")','Edit','btn btn-info','data-toggle="tooltip" title="Edit User"');?> 
+            <?php echo button('load_silent("kelola/kelola_user/show_editForm/'.$row->id.'","#content")','Edit','btn btn-info','data-toggle="tooltip" title="Edit User"');?> 
 						</td>
 					</tr>
 

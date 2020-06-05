@@ -57,7 +57,7 @@ class peminjaman_alat extends CI_Controller {
 			$this->m_peminjaman_alat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/peminjaman_alat","#content")');
 			$this->fungsi->message_box("Data Peminjaman Alat sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah peminjaman_alat dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Menambah Peminjaman Alat dengan data sbb:",true);
 		}
 	}
 
@@ -92,7 +92,7 @@ class peminjaman_alat extends CI_Controller {
 			$this->m_peminjaman_alat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/peminjaman_alat","#content")');
 			$this->fungsi->message_box("Data Peminjaman Alat sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Peminjaman_alat dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Mengedit Peminjaman Alat dengan data sbb:",true);
 		}
 	}
 }

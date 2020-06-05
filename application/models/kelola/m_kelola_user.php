@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_user extends CI_Model {
+class M_kelola_user extends CI_Model {
 
 	public function getList($value='')
 	{
