@@ -4,10 +4,10 @@
       <div class="col-lg-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">From Add User</h3>
+                <h3 class="box-title">Form Add User</h3>
 
                 <div class="box-tools pull-right">
-                  <?php echo button('load_silent("cms/user/formadd/","#content")','Reload Page','btn btn-danger','data-toggle="tooltip" title="Reload"');?> 
+                  <?php echo button('load_silent("kelola/kelola_user/formadd/","#content")','Reload Page','btn btn-danger','data-toggle="tooltip" title="Reload"');?> 
                 </div>
             </div>
           <div class="box-body">
