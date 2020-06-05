@@ -7,7 +7,7 @@
 		<!-- small box -->
 		<div class="small-box bg-blue">
 		<div class="inner">
-		<h3>0</h3>
+		<h3>12</h3>
 		<p>Data Lab</p>
 		</div>
 		<div class="icon">
@@ -22,7 +22,7 @@
 		<!-- small box --> 
 		<div class="small-box bg-green">
 		<div class="inner">
-		<h3>0</h3>
+		<h3>161</h3>
 		<p>Data Alat</p>
 		</div>
 		<div class="icon">
@@ -39,13 +39,13 @@
 		<!-- small box --> 
 		<div class="small-box bg-yellow">
 		<div class="inner">
-		<h3>0</h3>
+		<h3>245</h3>
 		<p>Data Bahan</p>
 		</div>
 		<div class="icon">
 		<i class="fa fa-flask"></i>
 		</div>
-		<a href="?master=nama_alat" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+		<a href="master/satuan" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 		</div>
     </div>
 
@@ -54,7 +54,7 @@
 		<!-- small box --> 
 		<div class="small-box bg-red">
 		<div class="inner">
-		<h3>0</h3> 
+		<h3>200</h3> 
 		<p>Data modul</p>
 		</div>
 		<div class="icon">

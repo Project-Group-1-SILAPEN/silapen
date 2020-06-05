@@ -87,7 +87,7 @@ class pengajuan_alat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_alat', 'jenis_alat','tahun_alat','keterangan'));
+			$datapost = get_post_data(array('id','nama_alat','seri_alat','merk_alat','jumlah_grosir','satuan_grosir','harga_grosir','estimasi_jumlah_alat','harga_dasar_alat','jenis_alat','tahun_alat','nama_lab','keterangan'));
 			$this->m_pengajan_alat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_alat","#content")');
 			$this->fungsi->message_box("Data pengajuan_alat sukses diperbarui...","success");
