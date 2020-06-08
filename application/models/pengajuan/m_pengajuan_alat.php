@@ -26,10 +26,8 @@ class M_pengajuan_alat extends CI_Model {
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('m_pengajuan_alat');
+        $this->db->delete('pengajuan_alat');
 	}
 
 }
 
-/* End of file m_nama_alat.php */
-/* Location: ./application/models/master/m_nama_alat.php */

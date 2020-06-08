@@ -5,7 +5,7 @@ class M_tipe_lab extends CI_Model {
 
 	public function getData($value='')
 	{
-		$this->db->from('tipe_lab ma');
+		$this->db->from('tipe_lab ma ');
 		$this->db->order_by('ma.id', 'desc');
 		return $this->db->get();
 	}

@@ -37,8 +37,8 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'tipe_lab',
-					'label' => 'tipe_lab',
+					'field'	=> 'nama_lab',
+					'label' => 'nama_lab',
 					'rules' => 'required'
 				)
 			);
@@ -52,7 +52,7 @@ class tipe_lab extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('kode','nama_tipe_lab','keterangan','id_status'));
+			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan','act'));
 			$this->m_tipe_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
 			$this->fungsi->message_box("Data tipe_lab sukses disimpan...","success");
@@ -62,7 +62,7 @@ class tipe_lab extends CI_Controller {
 	
 	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('nama_lab');
+		$this->fungsi->check_previleges('tipe_lab');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -87,7 +87,7 @@ class tipe_lab extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan'));
+			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan','act'));
 			$this->m_tipe_lab->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
 			$this->fungsi->message_box("Data  tipe_lab sukses diperbarui...","success");
