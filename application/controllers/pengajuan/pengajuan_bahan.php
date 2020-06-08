@@ -37,8 +37,8 @@ class pengajuan_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'pengajuan_bahan',
-					'label' => 'pengajuan_bahan',
+					'field'	=> 'id',
+					'label' => '',
 					'rules' => 'required'
 				)
 			);
@@ -52,7 +52,7 @@ class pengajuan_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('nama_bahan','jenis_bahan','tahun_bahan','keterangan'));
+			$datapost = get_post_data(array('id','nama_bahan','jenis_bahan','tahun_bahan','keterangan'));
 			$this->m_pengajuan_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
 			$this->fungsi->message_box("Data pengajuan_bahan sukses disimpan...","success");
@@ -68,11 +68,11 @@ class pengajuan_bahan extends CI_Controller {
 				array(
 					'field'	=> 'id',
 					'label' => '',
-					'rules' => ''
+					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'pengajuan_bahan',
-					'label' => 'pengajuan_bahan',
+					'field'	=> 'id',
+					'label' => '',
 					'rules' => 'required'
 				)
 			);
@@ -88,7 +88,7 @@ class pengajuan_bahan extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('id','nama_bahan', 'jenis_bahan','tahun_bahan','keterangan'));
-			$this->m_pengajan_bahan->updateData($datapost);
+			$this->m_pengajuan_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
 			$this->fungsi->message_box("Data pengajuan_bahan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit pengajuan_bahan dengan data sbb:",true);

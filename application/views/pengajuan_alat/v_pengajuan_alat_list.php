@@ -11,7 +11,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("pengajuan/pengajuan_alat/form/base","#modal")','Add New pengajuan_alat','btn btn-success');
+                echo button('load_silent("pengajuan/pengajuan_alat/form/base","#modal")','Add New pengajuan alat','btn btn-success');
               } else {
                 # code...
               }
@@ -43,7 +43,6 @@
           foreach($pengajuan_alat->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-         
             <td align="center"><?=$row->nama_alat?></td>
             <td align="center"><?=$row->seri_alat?></td>
             <td align="center"><?=$row->merk_alat?></td>
