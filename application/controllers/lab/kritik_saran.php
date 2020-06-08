@@ -19,7 +19,7 @@ class kritik_saran extends CI_Controller {
     public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Kritik dan Saran";
+		$header    = "Form Lab Kritik dan Saran";
 		$subheader = "kritik dan saran";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -53,9 +53,9 @@ class kritik_saran extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('pengirim','tgl_pengiriman','lab_tujuan','kritik','saran'));
-			$this->m_satuan->insertData($datapost);
+			$this->m_kritik_saran->insertData($datapost);
 			$this->fungsi->run_js('load_silent("lab/kritik_saran","#content")');
-			$this->fungsi->message_box("Data Kritik dan Saran sukses disimpan...","success");
+			$this->fungsi->message_box("Data kritik dan saran sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah kritik dan saran dengan data sbb:",true);
 		}
 	}
@@ -90,9 +90,18 @@ class kritik_saran extends CI_Controller {
 			$datapost = get_post_data(array('id','pengirim','tgl_pengiriman','lab_tujuan','kritik','saran'));
 			$this->m_kritik_saran->updateData($datapost);
 			$this->fungsi->run_js('load_silent("lab/kritik_saran","#content")');
-			$this->fungsi->message_box("Data Kritik dan Saran sukses diperbarui...","success");
+			$this->fungsi->message_box("Data kritik dan saran sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit kritik dan saran dengan data sbb:",true);
 	
 		}
+	}
+	public function delete_kritik_saran()
+	{
+		$this->fungsi->check_previleges('kritik_saran');
+		$id = $this->uri->segment(4);
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_kritik_saran->delete_kritik_saran($id);
+		$this->show_kritik_saran();
+		$this->fungsi->catat("Menghapus kritik dan saran dengan id ".$id);
 	}
 }

@@ -45,6 +45,7 @@
                 # code...
               }
               ?>
+              <a href="<?= site_url('lab/pendanaan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus sumber pendanaan ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

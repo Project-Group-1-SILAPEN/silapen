@@ -95,4 +95,13 @@ class pendanaan extends CI_Controller {
 	
 		}
 	}
+	public function delete_pendanaan()
+	{
+		$this->fungsi->check_previleges('pendanaan');
+		$id = $this->uri->segment(4);
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_pendanaan->delete_pendanaan($id);
+		$this->show_pendanaan();
+		$this->fungsi->catat("Menghapus pendanaan dengan id ".$id);
+	}
 }
