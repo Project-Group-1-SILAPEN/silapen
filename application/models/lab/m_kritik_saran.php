@@ -31,5 +31,5 @@ class M_kritik_saran extends CI_Model {
 
 }
 
-/* End of file m_nama_alat.php */
-/* Location: ./application/models/master/m_nama_alat.php */
+/* End of file m_kritik_saran.php */
+/* Location: ./application/models/lab/m_kritik_saran.php */

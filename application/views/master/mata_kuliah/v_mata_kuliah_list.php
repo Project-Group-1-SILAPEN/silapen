@@ -20,9 +20,9 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>id</th>
-                <th>nama_mk</th>
-                <th>jml_sks</th>
+                <th>Id</th>
+                <th>Nama Mata Kuliah</th>
+                <th>Jumlah SKS</th>
                 <th>Keterangan</th>
                 <th>Act</th>
               </thead>
@@ -40,6 +40,7 @@
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
                 echo button('load_silent("master/mata_kuliah/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/mata_kuliah/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
