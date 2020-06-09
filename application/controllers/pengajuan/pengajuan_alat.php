@@ -66,7 +66,11 @@ class pengajuan_alat extends CI_Controller {
 		$this->fungsi->check_previleges('pengajuan_alat');
 		$this->load->library('form_validation');
 		$config = array(
-				
+				array(
+					'field'	=> 'id',
+					'label' => 'id',
+					'rules' => ''
+				),
 				array(
 					'field'	=> 'nama_alat',
 					'label' => 'nama_alat',
