@@ -54,7 +54,7 @@ class peminjaman_bahan extends CI_Controller {
 		else
 		{
 			$datapost = get_post_data(array('id','nama_bahan','nama_peminjam','tanggal_pinjam', 'satuan'));
-			$this->m_peminjaman_alat->insertData($datapost);
+			$this->m_peminjaman_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/peminjaman_bahan","#content")');
 			$this->fungsi->message_box("Data Peminjaman Bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah peminjaman_bahan dengan data sbb:",true);
