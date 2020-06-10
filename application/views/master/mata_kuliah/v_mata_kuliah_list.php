@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("master/mata_kuliah/form/base","#modal")','Add New Mata Kuliah','btn btn-success');
               } else {
                 # code...
@@ -38,7 +38,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("master/mata_kuliah/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
                 echo button('load_silent("master/mata_kuliah/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
