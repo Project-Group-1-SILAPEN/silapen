@@ -52,7 +52,7 @@ class kritik_saran extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('pengirim','tgl_pengiriman','lab_tujuan','kritik','saran'));
+			$datapost = get_post_data(array('id','pengirim','tgl_pengiriman','lab_tujuan','kritik','saran'));
 			$this->m_kritik_saran->insertData($datapost);
 			$this->fungsi->run_js('load_silent("lab/kritik_saran","#content")');
 			$this->fungsi->message_box("Data kritik dan saran sukses disimpan...","success");
@@ -67,7 +67,7 @@ class kritik_saran extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => '',
+					'label' => 'id',
 					'rules' => ''
 				),
 				array(

@@ -9,7 +9,8 @@
     <div class="form-group">
             <label class="col-sm-4 control-label">Pengirim</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'pengirim','class'=>'form-control'));?>
+            <?php echo form_hidden('id',$row->id); ?>
+            <?php echo form_input(array('name'=>'pengirim','value'=>$row->pengirim,'class'=>'form-control'));?>
             <?php echo form_error('pengirim');?>
             <span id="check_data"></span>
             </div>
@@ -17,7 +18,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pengiriman</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pengiriman','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tgl_pengiriman','value'=>$row->tgl_pengiriman,'class'=>'form-control'));?>
             <?php echo form_error('tgl_pengiriman');?>
             <span id="check_data"></span>
             </div>
@@ -25,7 +26,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Lab Tujuan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'lab_tujuan','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'lab_tujuan','value'=>$row->lab_tujuan,'class'=>'form-control'));?>
             <?php echo form_error('lab_tujuan');?>
             <span id="check_data"></span>
             </div>
@@ -33,7 +34,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Kritik</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kritik','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'kritik','value'=>$row->kritik,'class'=>'form-control'));?>
             <?php echo form_error('kritik');?>
             <span id="check_data"></span>
             </div>
@@ -41,7 +42,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Saran</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'saran','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'saran','value'=>$row->saran,'class'=>'form-control'));?>
             <?php echo form_error('saran');?>
             <span id="check_data"></span>
             </div>
