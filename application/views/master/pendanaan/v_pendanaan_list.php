@@ -11,7 +11,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '3') {
-                echo button('load_silent("lab/pendanaan/form/base","#modal")','Add New pendanaan','btn btn-success');
+                echo button('load_silent("master/pendanaan/form/base","#modal")','Add New pendanaan','btn btn-success');
               } else {
                 # code...
               }
@@ -40,13 +40,13 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '3') {
-                echo button('load_silent("lab/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("lab/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+                echo button('load_silent("master/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
               ?>
-              <a href="<?= site_url('lab/pendanaan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus sumber pendanaan ?')"><i class="fa fa-trash"></i></a>
+              <a href="<?= site_url('master/pendanaan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus sumber pendanaan ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 
