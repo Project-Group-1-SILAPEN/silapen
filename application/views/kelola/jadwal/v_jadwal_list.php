@@ -11,7 +11,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4' || $sesi == '5' || $sesi == '6'|| $sesi == '7'|| $sesi == '8') {
-                echo button('load_silent("kelola/kelola_jadwal/form/base","#modal")','Add New kelola_jadwal','btn btn-success');
+                echo button('load_silent("kelola/jadwal/form/base","#modal")','Add New jadwal','btn btn-success');
               } else {
                 # code...
               }
@@ -31,7 +31,7 @@
               <tbody>
           <?php 
           $i = 1;
-          foreach($kelola_jadwal->result() as $row): ?>
+          foreach($jadwal->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->id?></td>
@@ -42,8 +42,8 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4') {
-                echo button('load_silent("kelola/kelola_jadwal/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("kelola/kelola_jadwal/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+                echo button('load_silent("kelola/jadwal/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("kelola/jadwal/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
