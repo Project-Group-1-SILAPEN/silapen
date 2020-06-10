@@ -31,5 +31,3 @@ class M_pengajuan_bahan extends CI_Model {
 
 }
 
-/* End of file m_nama_alat.php */
-/* Location: ./application/models/master/m_nama_alat.php */
