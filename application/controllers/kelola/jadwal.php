@@ -1,40 +1,40 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class kelola_jadwal extends CI_Controller {
+class jadwal extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('kelola/m_kelola_jadwal');
+		$this->load->model('kelola/m_jadwal');
 	}
 
 	public function index()
 	{
-		$this->fungsi->check_previleges('kelola_jadwal');
-		$data['kelola_jadwal'] = $this->m_kelola_jadwal->getData();
-		$this->load->view('kelola/v_kelola_jadwal_list',$data);
+		$this->fungsi->check_previleges('jadwal');
+		$data['jadwal'] = $this->m_jadwal->getData();
+		$this->load->view('kelola/v_jadwal_list',$data);
 	}
 
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
 		$header    = "Form Kelola Jadwal";
-		$subheader = "kelola_jadwal";
+		$subheader = "jadwal";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
-			$this->fungsi->run_js('load_silent("kelola/kelola_jadwal/show_addForm/","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("kelola/jadwal/show_addForm/","#divsubcontent")');	
 		}else{
 			$base_kom=$this->uri->segment(5);
-			$this->fungsi->run_js('load_silent("kelola/kelola_jadwal/show_editForm/'.$base_kom.'","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("kelola/jadwal/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
 	}
 
 	public function show_addForm()
 	{
-		$this->fungsi->check_previleges('kelola_jadwal');
+		$this->fungsi->check_previleges('jadwal');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -49,13 +49,13 @@ class kelola_jadwal extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('kelola/v_kelola_jadwal_add',$data);
+			$this->load->view('kelola/v_jadwal_add',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id','nama_jadwal','file_jadwal','status'));
-			$this->m_peminjaman_alat->insertData($datapost);
-			$this->fungsi->run_js('load_silent("kelola/kelola_jadwal","#content")');
+			$this->m_jadwal->insertData($datapost);
+			$this->fungsi->run_js('load_silent("kelola/jadwal","#content")');
 			$this->fungsi->message_box("Tambah Jadwal Lab sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah Jadwal Lab dengan data sbb:",true);
 		}
@@ -63,7 +63,7 @@ class kelola_jadwal extends CI_Controller {
 
 	public function show_editForm($id='')
 	{
-		$this->fungsi->check_previleges('kelola_jadwal');
+		$this->fungsi->check_previleges('jadwal');
 		$this->load->library('form_validation');
 		$config = array(
 				array(
@@ -82,15 +82,15 @@ class kelola_jadwal extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('kelola_jadwal',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('jadwal',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('kelola/v_kelola_jadwal_edit',$data);
+			$this->load->view('kelola/v_jadwal_edit',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id','nama_jadwal','file_jadwal','status'));
-			$this->m_kelola_jadwal->updateData($datapost);
-			$this->fungsi->run_js('load_silent("kelola/kelola_jadwal","#content")');
+			$this->m_jadwal->updateData($datapost);
+			$this->fungsi->run_js('load_silent("kelola/jadwal","#content")');
 			$this->fungsi->message_box("Jadwal sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Jadwal Lab dengan data sbb:",true);
 		}
