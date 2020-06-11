@@ -41,7 +41,6 @@
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '3') {
                 echo button('load_silent("master/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("master/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
