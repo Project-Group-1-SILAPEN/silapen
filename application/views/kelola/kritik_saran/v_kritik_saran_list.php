@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '5' || $sesi == '6' || $sesi == '7'|| $sesi == '8') {
+              if ($sesi == '1' || $sesi == '4' || $sesi == '6' || $sesi == '7'|| $sesi == '8') {
                 echo button('load_silent("kelola/kritik_saran/form/base","#modal")','Add New kritik_saran','btn btn-success');
               } else {
                 # code...
@@ -42,7 +42,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '5') {
+              if ($sesi == '1' || $sesi == '4') {
                 echo button('load_silent("kelola/kritik_saran/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
                 echo button('load_silent("kelola/kritik_saran/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
