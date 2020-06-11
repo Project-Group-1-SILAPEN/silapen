@@ -52,7 +52,7 @@ class kelola_user extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','NoInduk','Username','Nama','JenisKelamin','Foto','Email','NoTelp','Level','Status'));
+			$datapost = get_post_data(array('id','NoInduk','Username','Nama','JenisKelamin','Foto','Email','NoTelp','Level','Status','Alamat'));
 			$this->m_kelola_user->insertData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/kelola_user","#content")');
 			$this->fungsi->message_box("Data Kelola User sukses disimpan...","success");
@@ -109,6 +109,11 @@ class kelola_user extends CI_Controller {
 				'label' => 'Uraian Komponen',
 				'rules' => ''
 			),
+			array(
+				'field'	=> 'Alamat',
+				'label' => 'Nama Komponen',
+				'rules' => ''
+			),
 		);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -121,7 +126,7 @@ class kelola_user extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','NoInduk','Username','Nama','JenisKelamin','Foto','Email','NoTelp','Level','Status','id_status'));
+			$datapost = get_post_data(array('id','NoInduk','Username','Nama','JenisKelamin','Foto','Email','NoTelp','Level','Status','Alamat'));
 			$this->m_kelola_user->updateData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/kelola_user","#content")');
 			$this->fungsi->message_box("Data Kelola User sukses diperbarui...","success");

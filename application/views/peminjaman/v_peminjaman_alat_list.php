@@ -43,7 +43,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '4') {
+              if ($sesi == '1' || $sesi == '5') {
                 echo button('load_silent("peminjaman/peminjaman_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
                 echo button('load_silent("peminjaman/peminjaman_alat/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
