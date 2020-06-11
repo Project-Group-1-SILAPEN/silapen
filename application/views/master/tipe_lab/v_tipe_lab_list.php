@@ -5,13 +5,13 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">tipe lab</h3>
+            <h3 class="box-title">Tipe Lab</h3>
 
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("master/tipe_lab/form/base","#modal")','Add New tipe_lab','btn btn-success');
+                echo button('load_silent("master/tipe_lab/form/base","#modal")','Add New Tipe Lab','btn btn-success');
               } else {
                 # code...
               }
