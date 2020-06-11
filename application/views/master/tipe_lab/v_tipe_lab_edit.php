@@ -13,21 +13,21 @@
             <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
             <?php echo form_error('id');?>
             </div>
-
-            <div  class="form-group">
+        </div>
+        <div  class="form-group">
             <label class="col-sm-4 control-label">Kode</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'kode','value'=>$row->kode,'class'=>'form-control'));?>
             <?php echo form_error('kode');?>
             </div>
-       
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Tipe Lab</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'nama_tipe_lab','value'=>$row->nama_tipe_lab,'class'=>'form-control'));?>
             <?php echo form_error('nama_tipe_lab');?>
             </div>
-            
+        </div> 
         <div class="form-group">
             <label class="col-sm-4 control-label">Keterangan</label>
             <div class="col-sm-8">
