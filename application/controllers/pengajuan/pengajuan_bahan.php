@@ -88,7 +88,7 @@ class pengajuan_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_bahan', 'jenis_bahan','tahun_bahan','keterangan'));
+			$datapost = get_post_data(array('id','nama_bahan','seri_bahan','merk_bahan','jumlah_grosir','satuan_grosir','harga_grosir','estimasi_jumlah_bahan','harga_dasar_bahan','jenis_bahan','tahun_bahan','nama_lab','keterangan'));
 			$this->m_pengajuan_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
 			$this->fungsi->message_box("Data pengajuan_bahan sukses diperbarui...","success");
