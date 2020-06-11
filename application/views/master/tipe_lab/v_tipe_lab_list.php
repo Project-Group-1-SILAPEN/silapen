@@ -10,13 +10,8 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-<<<<<<< HEAD
               if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
                 echo button('load_silent("master/tipe_lab/form/base","#modal")','Add New Tipe Lab','btn btn-success');
-=======
-              if ($sesi == '1' || $sesi == '2') {
-                echo button('load_silent("master/tipe_lab/form/base","#modal")','Add New tipe_lab','btn btn-success');
->>>>>>> 2150186b3d3bdf25df95e8fb335b029b414a3e2c
               } else {
                 # code...
               }

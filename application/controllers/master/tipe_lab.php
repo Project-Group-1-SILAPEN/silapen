@@ -20,13 +20,8 @@ class tipe_lab extends CI_Controller {
     public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-<<<<<<< HEAD
 		$header    = "Form Tipe Lab";
 		$subheader = "tipe lab";
-=======
-		$header    = "Form  Tipe Lab";
-		$subheader = "tipe_lab";
->>>>>>> 2150186b3d3bdf25df95e8fb335b029b414a3e2c
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
@@ -43,13 +38,8 @@ class tipe_lab extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-<<<<<<< HEAD
 					'field'	=> 'id',
 					'label' => 'id',
-=======
-					'field'	=> 'kode',
-					'label' => 'kode',
->>>>>>> 2150186b3d3bdf25df95e8fb335b029b414a3e2c
 					'rules' => 'required'
 				)
 			);
@@ -66,13 +56,8 @@ class tipe_lab extends CI_Controller {
 			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan','act'));
 			$this->m_tipe_lab->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
-<<<<<<< HEAD
 			$this->fungsi->message_box("Data tipe_lab sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah tipe_lab dengan data sbb:",true);
-=======
-			$this->fungsi->message_box("Data tipe lab sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah  tipe_lab dengan data sbb:",true);
->>>>>>> 2150186b3d3bdf25df95e8fb335b029b414a3e2c
 		}
 	}
 	
@@ -87,13 +72,8 @@ class tipe_lab extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-<<<<<<< HEAD
 					'field'	=> 'kode',
 					'label' => 'kode',
-=======
-					'field'	=> 'nama_tipe_lab',
-					'label' => 'nama_tipe_lab',
->>>>>>> 2150186b3d3bdf25df95e8fb335b029b414a3e2c
 					'rules' => 'required'
 				)
 			);
@@ -111,13 +91,8 @@ class tipe_lab extends CI_Controller {
 			$datapost = get_post_data(array('id','kode','nama_tipe_lab','keterangan','act'));
 			$this->m_tipe_lab->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
-<<<<<<< HEAD
 			$this->fungsi->message_box("Data tipe_lab sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit tipe_lab dengan data sbb:",true);
-=======
-			$this->fungsi->message_box("Data  tipe lab sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit  tipe_lab dengan data sbb:",true);
->>>>>>> 2150186b3d3bdf25df95e8fb335b029b414a3e2c
 	
 		}
 	}

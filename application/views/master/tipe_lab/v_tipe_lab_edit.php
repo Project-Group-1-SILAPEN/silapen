@@ -14,11 +14,7 @@
             <?php echo form_error('id');?>
             </div>
         </div>
-<<<<<<< HEAD
             <div  class="form-group">
-=======
-        <div  class="form-group">
->>>>>>> 2150186b3d3bdf25df95e8fb335b029b414a3e2c
             <label class="col-sm-4 control-label">Kode</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'kode','value'=>$row->kode,'class'=>'form-control'));?>
