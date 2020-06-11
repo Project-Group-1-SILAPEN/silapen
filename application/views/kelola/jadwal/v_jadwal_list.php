@@ -21,7 +21,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+            
                 <th>Id</th>
                 <th>Nama Jadwal</th>
                 <th>File Jadwal</th>
@@ -34,7 +34,6 @@
           foreach($jadwal->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->id?></td>
             <td align="center"><?=$row->nama_jadwal?></td>
             <td align="center"><?=$row->file_jadwal?></td>
             <td align="center"><?=$row->status?></td>
