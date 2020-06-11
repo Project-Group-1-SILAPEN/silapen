@@ -14,13 +14,13 @@ class jadwal extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('jadwal');
 		$data['jadwal'] = $this->m_jadwal->getData();
-		$this->load->view('kelola/v_jadwal_list',$data);
+		$this->load->view('kelola/jadwal/v_jadwal_list',$data);
 	}
 
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form Kelola Jadwal";
+		$header    = "Form Jadwal";
 		$subheader = "jadwal";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -38,8 +38,8 @@ class jadwal extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'nama_jadwal',
-					'label' => 'nama_jadwal',
+					'field'	=> 'id',
+					'label' => 'id',
 					'rules' => 'required'
 				)
 			);
@@ -49,7 +49,7 @@ class jadwal extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('kelola/v_jadwal_add',$data);
+			$this->load->view('kelola/jadwal/v_jadwal_add',$data);
 		}
 		else
 		{
@@ -84,7 +84,7 @@ class jadwal extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('jadwal',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('kelola/v_jadwal_edit',$data);
+			$this->load->view('kelola/jadwal/v_jadwal_edit',$data);
 		}
 		else
 		{
