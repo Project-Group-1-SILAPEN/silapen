@@ -24,8 +24,16 @@
                 
                 <th>Id</th>
                 <th>Nama Bahan</th>
+                <th>Seri Bahan</th>
+                <th>Merk Bahan</th>
+                <th>Jumlah Grosir</th>
+                <th>Satuan Grosir</th>
+                <th>Harga Grosir</th>
+                <th>Estimasi Jumlah Bahan</th>
+                <th>Harga Dasar Bahan</th>
                 <th>jenis Bahan</th>
                 <th>Tahun</th>
+                <th>Nama Lab</th>
                 <th>keterangan</th>
                 <th>Act</th>
               </thead>
@@ -35,10 +43,17 @@
           foreach($pengajuan_bahan->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-         
             <td align="center"><?=$row->nama_bahan?></td>
+            <td align="center"><?=$row->seri_bahan?></td>
+            <td align="center"><?=$row->merk_bahan?></td>
+            <td align="center"><?=$row->jumlah_grosir?></td>
+            <td align="center"><?=$row->satuan_grosir?></td>
+            <td align="center"><?=$row->harga_grosir?></td>
+            <td align="center"><?=$row->estimasi_jumlah_bahan?></td>
+            <td align="center"><?=$row->harga_dasar_bahan?></td>
             <td align="center"><?=$row->jenis_bahan?></td>
             <td align="center"><?=$row->tahun_bahan?></td>
+            <td align="center"><?=$row->nama_lab?></td>
             <td align="center"><?=$row->keterangan?></td>
             <td align="center">
             <?php
