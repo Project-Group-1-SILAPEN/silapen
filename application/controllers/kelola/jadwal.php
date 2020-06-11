@@ -57,7 +57,7 @@ class jadwal extends CI_Controller {
 			$this->m_jadwal->insertData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/jadwal","#content")');
 			$this->fungsi->message_box("Tambah Jadwal Lab sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Jadwal Lab dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Menambah jadwal_lab dengan data sbb:",true);
 		}
 	}
 
@@ -92,7 +92,7 @@ class jadwal extends CI_Controller {
 			$this->m_jadwal->updateData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/jadwal","#content")');
 			$this->fungsi->message_box("Jadwal sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Jadwal Lab dengan data sbb:",true);
+			$this->fungsi->catat($datapost,"Mengedit jadwal_lab dengan data sbb:",true);
 		}
 	}
 }
