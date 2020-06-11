@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2020 at 04:22 PM
+-- Generation Time: Jun 11, 2020 at 06:42 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -31,8 +31,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `pengajuan_alat` (
   `id` int(11) NOT NULL,
   `nama_alat` varchar(225) NOT NULL,
+  `seri_alat` varchar(225) NOT NULL,
+  `merk_alat` varchar(225) NOT NULL,
+  `jumlah_grosir` varchar(225) NOT NULL,
+  `satuan_grosir` varchar(225) NOT NULL,
+  `harga_grosir` varchar(225) NOT NULL,
+  `estimasi_jumlah_alat` varchar(225) NOT NULL,
+  `harga_dasar_alat` varchar(225) NOT NULL,
   `jenis_alat` varchar(225) NOT NULL,
   `tahun_alat` year(4) NOT NULL,
+  `nama_lab` varchar(225) NOT NULL,
   `keterangan` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,8 +48,10 @@ CREATE TABLE `pengajuan_alat` (
 -- Dumping data for table `pengajuan_alat`
 --
 
-INSERT INTO `pengajuan_alat` (`id`, `nama_alat`, `jenis_alat`, `tahun_alat`, `keterangan`) VALUES
-(1, 'AR', 'yaitu', 2020, 'baik kayaknya');
+INSERT INTO `pengajuan_alat` (`id`, `nama_alat`, `seri_alat`, `merk_alat`, `jumlah_grosir`, `satuan_grosir`, `harga_grosir`, `estimasi_jumlah_alat`, `harga_dasar_alat`, `jenis_alat`, `tahun_alat`, `nama_lab`, `keterangan`) VALUES
+(1, 'AR', '', '', '', '', '', '', '', 'yaitu', 2020, '', 'baik kayaknya'),
+(2, 'e', '', '', '', '', '', '', '', '', 0000, '', ''),
+(12, 'qww', 'ee', '', 'ccc', '', 'cccccvgf', 'gryh', 'btyh', 'gttg', 0000, 'gtb', 'btt');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +71,7 @@ ALTER TABLE `pengajuan_alat`
 -- AUTO_INCREMENT for table `pengajuan_alat`
 --
 ALTER TABLE `pengajuan_alat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

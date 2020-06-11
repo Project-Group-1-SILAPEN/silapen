@@ -7,14 +7,14 @@ class pendanaan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('lab/m_pendanaan');
+		$this->load->model('master/m_pendanaan');
 	}
 
 	public function index()
 	{
 		$this->fungsi->check_previleges('pendanaan');
 		$data['pendanaan'] = $this->m_pendanaan->getData();
-		$this->load->view('lab/pendanaan/v_pendanaan_list',$data);
+		$this->load->view('master/pendanaan/v_pendanaan_list',$data);
     }
     public function form($param='')
 	{
@@ -24,10 +24,10 @@ class pendanaan extends CI_Controller {
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
-			$this->fungsi->run_js('load_silent("lab/pendanaan/show_addForm/","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/pendanaan/show_addForm/","#divsubcontent")');	
 		}else{
 			$base_kom=$this->uri->segment(5);
-			$this->fungsi->run_js('load_silent("lab/pendanaan/show_editForm/'.$base_kom.'","#divsubcontent")');	
+			$this->fungsi->run_js('load_silent("master/pendanaan/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
 	}
 
@@ -48,15 +48,15 @@ class pendanaan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
-			$this->load->view('lab/pendanaan/v_pendanaan_add',$data);
+			$this->load->view('master/pendanaan/v_pendanaan_add',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('sumber_pendanaan','jumlah','keterangan'));
 			$this->m_pendanaan->insertData($datapost);
-			$this->fungsi->run_js('load_silent("lab/pendanaan","#content")');
-			$this->fungsi->message_box("Data Lab Pendanaan sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah Lab Pendanaan dengan data sbb:",true);
+			$this->fungsi->run_js('load_silent("master/pendanaan","#content")');
+			$this->fungsi->message_box("Data master Pendanaan sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah master Pendanaan dengan data sbb:",true);
 		}
 	}
 	
@@ -83,16 +83,25 @@ class pendanaan extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('lab_pendanaan',array('id'=>$id));
 			$data['status']='';
-			$this->load->view('lab/pendanaan/v_pendanaan_edit',$data);
+			$this->load->view('master/pendanaan/v_pendanaan_edit',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id','sumber_pendanaan', 'jumlah','keterangan'));
 			$this->m_pendanaan->updateData($datapost);
-			$this->fungsi->run_js('load_silent("lab/pendanaan","#content")');
-			$this->fungsi->message_box("Data Lab Pendanaan sukses diperbarui...","success");
-			$this->fungsi->catat($datapost,"Mengedit Lab Satuan dengan data sbb:",true);
+			$this->fungsi->run_js('load_silent("master/pendanaan","#content")');
+			$this->fungsi->message_box("Data master Pendanaan sukses diperbarui...","success");
+			$this->fungsi->catat($datapost,"Mengedit master pendanaan dengan data sbb:",true);
 	
 		}
+	}
+	public function delete_pendanaan()
+	{
+		$this->fungsi->check_previleges('pendanaan');
+		$id = $this->uri->segment(4);
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_pendanaan->delete_pendanaan($id);
+		$this->show_pendanaan();
+		$this->fungsi->catat("Menghapus pendanaan dengan id ".$id);
 	}
 }

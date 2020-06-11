@@ -37,8 +37,8 @@ class mata_kuliah extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'nama_mata_kuliah',
-					'label' => 'nama_mata_kuliah',
+					'field'	=> 'nama_mk',
+					'label' => 'nama_mk',
 					'rules' => 'required'
 				)
 			);
@@ -64,10 +64,14 @@ class mata_kuliah extends CI_Controller {
 		$this->fungsi->check_previleges('mata_kuliah');
 		$this->load->library('form_validation');
 		$config = array(
-				
+			array(
+				'field'	=> 'id',
+				'label' => '',
+				'rules' => ''
+			),
 				array(
-					'field'	=> 'mata_kuliah',
-					'label' => 'mata_kuliah',
+					'field'	=> 'nama_mk',
+					'label' => 'nama_mk',
 					'rules' => 'required'
 				)
 			);
@@ -76,14 +80,14 @@ class mata_kuliah extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['edit'] = $this->db->get_where('mata_kuliah',array('id'=>$id));
+			$data['edit'] = $this->db->get_where('master_mata_kuliah',array('id'=>$id));
 			$data['status']='';
 			$this->load->view('master/mata_kuliah/v_mata_kuliah_edit',$data);
 		}
 		else
 		{
 			$datapost = get_post_data(array('id','nama_mk','jml_sks','keterangan'));
-			$this->m_tipe_lab->updateData($datapost);
+			$this->m_mata_kuliah->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/mata_kuliah","#content")');
 			$this->fungsi->message_box("Data Master mata kuliah sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit mata kuliah dengan data sbb:",true);

@@ -33,7 +33,7 @@
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"master/mata_kuliah/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"master/mata_kuliah/show_addForm/","#divsubcontent")','Yes','btn btn-success')." ";
             ?>
             </div>
         </div>

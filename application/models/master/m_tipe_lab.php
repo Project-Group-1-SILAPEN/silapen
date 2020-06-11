@@ -5,8 +5,8 @@ class M_tipe_lab extends CI_Model {
 
 	public function getData($value='')
 	{
-		$this->db->from('tipe_lab ma');
-		$this->db->order_by('ma.id', 'desc');
+		$this->db->from('tipe_lab ');
+		$this->db->order_by('tipe_lab.id', 'desc');
 		return $this->db->get();
 	}
 
@@ -31,5 +31,3 @@ class M_tipe_lab extends CI_Model {
 
 }
 
-/* End of file m_nama_alat.php */
-/* Location: ./application/models/master/m_nama_alat.php */

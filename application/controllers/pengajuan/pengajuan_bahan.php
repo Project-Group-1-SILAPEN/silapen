@@ -15,12 +15,13 @@ class pengajuan_bahan extends CI_Controller {
 		$this->fungsi->check_previleges('pengajuan_bahan');
 		$data['pengajuan_bahan'] = $this->m_pengajuan_bahan->getData();
 		$this->load->view('pengajuan_bahan/v_pengajuan_bahan_list',$data);
-    }
+	}
+	
     public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
 		$header    = "Form pengajuan bahan";
-		$subheader = "pengajuan bahan";
+		$subheader = "pengajuan_bahan";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
 		if($param=='base'){
@@ -37,8 +38,8 @@ class pengajuan_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'pengajuan_bahan',
-					'label' => 'pengajuan_bahan',
+					'field'	=> 'nama_bahan',
+					'label' => '',
 					'rules' => 'required'
 				)
 			);
@@ -52,10 +53,10 @@ class pengajuan_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('nama_bahan','jenis_bahan','tahun_bahan','keterangan'));
+			$datapost = get_post_data(array('id','nama_bahan','seri_bahan','merk_bahan','jumlah_grosir','satuan_grosir','harga_grosir','estimasi_jumlah_bahan','harga_dasar_bahan','jenis_bahan','tahun_bahan','nama_lab','keterangan'));
 			$this->m_pengajuan_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
-			$this->fungsi->message_box("Data pengajuan_bahan sukses disimpan...","success");
+			$this->fungsi->message_box("Data pengajuan bahan sukses disimpan...","success");
 			$this->fungsi->catat($datapost,"Menambah pengajuan_bahan dengan data sbb:",true);
 		}
 	}
@@ -67,12 +68,12 @@ class pengajuan_bahan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => '',
-					'rules' => ''
+					'label' => 'id',
+					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'pengajuan_bahan',
-					'label' => 'pengajuan_bahan',
+					'field'	=> 'nama_bahan',
+					'label' => 'nama_bahan',
 					'rules' => 'required'
 				)
 			);
@@ -87,8 +88,8 @@ class pengajuan_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_bahan', 'jenis_bahan','tahun_bahan','keterangan'));
-			$this->m_pengajan_bahan->updateData($datapost);
+			$datapost = get_post_data(array('id','nama_bahan','seri_bahan','merk_bahan','jumlah_grosir','satuan_grosir','harga_grosir','estimasi_jumlah_bahan','harga_dasar_bahan','jenis_bahan','tahun_bahan','nama_lab','keterangan'));
+			$this->m_pengajuan_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
 			$this->fungsi->message_box("Data pengajuan_bahan sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit pengajuan_bahan dengan data sbb:",true);

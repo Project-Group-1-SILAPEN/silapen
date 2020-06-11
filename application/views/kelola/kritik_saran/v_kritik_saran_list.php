@@ -4,13 +4,13 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Lab Pendanaan</h3>
+            <h3 class="box-title">Kritik dan Saran</h3>
 
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("lab/pendanaan/form/base","#modal")','Add New pendanaan','btn btn-success');
+              if ($sesi == '1' || $sesi == '4' || $sesi == '6' || $sesi == '7'|| $sesi == '8') {
+                echo button('load_silent("kelola/kritik_saran/form/base","#modal")','Add New kritik_saran','btn btn-success');
               } else {
                 # code...
               }
@@ -20,27 +20,31 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>id</th>
-                <th>Sumber Pendanaan</th>
-                <th>Jumlah</th>
-                <th>Keterangan</th>
+                <th>Id</th>
+                <th>Pengirim</th>
+                <th>Tanggal Pengiriman</th>
+                <th>Lab Tujuan</th>
+                <th>Kritik</th>
+                <th>Saran</th>
                 <th>Act</th>
               </thead>
               <tbody>
           <?php 
           $i = 1;
-          foreach($pendanaan->result() as $row): ?>
+          foreach($kritik_saran->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->sumber_pendanaan?></td>
-            <td align="center"><?=$row->jumlah?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><?=$row->pengirim?></td>
+            <td align="center"><?=$row->tgl_pengiriman?></td>
+            <td align="center"><?=$row->lab_tujuan?></td>
+            <td align="center"><?=$row->kritik?></td>
+            <td align="center"><?=$row->saran?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("lab/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("lab/pendanaan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+              if ($sesi == '1' || $sesi == '4') {
+                echo button('load_silent("kelola/kritik_saran/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("kelola/kritik_saran/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }

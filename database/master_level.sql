@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2020 at 05:08 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Jun 05, 2020 at 04:40 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -37,13 +39,13 @@ CREATE TABLE `master_level` (
 
 INSERT INTO `master_level` (`id`, `level`) VALUES
 (1, 'Super Admin'),
-(2, 'Level 1'),
-(3, 'Level 2'),
-(4, 'Level 3'),
-(5, 'Level 4'),
-(6, 'Level 5'),
-(7, 'Level 6'),
-(8, 'Level 7');
+(2, 'Admin'),
+(3, 'Kepala Laboratorium'),
+(4, 'Koordinator Laboratorium'),
+(5, 'Laboran'),
+(6, 'Asisten Lab'),
+(7, 'Mahasiswa'),
+(8, 'Dosen');
 
 --
 -- Indexes for dumped tables
@@ -64,6 +66,8 @@ ALTER TABLE `master_level`
 --
 ALTER TABLE `master_level`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

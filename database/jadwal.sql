@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2020 pada 16.23
+-- Waktu pembuatan: 11 Jun 2020 pada 06.39
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -25,32 +25,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peminjaman_bahan`
+-- Struktur dari tabel `jadwal`
 --
 
-CREATE TABLE `peminjaman_bahan` (
+CREATE TABLE `jadwal` (
   `id` int(11) NOT NULL,
-  `nama_bahan` varchar(255) NOT NULL,
-  `nama_peminjam` varchar(255) NOT NULL,
-  `tanggal_pinjam` date NOT NULL,
-  `satuan` int(255) NOT NULL
+  `nama_jadwal` varchar(255) NOT NULL,
+  `file_jadwal` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `peminjaman_bahan`
---
-
-INSERT INTO `peminjaman_bahan` (`id`, `nama_bahan`, `nama_peminjam`, `tanggal_pinjam`, `satuan`) VALUES
-(123, 'Skripsi Sistem Informasi', 'Lilaa', '2020-06-03', 3);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `peminjaman_bahan`
+-- Indeks untuk tabel `jadwal`
 --
-ALTER TABLE `peminjaman_bahan`
+ALTER TABLE `jadwal`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,10 +50,10 @@ ALTER TABLE `peminjaman_bahan`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `peminjaman_bahan`
+-- AUTO_INCREMENT untuk tabel `jadwal`
 --
-ALTER TABLE `peminjaman_bahan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+ALTER TABLE `jadwal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

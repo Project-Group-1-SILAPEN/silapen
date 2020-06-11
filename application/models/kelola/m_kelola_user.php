@@ -1,31 +1,36 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_user extends CI_Model {
+class m_kelola_user extends CI_Model {
 
-	public function getList($value='')
+    //select->read
+	public function getData($value='')
 	{
-		$this->db->join('master_level ml', 'cu.level = ml.id', 'left');
-		$this->db->select('cu.*,ml.level');
+		$this->db->from('kelola_user ma');
+		$this->db->order_by('ma.id', 'desc');
+		return $this->db->get();
+    }
+    
+    //insert->create
+	public function insertData($data='')
+	{
 		
-		$this->db->where('cu.level !=', 1);
-		return $this->db->get('cms_user cu');
+        $this->db->insert('kelola_user',$data);
+       
 	}
+   //update
 
-	public function insertData($data='',$new=true)
+
+	public function updateData($data='')
 	{
-		if($new)
-        {
-            $this->db->insert('cms_user',$data);
-        }
-        else
-        {
-            $this->db->where('id',$data['id']);
-            $this->db->update('cms_user',$data);
-        }
+		 $this->db->where('id',$data['id']);
+            $this->db->update('kelola_user',$data);
+	}
+   //delete
+	public function deleteData($id='')
+	{
+		$this->db->where('id', $id);
+        $this->db->delete('kelola_user');
 	}
 
 }
-
-/* End of file m_user.php */
-/* Location: ./application/models/cms/m_user.php */

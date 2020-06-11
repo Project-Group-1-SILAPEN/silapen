@@ -10,8 +10,8 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
-                echo button('load_silent("pengajuan/pengajuan_alat/form/base","#modal")','Add New pengajuan_alat','btn btn-success');
+              if ($sesi == '1' || $sesi == '3' || $sesi == '4' || $sesi == '5'|| $sesi == '7') {
+                echo button('load_silent("pengajuan/pengajuan_alat/form/base","#modal")','Add New pengajuan alat','btn btn-success');
               } else {
                 # code...
               }
@@ -24,8 +24,16 @@
                 
                 <th>Id</th>
                 <th>Nama Alat</th>
+                <th>Seri Alat</th>
+                <th>Merk Alat</th>
+                <th>Jumlah Grosir</th>
+                <th>Satuan Grosir</th>
+                <th>Harga Grosir</th>
+                <th>Estimasi Jumlah Alat</th>
+                <th>Harga Dasar Alat</th>
                 <th>jenis Alat</th>
                 <th>Tahun</th>
+                <th>Nama Lab</th>
                 <th>keterangan</th>
                 <th>Act</th>
               </thead>
@@ -35,15 +43,22 @@
           foreach($pengajuan_alat->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-         
             <td align="center"><?=$row->nama_alat?></td>
+            <td align="center"><?=$row->seri_alat?></td>
+            <td align="center"><?=$row->merk_alat?></td>
+            <td align="center"><?=$row->jumlah_grosir?></td>
+            <td align="center"><?=$row->satuan_grosir?></td>
+            <td align="center"><?=$row->harga_grosir?></td>
+            <td align="center"><?=$row->estimasi_jumlah_alat?></td>
+            <td align="center"><?=$row->harga_dasar_alat?></td>
             <td align="center"><?=$row->jenis_alat?></td>
             <td align="center"><?=$row->tahun_alat?></td>
+            <td align="center"><?=$row->nama_lab?></td>
             <td align="center"><?=$row->keterangan?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1') {
                 echo button('load_silent("pengajuan/pengajuan_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
                 echo button('load_silent("pengajuan/pengajuan_alat/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
