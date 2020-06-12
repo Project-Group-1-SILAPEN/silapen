@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("kelola/kelola_user/form/base","#modal")','Add New kelola user','btn btn-success');
               } else {
                 # code...
@@ -30,12 +30,13 @@
                 <th>No Telp</th>
                 <th>Level</th>
                 <th>Status</th>
+                <th>Alamat</th>
                 <th>Act</th>
               </thead>
               <tbody>
               <?php 
           $i = 1;
-          foreach($user->result() as $row): ?>
+          foreach($kelola_user->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->NoInduk?></td>
@@ -47,10 +48,11 @@
             <td align="center"><?=$row->NoTelp?></td>
             <td align="center"><?=$row->Level?></td>
             <td align="center"><?=$row->Status?></td>
+            <td align="center"><?=$row->Alamat?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+              if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("kelola/kelola_user/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-search','data-toggle="tooltip" title="view"');
                 echo button('load_silent("kelola/kelola_user/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
  

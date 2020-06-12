@@ -85,6 +85,15 @@
             </div>
         </div>
 
+        div class="form-group">
+            <label class="col-sm-4 control-label">Alamat</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'Alamat','class'=>'form-control'));?>
+            <?php echo form_error('Alamat');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">

@@ -71,10 +71,17 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-4 control-label">Alamat</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'Alamat','value'=>$row->Alamat,'class'=>'form-control'));?>
+            <?php echo form_error('Alamat');?>
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"kelola/kelola_user/show_editForm/","#divsubcontent")','Simpan','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/kelola_user/show_editForm_user/","#divsubcontent")','Simpan','btn btn-success')." ";
             ?>
             </div>
         </div>

@@ -7,7 +7,7 @@ class kelola_user extends CI_Controller {
 	{
 		parent::__construct();
 		$this->fungsi->restrict();
-		$this->load->model('kelola/kelola_user');
+		$this->load->model('kelola/m_kelola_user');
 	}
 
 	public function index()
