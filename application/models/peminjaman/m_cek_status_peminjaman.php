@@ -5,8 +5,8 @@ class M_cek_status_peminjaman extends CI_Model {
 
 	public function getData($value='')
 	{
-		$this->db->from('cek_status_peminjaman');
-		$this->db->order_by('cek_status_peminjaman.id', 'desc');
+		$this->db->from('cek_status_peminjaman ma');
+		$this->db->order_by('ma.id', 'desc');
 		return $this->db->get();
 	}
 

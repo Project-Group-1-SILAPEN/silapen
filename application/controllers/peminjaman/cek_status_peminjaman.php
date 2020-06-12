@@ -53,7 +53,7 @@ class cek_status_peminjaman extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('no','id_peminjaman','jenis_peminjaman','status'));
+			$datapost = get_post_data(array('id_peminjaman','jenis_peminjaman','status'));
 			$this->m_cek_status_peminjaman->insertData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/cek_status_peminjaman","#content")');
 			$this->fungsi->message_box("Data status peminjaman sukses disimpan...","success");
@@ -68,7 +68,7 @@ class cek_status_peminjaman extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => 'id',
+					'label' => '',
 					'rules' => ''
 				),
 				array(
@@ -88,11 +88,20 @@ class cek_status_peminjaman extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('no','id_peminjaman','jenis_peminjaman','status'));
+			$datapost = get_post_data(array('id','id_peminjaman','jenis_peminjaman','status'));
 			$this->m_cek_status_peminjaman->updateData($datapost);
 			$this->fungsi->run_js('load_silent("peminjaman/cek_status_peminjaman","#content")');
 			$this->fungsi->message_box("Data status peminjaman sukses diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit status peminjaman dengan data sbb:",true);
 		}
+	}
+	public function delete_cek_status_peminjaman()
+	{
+		$this->fungsi->check_previleges('cek_status_peminjaman');
+		$id = $this->uri->segment(4);
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_cek_status_peminjaman->delete_cek_status_peminjaman($id);
+		$this->show_cek_status_peminjaman();
+		$this->fungsi->catat("Menghapus status peminjaman dengan id ".$id);
 	}
 }
