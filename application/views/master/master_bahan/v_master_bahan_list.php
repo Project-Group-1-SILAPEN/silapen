@@ -21,7 +21,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+                <th>Id</th>
                 <th>Kode</th>
                 <th>Jenis Bahan</th>
                 <th>Nama Bahan</th>
@@ -49,6 +49,7 @@
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/master_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data bahan tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

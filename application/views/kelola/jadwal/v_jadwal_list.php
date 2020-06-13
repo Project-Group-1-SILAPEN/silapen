@@ -42,11 +42,11 @@
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4') {
                 echo button('load_silent("kelola/jadwal/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("kelola/jadwal/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
               ?>
+              <a href="<?= site_url('kelola/jadwal/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus jadwal tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

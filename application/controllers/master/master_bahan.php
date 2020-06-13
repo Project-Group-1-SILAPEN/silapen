@@ -38,8 +38,8 @@ class Master_bahan extends CI_Controller {
 		$this->load->library('form_validation');
 		$config = array(
 				array(
-					'field'	=> 'nama_bahan',
-					'label' => 'nama_bahan',
+					'field'	=> 'kode',
+					'label' => 'kode',
 					'rules' => 'required'
 				)
 			);
@@ -53,7 +53,7 @@ class Master_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('no','kode','jenis_bahan','nama_bahan','tahun','pengarang'));
+			$datapost = get_post_data(array('id','kode','jenis_bahan','nama_bahan','tahun','pengarang'));
 			$this->m_master_bahan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
 			$this->fungsi->message_box("Data Master Nama_bahan sukses disimpan...","success");
@@ -72,8 +72,8 @@ class Master_bahan extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'nama_bahan',
-					'label' => 'nama_bahan',
+					'field'	=> 'kode',
+					'label' => 'kode',
 					'rules' => 'required'
 				)
 			);
@@ -88,7 +88,7 @@ class Master_bahan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('no','kode','nama_bahan','jenis_bahan','keterangan','tahun','pengarang'));
+			$datapost = get_post_data(array('id','kode','nama_bahan','jenis_bahan','keterangan','tahun','pengarang'));
 			$this->m_master_bahan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
 			$this->fungsi->message_box("Data Master Nama Bahan sukses diperbarui...","success");

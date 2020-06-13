@@ -60,11 +60,11 @@
               $sesi = from_session('level');
               if ($sesi == '1') {
                 echo button('load_silent("pengajuan/pengajuan_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("pengajuan/pengajuan_bahan/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
               ?>
+              <a href="<?= site_url('pengajuan/pengajuan_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data pengajuan bahan tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

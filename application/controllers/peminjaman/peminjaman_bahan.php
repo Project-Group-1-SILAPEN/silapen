@@ -95,4 +95,11 @@ class peminjaman_bahan extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Peminjaman_bahan dengan data sbb:",true);
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_peminjaman_bahan->deleteData($id);
+				redirect('admin');
+				$this->load->view('peminjaman/peminjaman_bahan/v_peminjaman_bahan_list');
+			}	
 }
