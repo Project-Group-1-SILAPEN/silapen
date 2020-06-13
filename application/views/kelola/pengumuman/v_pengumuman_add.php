@@ -13,51 +13,51 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Mata Kuliah</label>
+            <label class="col-sm-4 control-label">Nama </label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'mata_kuliah','class'=>'form-control'));?>
-            <?php echo form_error('mata_kuliah');?>
+            <?php echo form_input(array('name'=>'nama','class'=>'form-control'));?>
+            <?php echo form_error('nama');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Modul</label>
+            <label class="col-sm-4 control-label">Nomor Induk</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_modul','class'=>'form-control'));?>
-            <?php echo form_error('nama_modul');?>
+            <?php echo form_input(array('name'=>'nomor_induk','class'=>'form-control'));?>
+            <?php echo form_error('nomor_induk');?>
             <span id="check_data"></span>
             </div>
-        </div>
-        <div class="form-group">
-                  <label for="exampleInputFile">File modul</label>
-                  <input type="file" id="exampleInputFile">
-                  <p class="help-block">Example block-level help text here.</p>
-                  
-            <span id="check_data"></span>
-         </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Deskripsi Modul</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'deskripsi_modul','class'=>'form-control'));?>
-            <?php echo form_error('deskripsi_modul');?>
-            <span id="check_data"></span>
-            </div>
-            </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Dosen Pengarang</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'dosen_pengarang','class'=>'form-control'));?>
-            <?php echo form_error('dosen_pengarang');?>
-            <span id="check_data"></span>
-            </div>
-            
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Status</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'status','class'=>'form-control'));?>
             <?php echo form_error('status');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Kategori Pinjam</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'kategori_pinjam','class'=>'form-control'));?>
+            <?php echo form_error('kategori_pinjam');?>
+            <span id="check_data"></span>
+            </div>
+            </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Tanggal Pinjam</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tanggal_pinjam','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_pinjam');?>
+            <span id="check_data"></span>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Tanggal Kembali</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'tanggal_kembali','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_kembali');?>
             <span id="check_data"></span>
             </div></div>
         
@@ -66,7 +66,7 @@
             <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
-            echo button('send_form(document.faddmenugrup,"kelola/modul/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+            echo button('send_form(document.faddmenugrup,"kelola/pengumuman/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
         </div>
