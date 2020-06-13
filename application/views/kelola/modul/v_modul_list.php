@@ -39,7 +39,7 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->mata_kuliah?></td>
             <td align="center"><?=$row->nama_modul?></td>
-            <td align="center"><?=$row->file_modul?></td>
+            <td align="center"><img src="<?php echo base_url().$row->file_modul; ?>" class="file-preview-file"></td>	
             <td align="center"><?=$row->deskripsi_modul?></td>
             <td align="center"><?=$row->dosen_pengarang?></td>
             <td align="center"><?=$row->status?></td>

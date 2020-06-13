@@ -29,12 +29,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">File Modul</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'file_modul','class'=>'form-control'));?>
-            <?php echo form_error('file_modul');?>
+                  <label for="exampleInputFile">File modul</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Example block-level help text here.</p>
+                  
             <span id="check_data"></span>
-            </div>
+         </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Deskripsi Modul</label>

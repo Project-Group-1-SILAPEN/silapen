@@ -29,8 +29,8 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">File Modul</label>
-            <div class="col-sm-8">
+        <label for="exampleInputFile">File modul</label>
+        <input type="file" id="exampleInputFile">
             <?php echo form_input(array('name'=>'file_modul','value'=>$row->file_modul,'class'=>'form-control'));?>
             <?php echo form_error('file_modul');?>
             </div>
