@@ -10,7 +10,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '4' || $sesi == '5' || $sesi == '6'|| $sesi == '7'|| $sesi == '8') {
+              if ($sesi == '1' || $sesi == '4' || $sesi == '5' || $sesi == '8') {
                 echo button('load_silent("kelola/skripsi/form/base","#modal")','Add New Skripsi','btn btn-success');
               } else {
                 # code...
@@ -47,7 +47,7 @@
             <td align="center"><?=$row->nama_penulis?></td>
             <td align="center"><?=$row->dosen_pembimbing1?></td>
             <td align="center"><?=$row->dosen_pembimbing2?></td>
-            <td align="center"><?=$row->gambar?></td>
+            <td align="center"><img src="<?php echo base_url().$row->gambar; ?>" class="file-preview-image"></td>
             <td align="center"><?=$row->file_abstrak?></td>
             <td align="center"><?=$row->lembar_pengesahan?></td>
             <td align="center"><?=$row->cover?></td>
@@ -58,7 +58,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '4') {
+              if ($sesi == '1' || $sesi == '8') {
                 echo button('load_silent("kelola/skripsi/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
                 echo button('load_silent("kelola/skripsi/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {

@@ -72,8 +72,8 @@ class skripsi extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'judul_skripsi/ta',
-					'label' => 'judul_skripsi/ta',
+					'field'	=> 'judul_skripsi',
+					'label' => 'judul_skripsi',
 					'rules' => 'required'
 				)
 			);

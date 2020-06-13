@@ -47,8 +47,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Gambar</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'gambar','class'=>'form-control'));?>
-            <?php echo form_error('gambar');?>
+            <?php echo form_upload(array('name'=>'gambar','id'=>'gambar','class'=>'form-control'));?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -93,7 +92,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tahun Skripsi/TA</label>
+            <label class="col-sm-4 control-label">Tahun Skripsi</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'tahun_skripsi','class'=>'form-control'));?>
             <?php echo form_error('tahun_skripsi');?>
@@ -101,7 +100,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Status Skripsi/TA</label>
+            <label class="col-sm-4 control-label">Status Skripsi</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'status_skripsi','class'=>'form-control'));?>
             <?php echo form_error('status_skripsi');?>
