@@ -13,7 +13,7 @@
 		<div class="icon">
 		<i class ="fa fa-desktop"></i>
 		</div>
-		<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+		<h5 class="small-box-footer"<?php echo button('load_silent("master/tipe_lab","#content")','' ,'  ');?>More info <i class="fa fa-arrow-circle-right"></i></h5>
 		</div>
 		</div>
 
