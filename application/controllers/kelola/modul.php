@@ -95,4 +95,11 @@ class modul extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit modul dengan data sbb:",true);
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_modul->deleteData($id);
+				redirect('admin');
+				$this->load->view('kelola/modul/v_modul_list');
+			}	
 }

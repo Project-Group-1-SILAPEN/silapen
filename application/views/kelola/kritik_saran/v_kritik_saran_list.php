@@ -12,7 +12,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4' || $sesi == '6' || $sesi == '7'|| $sesi == '8') {
-                echo button('load_silent("kelola/kritik_saran/form/base","#modal")','Add New kritik_saran','btn btn-success');
+                echo button('load_silent("kelola/kritik_saran/form/base","#modal")','Add New kritik saran','btn btn-success');
               } else {
                 # code...
               }
@@ -46,11 +46,11 @@
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4') {
                 echo button('load_silent("kelola/kritik_saran/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("kelola/kritik_saran/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
               ?>
+              <a href="<?= site_url('kelola/kritik_saran/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus kritik dan saran tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

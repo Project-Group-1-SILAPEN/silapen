@@ -95,4 +95,11 @@ class pengumuman extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit pengumuman dengan data sbb:",true);
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_pengumuman->deleteData($id);
+				redirect('admin');
+				$this->load->view('kelola/pengumuman/v_pengumuman_list');
+			}	
 }

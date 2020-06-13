@@ -95,4 +95,11 @@ class skripsi extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Daftar Skripsi dengan data sbb:",true);
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_skripsi->deleteData($id);
+				redirect('admin');
+				$this->load->view('kelola/skripsi/v_skripsi_list');
+			}	
 }

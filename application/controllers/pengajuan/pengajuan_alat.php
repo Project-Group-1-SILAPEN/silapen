@@ -96,4 +96,11 @@ class pengajuan_alat extends CI_Controller {
 	
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_pengajuan_alat->deleteData($id);
+				redirect('admin');
+				$this->load->view('pengajuan/pengajuan_alat/v_pengajuan_alat_list');
+			}	
 }
