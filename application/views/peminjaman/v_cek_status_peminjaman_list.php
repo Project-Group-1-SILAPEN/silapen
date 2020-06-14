@@ -11,7 +11,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4' || $sesi == '5' || $sesi == '6'|| $sesi == '7'|| $sesi == '8') {
-                echo button('load_silent("peminjaman/cek_status_peminjaman/form/base","#modal")','Add New Cek Status Peminjaman','btn btn-success');
+                echo button('load_silent("peminjaman/cek_status_peminjaman/form/base","#modal")','Add Status Peminjaman','btn btn-success');
               } else {
                 # code...
               }
