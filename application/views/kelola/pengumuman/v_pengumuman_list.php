@@ -1,15 +1,18 @@
 
 <?php require ('application/views/warning.php'); ?>
+
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
-    <div class="row" id="form_pembelian">
+    <div class="row" id="form_pembelian"> 
       <div class="col-lg-12">
-        <div class="box box-primary">
-          <div class="box-header with-border">
+        <div class="box box-primary"> 
+          <div class="box-header with-border"> 
             <h3 class="box-title">Daftar Peminjaman yang Menunggu Persetujuan</h3>
 
-            <div class="box-tools pull-right">
+            
+            <div class="box-tools pull-right"> 
             <?php
+            
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4' || $sesi == '5' || $sesi == '6'|| $sesi == '7'|| $sesi == '8') {
                 echo button('load_silent("kelola/pengumuman/form/base","#modal")','Add New pengumuman','btn btn-success');

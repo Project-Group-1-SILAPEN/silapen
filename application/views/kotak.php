@@ -29,8 +29,8 @@
       <i class="fa fa-construct"> </i>
    <i class="fa fa-cogs"> </i> 
     
-		</div>
-		<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+   </div>
+		<h5 class="small-box-footer"<?php echo button('load_silent("master/nama_alat","#content")','' ,'  ');?>More info <i class="fa fa-arrow-circle-right"></i></h5>
 		</div>
 		</div>
 
@@ -45,9 +45,9 @@
 		<div class="icon">
 		<i class="fa fa-flask"></i>
 		</div>
-		<a href="master/satuan" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+		<h5 class="small-box-footer"<?php echo button('load_silent("master/master_bahan","#content")','' ,'  ');?>More info <i class="fa fa-arrow-circle-right"></i></h5>
 		</div>
-    </div>
+		</div>
 
 		<!-- ./col -->
 		<div class="col-lg-3 col-xs-6">
@@ -60,7 +60,7 @@
 		<div class="icon">
 		<i class="fa fa-book"></i>
 		</div>
-		<a href="" class="small-box-footer">More info <i class ="fa fa-arrow-circle-right"></i></a>
+		<h5 class="small-box-footer"<?php echo button('load_silent("kelola/modul","#content")','' ,'  ');?>More info <i class="fa fa-arrow-circle-right"></i></h5>
 		</div>
 		</div>
           <!-- ./col -->
