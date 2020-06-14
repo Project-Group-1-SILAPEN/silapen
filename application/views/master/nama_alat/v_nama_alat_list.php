@@ -45,6 +45,7 @@
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/nama_alat/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data alat tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

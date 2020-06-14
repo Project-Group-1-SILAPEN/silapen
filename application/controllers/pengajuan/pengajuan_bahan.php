@@ -96,4 +96,11 @@ class pengajuan_bahan extends CI_Controller {
 	
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_pengajuan_bahan->deleteData($id);
+				redirect('admin');
+				$this->load->view('pengajuan/pengajuan_bahan/v_pengajuan_bahan_list');
+			}	
 }

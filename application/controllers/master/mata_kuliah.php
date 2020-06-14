@@ -93,4 +93,11 @@ class mata_kuliah extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit mata kuliah dengan data sbb:",true);
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_mata_kuliah->deleteData($id);
+				redirect('admin');
+				$this->load->view('master/mata_kuliah/v_mata_kuliah_list');
+			}				
 }

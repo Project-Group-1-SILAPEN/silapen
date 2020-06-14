@@ -95,4 +95,11 @@ class anggota_lab extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit anggota_lab dengan data sbb:",true);
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_anggota_lab->deleteData($id);
+				redirect('admin');
+				$this->load->view('kelola/anggota_lab/v_anggota_lab_list');
+			}	
 }

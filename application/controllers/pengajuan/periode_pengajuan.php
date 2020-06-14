@@ -95,4 +95,11 @@ class periode_pengajuan extends CI_Controller {
 	
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_periode_pengajuan->deleteData($id);
+				redirect('admin');
+				$this->load->view('pengajuan/periode_pengajuan/v_periode_pengajuan_list');
+			}	
 }

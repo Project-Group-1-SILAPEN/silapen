@@ -40,11 +40,11 @@
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2') {
                 echo button('load_silent("master/mata_kuliah/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
-                echo button('load_silent("master/mata_kuliah/form/sub/'.$row->id.'","#modal")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
               }
               ?>
+              <a href="<?= site_url('master/mata_kuliah/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data mata kuliah tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
 

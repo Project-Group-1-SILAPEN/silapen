@@ -88,11 +88,18 @@ class skripsi extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','judul_skripsi/ta','nama_penulis','dosen_pembimbing1','dosen_pembimbing2','gambar','file_abstrak','lembar_pengesahan','cover','kartu_dp1','kartu_dp2','tahun_skripsi/ta','status_skripsi/ta'));
+			$datapost = get_post_data(array('id','judul_skripsi','nama_penulis','dosen_pembimbing1','dosen_pembimbing2','gambar','file_abstrak','lembar_pengesahan','cover','kartu_dp1','kartu_dp2','tahun_skripsi','status_skripsi'));
 			$this->m_skripsi->updateData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/skripsi","#content")');
 			$this->fungsi->message_box("Daftar Skripsi Sukses Diperbarui...","success");
 			$this->fungsi->catat($datapost,"Mengedit Daftar Skripsi dengan data sbb:",true);
 		}
 	}
+	public function delete()
+            {
+                $id = $this->uri->segment(4);
+                $this->m_skripsi->deleteData($id);
+				redirect('admin');
+				$this->load->view('kelola/skripsi/v_skripsi_list');
+			}	
 }
