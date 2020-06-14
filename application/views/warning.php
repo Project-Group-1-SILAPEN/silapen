@@ -1,3 +1,6 @@
+</div>
+</div>
+</div>
 <div class="col-md-13">
 <section class="content">
         <div class="callout callout-info">

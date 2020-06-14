@@ -52,7 +52,6 @@
               <a href="<?= site_url('master/master_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data bahan tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
-
         <?php endforeach;?>
         </tbody>
             </table>
