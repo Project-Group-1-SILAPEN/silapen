@@ -53,6 +53,7 @@
               ?>
             </td>
           </tr>
+          
           <?php require ('application/views/lab.php'); ?>
         <?php endforeach;?>
         </tbody>
