@@ -1,18 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
-    <div class="row" id="form_pembelian">
-      <div class="col-lg-12">
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">From Add User</h3>
-
-                <div class="box-tools pull-right">
-                  <?php echo button('load_silent("cms/user/formadd/","#content")','Reload Page','btn btn-danger','data-toggle="tooltip" title="Reload"');?> 
-                </div>
-            </div>
-          <div class="box-body">
+          <div class="box-body big">
             <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
             
+
+
             <div class="form-group">
                 <label class="col-sm-2 control-label">Nama</label>
                 <div class="col-sm-8">
@@ -49,13 +41,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Bagian</label>
-                <div class="col-sm-8">
-                  <?php echo form_dropdown('bagian',$bagian,set_value('id'),'id="bagian" class="form-control select2"');?>
-                  <?php echo form_error('bagian', '<span class="error-span">', '</span>'); ?>
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="col-sm-2 control-label" for="userfile">Picture</label>
                 <div class="col-sm-8">
                 <?php echo form_upload(array('name'=>'ufile','id'=>'ufile'));?>
@@ -80,7 +65,7 @@
                 <label class="col-sm-2 control-label">Save</label>
                 <div class="col-sm-8 tutup">
                 <?php
-                //echo button('send_form(document.faddmenugrup,"master/produk/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+                echo button('send_form(document.faddmenugrup,"cms/user/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
                 ?>
                 <input onclick="save()" type="submit" value="Save" class="btn btn-success">
                 </div>

@@ -15,7 +15,7 @@
               <?php echo button('load_silent("kelola/jadwal","#content")','' ,'  ');?>  Kelola Jadwal <a class="fa fa-calendar"></i>
               </a>
               <i class="btn btn-app" 
-              <?php echo button('load_silent("kelola/modul","#content")','' ,'  ');?>  Kelola Jadwal <a class="fa fa-book"></i>
+              <?php echo button('load_silent("kelola/modul","#content")','' ,'  ');?>  Kelola Modul <a class="fa fa-book"></i>
               </a>
               <i class="btn btn-app" 
               <?php echo button('load_silent("kelola/skripsi","#content")','' ,'  ');?>  Kelola Skripsi <a class="fa fa-graduation-cap"></i>

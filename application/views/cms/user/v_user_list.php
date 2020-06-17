@@ -38,7 +38,7 @@
             <td><?=$row->no_hp?></td>
             <td><?=$row->alamat?></td>
             <td>
-            <?php echo button('load_silent("cms/user/show_editForm/'.$row->id.'","#content")','Edit','btn btn-info','data-toggle="tooltip" title="Edit User"');?> 
+            <?php echo button('load_silent("cms/user/show_editForm_user/'.$row->id.'","#content")','Edit','btn btn-info','data-toggle="tooltip" title="Edit User"');?> 
 						</td>
 					</tr>
 

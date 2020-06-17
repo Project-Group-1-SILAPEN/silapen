@@ -23,7 +23,7 @@ class User extends CI_Controller {
 		$this->fungsi->check_previleges('user');
 		$data['level']  = get_options($this->db->query('select id, level from master_level'),true);
 		$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-		$this->load->view('cms/user/v_user_addd',$data);
+		$this->load->view('cms/user/v_user_editt',$data);
 	}
 
 	public function show_addForm()
@@ -74,7 +74,7 @@ class User extends CI_Controller {
 		{
 			$data['level']  = get_options($this->db->query('select id, level from master_level where id !=1'),true);
 			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_addd',$data);
+			$this->load->view('cms/user/v_user_editt',$data);
 		}
 		else
 		{
@@ -186,7 +186,7 @@ class User extends CI_Controller {
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level where id !=1'),true);
 			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_editt',$data);
+			$this->load->view('cms/user/v_user_edit_user',$data);
 		}
 		else
 		{
@@ -276,7 +276,7 @@ class User extends CI_Controller {
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level'),true);
 			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_editt',$data);
+			$this->load->view('cms/user/v_user_edit_user',$data);
 		}
 		else
 		{

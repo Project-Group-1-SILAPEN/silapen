@@ -81,7 +81,7 @@
                 <label class="col-sm-2 control-label">Save</label>
                 <div class="col-sm-8 tutup">
                 <?php
-                //echo button('send_form(document.faddmenugrup,"cms/user/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+                echo button('send_form(document.faddmenugrup,"cms/user/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
                 ?>
                 <input onclick="save()" type="submit" value="Save" class="btn btn-success">
                 </div>
