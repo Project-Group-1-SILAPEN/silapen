@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="<?=base_url();?>assets/plugins/pace/pace.min.css">
   <link href="<?=base_url();?>assets/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
   </head>
-  <body class="hold-transition skin-purple-light sidebar-mini fixed">
+  <body class="hold-transition skin-blue-light sidebar-mini fixed">
   <style type="text/css">
   .not-active {
    pointer-events: none;

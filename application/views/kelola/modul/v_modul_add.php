@@ -29,11 +29,11 @@
             </div>
         </div>
         <div class="form-group">
-                  <label for="exampleInputFile">File modul</label>
-                  <input type="file" id="exampleInputFile">
-                  <p class="help-block">Example block-level help text here.</p>
-                  
-            <span id="check_data"></span>
+        <label class="col-sm-4 control-label">Link Modul</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'link_modul','class'=>'form-control'));?>
+            <?php echo form_error('link_modul');?>
+            <span id="check_data"></span>    
          </div>
         </div>
         <div class="form-group">

@@ -53,12 +53,17 @@ class modul extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','mata_kuliah','nama_modul','file_modul','deskripsi_modul','dosen_pengarang','status'));
-			$this->m_modul->insertData($datapost);
-			$this->fungsi->run_js('load_silent("kelola/modul","#content")');
-			$this->fungsi->message_box("Tambah modul Lab sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah modul dengan data sbb:",true);
-		}
+			$datapost = get_post_data(array('id','mata_kuliah','nama_modul','link_modul','deskripsi_modul','dosen_pengarang','status'));
+		        $this->m_modul->insertData($datapost);
+				$this->fungsi->catat($datapost,"Menambah kelola modul dengan data sbb:",true);
+				$this->fungsi->run_js('load_silent("kelola/modul","#content")');
+				$this->fungsi->message_box("Tambah modul Lab sukses disimpan...","success");
+				$this->fungsi->catat($datapost,"Menambah modul dengan data sbb:",true);
+				
+				
+		      
+		    }
+		
 	}
 
 	public function show_editForm($id='')
@@ -88,7 +93,7 @@ class modul extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','mata_kuliah','nama_modul','file_modul','deskripsi_modul','dosen_pengarang','status'));
+			$datapost = get_post_data(array('id','mata_kuliah','nama_modul','link_modul','deskripsi_modul','dosen_pengarang','status'));
 			$this->m_modul->updateData($datapost);
 			$this->fungsi->run_js('load_silent("kelola/modul","#content")');
 			$this->fungsi->message_box("modul sukses diperbarui...","success");
@@ -101,5 +106,10 @@ class modul extends CI_Controller {
                 $this->m_modul->deleteData($id);
 				redirect('admin');
 				$this->load->view('kelola/modul/v_modul_list');
+				$this->fungsi->run_js('load_silent("kelola/modul","#content")');
+			$this->fungsi->message_box("modul sukses dihapus...","success");
+			$this->fungsi->catat($datapost,"Menghapus modul dengan data sbb:",true);
+
 			}	
 }
+
