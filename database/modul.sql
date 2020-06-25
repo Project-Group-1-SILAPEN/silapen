@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2020 at 04:49 PM
+-- Generation Time: Jun 25, 2020 at 02:45 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
@@ -32,18 +32,11 @@ CREATE TABLE `modul` (
   `id` int(11) NOT NULL,
   `mata_kuliah` varchar(225) NOT NULL,
   `nama_modul` varchar(225) NOT NULL,
-  `file_modul` varchar(225) NOT NULL,
+  `link_modul` varchar(225) NOT NULL,
   `deskripsi_modul` text NOT NULL,
   `dosen_pengarang` varchar(225) NOT NULL,
   `status` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `modul`
---
-
-INSERT INTO `modul` (`id`, `mata_kuliah`, `nama_modul`, `file_modul`, `deskripsi_modul`, `dosen_pengarang`, `status`) VALUES
-(1, 'rpl', 'rpl1', 'kepo bet', 'baik', 'pak kholiq', 'ok');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +56,7 @@ ALTER TABLE `modul`
 -- AUTO_INCREMENT for table `modul`
 --
 ALTER TABLE `modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

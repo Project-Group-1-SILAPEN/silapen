@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2020 at 12:40 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Jun 25, 2020 at 02:44 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
@@ -58,10 +60,9 @@ INSERT INTO `cms_menu` (`id`, `alias`, `nama`, `deskripsi`, `allowed_level`, `ur
 (130, 'kategori_no_induk', 'Kategori No Induk', '-', '+1+2+', 'master/kategori_no_induk', 1, 3, 2),
 (129, 'gambar_depan', 'Gambar Depan', '-', '+1+2+', 'master/gambar_depan', 1, 2, 2),
 (128, 'instansi', 'Instansi', '-', '+1+2+', 'master/instansi', 1, 1, 2),
-(140, 'pendanaan', 'Pendanaan', 'daftar sumber pendanaan', '+1+3+', 'lab/pendanaan', 1, 135, 2),
-(141, 'kritik_saran', 'Kritik dan Saran', 'kritik dan saran dari para pengguna lab', '+1+4+6+7+8+', 'lab/kritik_saran', 1, 140, 7),
-(148, 'pengumuman', 'Pengumuman', 'mengelola pengumuman', '+1+3+', 'lab/pengumuman', 1, 3, 7),
-(142, 'kelola user', 'Kelola User', 'untuk mengelola pengguna SILAPEN', '+1+2+', 'kelola/kelola_user', 1, 1, 7),
+(140, 'pendanaan', 'Pendanaan', 'daftar sumber pendanaan', '+1+3+', 'master/pendanaan', 1, 135, 2),
+(141, 'kritik_saran', 'Kritik dan Saran', 'kritik dan saran dari para pengguna lab', '+1+4+6+7+8+', 'kelola/kritik_saran', 1, 140, 7),
+(148, 'pengumuman', 'Pengumuman', 'mengelola pengumuman', '+1+3+', 'kelola/pengumuman', 1, 3, 7),
 (143, 'kelola alat&bahan', 'kelola alat dan bahan', 'untuk mengelola alat dan bahan di lab', '+1+5+', 'kelola/kelola_alat_bahan', 1, 2, 7),
 (144, 'peminjaman_alat', 'Peminjaman Alat', 'untuk mengelola peminjaman alat', '+1+4+5+6+7+8+', 'peminjaman/peminjaman_alat', 1, 1, 5),
 (145, 'peminjaman_bahan', 'Peminjaman Bahan', 'untuk mengelola peminjaman bahan', '+1+4+5+6+7+8+', 'peminjaman/peminjaman_bahan', 1, 2, 5),
@@ -74,7 +75,8 @@ INSERT INTO `cms_menu` (`id`, `alias`, `nama`, `deskripsi`, `allowed_level`, `ur
 (153, 'skripsi', 'TA/Skripsi', 'untuk mengelola skripsi mahasiswa', '+1+5+6+8+', 'kelola/skripsi', 1, 7, 7),
 (154, 'periode_pengajuan', 'Periode Pengajuan', 'untuk mengelola periode pengajuan warga lab', '+1+3+', 'pengajuan/periode_pengajuan', 1, 3, 6),
 (155, 'cek_status_peminjaman', 'Cek Status Peminjaman', 'untuk mengelola status peminjaman warga lab', '+1+4+5+6+7+8+', 'peminjaman/cek_status_peminjaman', 1, 3, 5),
-(156, 'anggota_lab', 'Anggota Lab', 'untuk mengelola anggota lab', '+1+4+', 'kelola/anggota_lab', 1, 5, 7);
+(156, 'anggota_lab', 'Anggota Lab', 'untuk mengelola anggota lab', '+1+4+', 'kelola/anggota_lab', 1, 5, 7),
+(157, 'user', 'user', '', '+1+2+', 'cms/user', 1, 1, 7);
 
 --
 -- Indexes for dumped tables
@@ -94,7 +96,9 @@ ALTER TABLE `cms_menu`
 -- AUTO_INCREMENT for table `cms_menu`
 --
 ALTER TABLE `cms_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
