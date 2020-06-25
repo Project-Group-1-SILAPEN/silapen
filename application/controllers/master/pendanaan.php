@@ -52,7 +52,7 @@ class pendanaan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('sumber_pendanaan','jumlah','keterangan'));
+			$datapost = get_post_data(array('id','sumber_pendanaan','jumlah','keterangan'));
 			$this->m_pendanaan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/pendanaan","#content")');
 			$this->fungsi->message_box("Data master Pendanaan sukses disimpan...","success");
@@ -95,12 +95,13 @@ class pendanaan extends CI_Controller {
 	
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_pendanaan->deleteData($id);
-				redirect('admin');
-				$this->load->view('master/pendanaan/v_pendanaan_list');
-			}	
-			
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('pendanaan');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_pendanaan->deleteData($id);
+		$this->fungsi->run_js('load_silent("master/pendanaan","#content")');
+		$this->fungsi->message_box("Data pendanaan berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus pendanaan dengan id ".$id);
+	}					
 }

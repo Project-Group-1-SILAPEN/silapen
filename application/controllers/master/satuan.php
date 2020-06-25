@@ -95,12 +95,13 @@ class satuan extends CI_Controller {
 	
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_satuan->deleteData($id);
-				redirect('admin');
-				$this->load->view('master/satuan/v_satuan_list');
-			}	
-			
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('satuan');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_satuan->deleteData($id);
+		$this->fungsi->run_js('load_silent("master/satuan","#content")');
+		$this->fungsi->message_box("Data satuan berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus satuan dengan id ".$id);
+	}			
 }
