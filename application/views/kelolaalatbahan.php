@@ -1,5 +1,5 @@
 <div class="box-body">
-              <p>Pengelolaan Laboratorium </p>
+              <p>Pengelolaan Alat Bahan </p>
               </a>
               <i class="btn btn-app" 
               <?php echo button('load_silent("master/nama_alat","#content")','' ,'  ');?>  Kelola Alat <a class="fa fa-wrench"></i>
