@@ -2,7 +2,7 @@
         <div class="col-md-3">
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Collapsable</h3>
+              <h3 class="box-title">Kelola Alat Bahan</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -17,7 +17,13 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              The body of the box
+            </a>
+              <i class="btn btn-app" 
+              <?php echo button('load_silent("master/nama_alat","#content")','' ,'  ');?>  Kelola Alat </i>
+              </a> 
+              <i class="btn btn-app" 
+              <?php echo button('load_silent("master/master_bahan","#content")','' ,'  ');?>  Kelola Bahan </i>
+              </a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -27,7 +33,7 @@
         <div class="col-md-3">
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Removable</h3>
+              <h3 class="box-title">Kelola Administrasi Lab</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -36,7 +42,18 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              The body of the box
+            </a>
+              <i class="btn btn-app" 
+              <?php echo button('load_silent("peminjaman/peminjaman_alat","#content")','' ,'  ');?>  Peminjaman Alat </i>
+              </a> 
+              <i class="btn btn-app" 
+              <?php echo button('load_silent("peminjaman/peminjaman_bahan","#content")','' ,'  ');?>  Peminjaman Bahan</i>
+              </a>
+              <i class="btn btn-app" 
+              <?php echo button('load_silent("peminjaman/cek_status_peminjaman","#content")','' ,'  ');?>  Cek Status Peminjaman </i>
+              </a>
+              <i class="btn btn-app" 
+              <?php echo button('load_silent("kelola/kritik_saran","#content")','' ,'  ');?>  Kritik & Saran </i>
             </div>
             <!-- /.box-body -->
           </div>
@@ -46,7 +63,7 @@
         <div class="col-md-3">
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">kelola lab</h3>
+              <h3 class="box-title">kelola Jadwal, Modul, Skripsi</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -56,35 +73,21 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            <i class="btn btn-app" 
-              <?php echo button('load_silent("master/nama_alat","#content")','' ,'  ');?>  Kelola Alat <a class="fa fa-wrench"></i>
-              </a> 
+            </a>
               <i class="btn btn-app" 
-              <?php echo button('load_silent("master/master_bahan","#content")','' ,'  ');?>  Kelola Bahan <a class="fa fa-eyedropper"></i>
+              <?php echo button('load_silent("kelola/jadwal","#content")','' ,'  ');?>  Kelola Jadwal </i>
               </a>
               <i class="btn btn-app" 
-              <?php echo button('load_silent("kelola/jadwal","#content")','' ,'  ');?>  Kelola Jadwal <a class="fa fa-calendar"></i>
+              <?php echo button('load_silent("kelola/modul","#content")','' ,'  ');?>  Kelola Modul </i>
               </a>
+              <i class="btn btn-app" 
+              <?php echo button('load_silent("kelola/skripsi","#content")','' ,'  ');?>  Kelola Skripsi </i>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3">
-          <div class="box box-danger">
-            <div class="box-header">
-              <h3 class="box-title">Loading state</h3>
-            </div>
-            <div class="box-body">
-              The body of the box
-            </div>
-            <!-- /.box-body -->
-            <!-- Loading (remove the following to stop the loading)-->
-            <div class="overlay">
-              <i class="fa fa-refresh fa-spin"></i>
-            </div>
-            <!-- end loading -->
           </div>
           <!-- /.box -->
         </div>

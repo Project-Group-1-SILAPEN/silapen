@@ -36,4 +36,5 @@
           <!-- /.widget-user -->
           <?php require ('application/views/kotak.php'); ?>
           <?php require ('application/views/nyoba.php'); ?>
+          <?php require ('application/views/about_lab.php'); ?>
         </div>
