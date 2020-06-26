@@ -5,13 +5,13 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Master Nama Alat</h3>
+            <h3 class="box-title">Kelola Gambar Depan</h3>
 
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '5') {
-                echo button('load_silent("master/nama_alat/form/base","#modal")','Add New Nama Alat','btn btn-success');
+                echo button('load_silent("master/gambar_depan/form/base","#modal")','Add New Gambar Depan','btn btn-success');
               } else {
                 # code...
               }
@@ -21,35 +21,31 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
-                <th>Kode</th>
-                <th>Nama Alat</th>
-                <th>Keterangan</th>
+                <th>Id</th>
+                <th>Gambar Depan</th>
                 <th>Act</th>
               </thead>
               <tbody>
           <?php 
           $i = 1;
-          foreach($nama_alat->result() as $row): ?>
+          foreach($gambar_depan->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->kode?></td>
-            <td align="center"><?=$row->nama_alat?></td>
-            <td align="center"><?=$row->keterangan?></td>
+            <td align="center"><img src="<?php echo base_url().$row->gambar_depan; ?>" class="file-preview-image"></td>
             <td align="center">
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '2' || $sesi == '5') {
-                echo button('load_silent("master/nama_alat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
+                echo button('load_silent("master/gambar_depan/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
               }
               ?>
-              <?php echo button('load_silent("master/nama_alat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
+              <a href="<?= site_url('master/gambar_depan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data alat tersebut ?')"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
         <?php endforeach;?>
-        <?php require ('application/views/informasi.php'); ?>
+
         </tbody>
             </table>
           </div>
