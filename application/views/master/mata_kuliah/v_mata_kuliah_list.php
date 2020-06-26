@@ -44,7 +44,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('master/mata_kuliah/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data mata kuliah tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("master/mata_kuliah/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 

@@ -95,13 +95,16 @@ class Master_bahan extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Master master_bahan dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_master_bahan->deleteData($id);
-				redirect('admin');
-				$this->load->view('master/master_bahan/v_master_bahan_list');
-			}			
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('master_bahan');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_master_bahan->deleteData($id);
+		$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
+		$this->fungsi->message_box("Data bahan berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus bahan dengan id ".$id);
+	}			
+		
 }
 
 /* End of file nama_alat.php */
