@@ -49,6 +49,7 @@
             </td>
           </tr>
         <?php endforeach;?>
+        <?php require ('application/views/informasi.php'); ?>
         </tbody>
             </table>
           </div>

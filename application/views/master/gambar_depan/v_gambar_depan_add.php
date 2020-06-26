@@ -13,12 +13,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Gambar Depan</label>
+            <label class="col-sm-4 control-label" for="gambar_depan">gambar_depan</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'gambar_depan','class'=>'form-control'));?>
-            <?php echo form_error('gambar_depan');?>
-            <span id="check_data"></span>
+            <?php echo form_upload(array('name'=>'foto','id'=>'foto','class'=>'form-control'));?>
+            <?php echo form_error('foto');?>
             </div>
+        </div>
         </div>
         
         <div class="form-group">
@@ -34,6 +34,14 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+    $(foto) . fileinput({
+        'showimage'       :true,
+        initialPreview: '<img scr = <?php echo base_url(). $row->gambar_depan; ?>"class= "file-priview-img">'
+    })
+    $(".select2").select2();
+    $('.tutup').click(function(e) {  
+        $('#myModal').modal('hide');
+    });
     $('.tutup').click(function(e) {  
         $('#myModal').modal('hide');
     });
