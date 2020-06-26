@@ -95,4 +95,13 @@ class laboratorium extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit laboratorium dengan data sbb:",true);
 		}
 	}
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('laboratorium');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_laboratorium->deleteData($id);
+		$this->fungsi->run_js('load_silent("kelola/laboratorium","#content")');
+		$this->fungsi->message_box("Data laboratorium berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus laboratorium dengan id ".$id);
+	}		
 }

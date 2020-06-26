@@ -95,7 +95,7 @@ class Nama_alat extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Master nama_alat dengan data sbb:",true);
 		}
 	}
-	public function delete()
+	public function delete($id)
 	{
 		$this->fungsi->check_previleges('nama_alat');
 		if($id == '' || !is_numeric($id)) die;

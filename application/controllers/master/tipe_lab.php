@@ -96,12 +96,14 @@ class tipe_lab extends CI_Controller {
 	
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_tipe_lab->deleteData($id);
-				redirect('admin');
-				$this->load->view('master/tipe_lab/v_tipe_lab_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('tipe_lab');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_tipe_lab->deleteData($id);
+		$this->fungsi->run_js('load_silent("master/tipe_lab","#content")');
+		$this->fungsi->message_box("Data tipe lab berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus tipe lab dengan id ".$id);
+	}					
 			
 }

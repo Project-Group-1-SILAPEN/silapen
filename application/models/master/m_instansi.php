@@ -6,13 +6,13 @@ class M_instansi extends CI_Model {
 	public function getEdit($value='')
 	{
 		$this->db->where('id', $value);
-		return $this->db->get('instansi');
+		return $this->db->get('master_instansi');
 	}
 
 	public function updateData($object='')
 	{
 		$this->db->where('id', '1');
-		$this->db->update('instansi', $object);
+		$this->db->update('master_instansi', $object);
 	}
 
 }

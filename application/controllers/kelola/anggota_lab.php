@@ -95,11 +95,13 @@ class anggota_lab extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit anggota_lab dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_anggota_lab->deleteData($id);
-				redirect('admin');
-				$this->load->view('kelola/anggota_lab/v_anggota_lab_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('anggota_lab');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_anggota_lab->deleteData($id);
+		$this->fungsi->run_js('load_silent("kelola/anggota_lab","#content")');
+		$this->fungsi->message_box("Data anggota lab berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus anggota lab dengan id ".$id);
+	}		
 }

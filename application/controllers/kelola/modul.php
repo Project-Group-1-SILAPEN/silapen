@@ -100,16 +100,14 @@ class modul extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit modul dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_modul->deleteData($id);
-				redirect('admin');
-				$this->load->view('kelola/modul/v_modul_list');
-				$this->fungsi->run_js('load_silent("kelola/modul","#content")');
-			$this->fungsi->message_box("modul sukses dihapus...","success");
-			$this->fungsi->catat($datapost,"Menghapus modul dengan data sbb:",true);
-
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('modul');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_modul->deleteData($id);
+		$this->fungsi->run_js('load_silent("kelola/modul","#content")');
+		$this->fungsi->message_box("Data modul berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus modul dengan id ".$id);
+	}		
 }
 
