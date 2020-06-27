@@ -43,45 +43,10 @@
             </div>  
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Gambar</label>
+            <label class="col-sm-4 control-label">Link File Abstrak, Cover, Lembar Pengesahan, dan Kartu DP </label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'gambar','value'=>$row->gambar,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'link_file','value'=>$row->link_file,'class'=>'form-control'));?>
             <?php echo form_error('gambar');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">File Abstrak</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'file_abstrak','value'=>$row->file_abstrak,'class'=>'form-control'));?>
-            <?php echo form_error('file_abstrak');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Lembar Pengesahan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'lembar_pengesahan','value'=>$row->lembar_pengesahan,'class'=>'form-control'));?>
-            <?php echo form_error('lembar_pengesahan');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Cover</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'cover','value'=>$row->cover,'class'=>'form-control'));?>
-            <?php echo form_error('cover');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Kartu DP 1</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kartu_dp1','value'=>$row->kartu_dp1,'class'=>'form-control'));?>
-            <?php echo form_error('kartu_dp1');?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Kartu DP 2</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kartu_dp2','value'=>$row->kartu_dp2,'class'=>'form-control'));?>
-            <?php echo form_error('kartu_dp2');?>
             </div>
         </div>
         <div class="form-group">

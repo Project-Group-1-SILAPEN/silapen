@@ -27,12 +27,7 @@
                 <th>Nama Penulis</th>
                 <th>Dosen Pembimbing 1</th>
                 <th>Dosen Pembimbing 2</th>
-                <th>Gambar</th>
-                <th>File Abstrak</th>
-                <th>Lembar Pengesahan</th>
-                <th>Cover</th>
-                <th>Kartu DP 1</th>
-                <th>Kartu DP 2</th>
+                <th>Link File Abstrak, Cover, Lembar Pengesahan, dan Kartu DP </th>
                 <th>Tahun Skripsi/TA</th>
                 <th>Status Skripsi/TA</th>
                 <th>Act</th>
@@ -47,12 +42,7 @@
             <td align="center"><?=$row->nama_penulis?></td>
             <td align="center"><?=$row->dosen_pembimbing1?></td>
             <td align="center"><?=$row->dosen_pembimbing2?></td>
-            <td align="center"><img src="<?php echo base_url().$row->gambar; ?>" class="file-preview-image"></td>
-            <td align="center"><?=$row->file_abstrak?></td>
-            <td align="center"><?=$row->lembar_pengesahan?></td>
-            <td align="center"><?=$row->cover?></td>
-            <td align="center"><?=$row->kartu_dp1?></td>
-            <td align="center"><?=$row->kartu_dp2?></td>
+            <td align="center"><?=$row->link_file?></td>
             <td align="center"><?=$row->tahun_skripsi?></td>
             <td align="center"><?=$row->status_skripsi?></td>
             <td align="center">

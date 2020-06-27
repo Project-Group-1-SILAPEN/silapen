@@ -97,7 +97,7 @@ class Master_bahan extends CI_Controller {
 	}
 	public function delete($id)
 	{
-		$this->fungsi->check_previleges('master_bahan');
+		$this->fungsi->check_previleges('nama_bahan');
 		if($id == '' || !is_numeric($id)) die;
 		$this->m_master_bahan->deleteData($id);
 		$this->fungsi->run_js('load_silent("master/master_bahan","#content")');
