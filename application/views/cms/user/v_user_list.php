@@ -18,6 +18,7 @@
                 <th>Nama</th>
                 <th>Picture</th>
                 <th>Username</th>
+                <th>password</th>
                 <th>Level</th>
                 <th>no HP</th>
                 <th>Alamat</th>
@@ -34,6 +35,7 @@
             <td><?=$row->nama?></td>
             <td><?=$avatar?></td>
             <td><?=$row->username?></td>
+            <td><?=$row->password?></td>
             <td><?=$row->level?></td>
             <td><?=$row->no_hp?></td>
             <td><?=$row->alamat?></td>

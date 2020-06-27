@@ -18,13 +18,7 @@ class User extends CI_Controller {
 	}
 
 
-	public function formadd($value='')
-	{
-		$this->fungsi->check_previleges('user');
-		$data['level']  = get_options($this->db->query('select id, level from master_level'),true);
-		$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-		$this->load->view('cms/user/v_user_editt',$data);
-	}
+	
 
 	public function show_addForm()
 	{
@@ -34,6 +28,11 @@ class User extends CI_Controller {
 				array(
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
+					'rules' => 'required'
+				),
+				array(
+					'field'	=> 'gambar',
+					'label' => 'Nama Komponen',
 					'rules' => 'required'
 				),
 				array(
@@ -47,11 +46,6 @@ class User extends CI_Controller {
 					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'no_hp',
-					'label' => 'Nama Komponen',
-					'rules' => ''
-				),
-				array(
 					'field'	=> 'level',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
@@ -59,6 +53,11 @@ class User extends CI_Controller {
 				array(
 					'field'	=> 'bagian',
 					'label' => 'Uraian Komponen',
+					'rules' => ''
+				),
+				array(
+					'field'	=> 'no_hp',
+					'label' => 'Nama Komponen',
 					'rules' => ''
 				),
 				array(
@@ -73,8 +72,7 @@ class User extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['level']  = get_options($this->db->query('select id, level from master_level where id !=1'),true);
-			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_editt',$data);
+			$this->load->view('cms/user/v_user_addd',$data);
 		}
 		else
 		{
