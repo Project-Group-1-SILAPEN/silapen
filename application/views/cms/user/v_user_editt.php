@@ -24,6 +24,13 @@
                 <?php echo form_input(array('name'=>'nama','id'=>'nama','value'=>$row->nama,'class'=>'form-control'));?>
                 <?php echo form_error('nama');?>
                 </div>
+                <?php }?>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="userfile">Picture</label>
+                <div class="col-sm-8">
+                <?php echo form_upload(array('name'=>'ufile','id'=>'ufile','class'=>'form-control'));?>
+                <!-- <span id='info'></span></label> -->
+                </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Username</label>
@@ -53,14 +60,6 @@
                 <div class="col-sm-8">
                   <?php echo form_dropdown('bagian',$bagian,$row->bagian,'id="bagian" class="form-control select2"');?>
                   <?php echo form_error('bagian', '<span class="error-span">', '</span>'); ?>
-                </div>
-            </div>
-            <?php }?>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="userfile">Picture</label>
-                <div class="col-sm-8">
-                <?php echo form_upload(array('name'=>'ufile','id'=>'ufile','class'=>'form-control'));?>
-                <!-- <span id='info'></span></label> -->
                 </div>
             </div>
             <div class="form-group">

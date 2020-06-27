@@ -5,7 +5,7 @@
 <div class="col-md-13">
 <section class="content">
         <div class="callout callout-info">
-          <h4>PENGUMUMAN!</h4>
+        <h4><i class="icon fa fa-bullhorn"></i> Pengumuman </h4>
           
           <p>
           
@@ -17,7 +17,7 @@
         
         </div>
         <div class="callout callout-danger">
-          <h4>PERINGATAN!</h4>
+        <h4><i class="icon fa fa-exclamation-triangle"></i> Peringatan </h4>
           
 
           <p>APAAN SIIIII </p>
