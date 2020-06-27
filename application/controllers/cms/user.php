@@ -545,7 +545,7 @@ class User extends CI_Controller {
 		$this->m_user->deleteData($id);
 		$this->fungsi->run_js('load_silent("cms/user","#content")');
 		$this->fungsi->message_box("Data Master user berhasil dihapus...","notice");
-		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
+		$this->fungsi->catat("Menghapus user dengan id ".$id);
 	}
 
 }

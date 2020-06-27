@@ -74,7 +74,6 @@
                 <?php
                 echo button('send_form(document.faddmenugrup,"cms/user/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
                 ?>
-                <input onclick="save()" type="submit" value="Save" class="btn btn-success">
                 </div>
             </div>
         </form>
@@ -93,44 +92,4 @@ $(document).ready(function() {
         $('#myModal').modal('hide');
     });
 });
-
-function save()
-{
-    var pass = $('#password').val();
-    var re_pass = $('#re_password').val();
-    if (pass != re_pass) {
-        $.growl.error({ title: 'Gagal', message: 'Password is not match' });
-        $('#password').val('');
-        $('#re_password').val('');
-    } else{
-        $.ajaxFileUpload
-          ({
-            url:site+'cms/user/show_addForm',
-            secureuri:false,
-            fileElementId:'ufile',
-            dataType: 'json',
-            data: {
-                nama        : $("#nama").val(),
-                gambar      : $("#gambar").val(),
-                username    : $("#username").val(),
-                password    : $("#password").val(),
-                level       : $("#level").val(),
-                bagian      : $("#bagian").val(),
-                no_hp       : $("#no_hp").val(),
-                alamat      : $("#alamat").val(),
-              },
-            success: function (data)
-            {
-              $.growl.notice({ title: 'Berhasil', message: data['msg'] });
-              load_silent("cms/user/","#content");
-            },
-            error: function (data, e)
-            {
-              $("#info").html(e);
-            }
-          })
-          return false;
-    };
-  
-}
 </script>
