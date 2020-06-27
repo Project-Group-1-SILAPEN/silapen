@@ -6,8 +6,8 @@ class M_master_bahan extends CI_Model {
     //select->read
 	public function getData($value='')
 	{
-		$this->db->from('master_bahan mb');
-		$this->db->order_by('mb.id', 'desc');
+		$this->db->from('master_bahan ma');
+		$this->db->order_by('ma.id', 'desc');
 		return $this->db->get();
 	}
 

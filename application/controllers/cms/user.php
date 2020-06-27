@@ -22,6 +22,11 @@ class User extends CI_Controller {
 		$this->fungsi->check_previleges('user');
 		$this->load->library('form_validation');
 		$config = array(
+			array(
+				'field'	=> 'id',
+				'label' => 'id',
+				'rules' => 'required'
+			)	
 				array(
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
@@ -30,7 +35,7 @@ class User extends CI_Controller {
 				array(
 					'field'	=> 'gambar',
 					'label' => 'Nama Komponen',
-					'rules' => 'required'
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'username',
@@ -86,7 +91,7 @@ class User extends CI_Controller {
 		    $this->load->library('upload', $config);
 		    $err = "";
 		    $msg = "";
-		    if ( ! $this->upload->do_upload('ufile'))
+		    if ( ! $this->upload->do_upload('gambar'))
 		    {
 		      $err = $this->upload->display_errors('<span class="error_string">','</span>');
 		    }
@@ -97,7 +102,7 @@ class User extends CI_Controller {
 		      // CREATE THUMBNAIL 100x100 - maintain aspect ratio
 		      /**********************/
 		      $config['image_library'] = 'gd2';
-		      $config['source_image'] = $upload_folder.$data['file_name'];
+		      $config['source_image'] = $upload_folder.$data['file'];
 		      $config['maintain_ratio'] = TRUE;
 		      $config['width'] = 100;
 		      $config['height'] = 100;
@@ -117,7 +122,7 @@ class User extends CI_Controller {
 				'password' => $pass_en, 
 				'level'    => $this->input->post('level'), 
 				'bagian'   => $this->input->post('bagian'), 
-				'gambar'   => substr($upload_folder,2).$data['file_name'], 
+				'gambar'   => substr($upload_folder,2).$data['file'], 
 				'no_hp'    => $this->input->post('no_hp'), 
 				'alamat'   => $this->input->post('alamat'), 
 				);
@@ -544,7 +549,24 @@ class User extends CI_Controller {
 		$this->fungsi->message_box("Data Master user berhasil dihapus...","notice");
 		$this->fungsi->catat("Menghapus user dengan id ".$id);
 	}
-
+	private function _uploadImage()
+	{
+		$config['upload_path']          = './silapen/file/';
+		$config['allowed_types']        = 'gif|jpg|jpeg|png';
+		$config['file_name']            = $this->file;
+		$config['overwrite']			= true;
+		$config['max_size']             = 1024; // 1MB
+		// $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+	
+		$this->load->library('upload', $config);
+	
+		if ($this->upload->do_upload('file')) {
+			return $this->upload->data("file_name");
+		}
+		
+		return "default.jpg";
+	}	
 }
 
 /* End of file user.php */
