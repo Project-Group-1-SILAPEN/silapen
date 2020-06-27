@@ -7,16 +7,22 @@
             <h3 class="box-title">User</h3>
 
             <div class="box-tools pull-right">
-              <?php echo button('load_silent("cms/user/show_addForm/","#content")','Add New User','btn btn-success','data-toggle="tooltip" title="Add New User"');?> 
+              <?php 
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '2' ) {
+                echo button('load_silent("cms/user/show_addForm/","#content")','Add New User','btn btn-success');
+              } else {
+                # code...
+              }
+                ?> 
             </div>
           </div>
-
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+                <th>Id</th>
                 <th>Nama</th>
-                <th>Picture</th>
+                <th>Gambar</th>
                 <th>Username</th>
                 <th>password</th>
                 <th>Level</th>
@@ -31,16 +37,24 @@
           $avatar = parse_avatar($row->gambar,$row->nama,75,'');             
           ?>
           <tr>
-            <td><?=$i++?></td>
-            <td><?=$row->nama?></td>
-            <td><?=$avatar?></td>
-            <td><?=$row->username?></td>
-            <td><?=$row->password?></td>
-            <td><?=$row->level?></td>
-            <td><?=$row->no_hp?></td>
-            <td><?=$row->alamat?></td>
-            <td>
-            <?php echo button('load_silent("cms/user/show_editForm_user/'.$row->id.'","#content")','Edit','btn btn-info','data-toggle="tooltip" title="Edit User"');?> 
+            <td align="center"><?=$i++?></td>
+            <td align="center"><?=$row->nama?></td>
+            <td align="center"><?=$avatar?></td>
+            <td align="center"><?=$row->username?></td>
+            <td align="center"><?=$row->password?></td>
+            <td align="center"><?=$row->level?></td>
+            <td align="center"><?=$row->no_hp?></td>
+            <td align="center"><?=$row->alamat?></td>
+            <td align="center">
+            <?php 
+            $sesi = from_session('level');
+            if ($sesi == '1' || $sesi == '2') {
+            echo button('load_silent("cms/user/show_editForm_user/'.$row->id.'","#content")','Edit','btn btn-info','data-toggle="tooltip" title="Edit User"');
+          } else {
+            # code...
+          }
+            ?> 
+            <?php echo button('load_silent("cms/user/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
 						</td>
 					</tr>
 

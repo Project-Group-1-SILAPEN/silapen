@@ -17,9 +17,6 @@ class User extends CI_Controller {
 		$this->load->view('cms/user/v_user_list',$data);
 	}
 
-
-	
-
 	public function show_addForm()
 	{
 		$this->fungsi->check_previleges('user');
@@ -77,7 +74,7 @@ class User extends CI_Controller {
 		else
 		{
 
-			$upload_folder = get_upload_folder('./files/');
+			$upload_folder = get_upload_folder('./file/');
 
 			$config['upload_path']   = $upload_folder;
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
@@ -278,7 +275,7 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			$upload_folder = get_upload_folder('./files/');
+			$upload_folder = get_upload_folder('./file/');
 
 			$config['upload_path']   = $upload_folder;
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';

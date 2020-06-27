@@ -13,9 +13,9 @@
                 </div>
             </div>
              <div class="form-group">
-                <label class="col-sm-2 control-label" for="userfile">Picture</label>
+                <label class="col-sm-2 control-label" for="userfile">Gambar</label>
                 <div class="col-sm-8">
-                <?php echo form_upload(array('name'=>'ufile','id'=>'ufile'));?>
+                <?php echo form_upload(array('name'=>'gambar','id'=>'gambar'));?>
                 <!-- <span id='info'></span></label> -->
                 </div>
             </div>
@@ -83,7 +83,7 @@
     </div>
 <script type="text/javascript">
 $(document).ready(function() {
-    $("#ufile").fileinput({
+    $("#gambar").fileinput({
     'showUpload'            :true
     });
     $(".select2").select2();

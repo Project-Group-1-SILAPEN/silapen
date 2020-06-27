@@ -27,13 +27,13 @@ class M_user extends CI_Model {
 	public function updateData($data='')
 	{
 		 $this->db->where('id',$data['id']);
-            $this->db->update('jadwal',$data);
+            $this->db->update('cms_user',$data);
 	}
 
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('jadwal');
+        $this->db->delete('cms_user');
 	}
 
 }

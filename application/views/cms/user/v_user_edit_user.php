@@ -14,8 +14,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Nama</label>
                 <div class="col-sm-8">
-                <?php echo form_input(array('name'=>'id','value'=>$row->id,'id'=>'id','class'=>'form-control','style'=>'display:none'));?>
-                
+                <?php echo form_hidden('id',$row->id); ?>
                 <?php echo form_input(array('name'=>'nama','id'=>'nama','value'=>$row->nama,'class'=>'form-control'));?>
                 <?php echo form_error('nama');?>
                 </div>
@@ -35,7 +34,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="userfile">Picture</label>
+                <label class="col-sm-2 control-label" for="userfile">Gambar</label>
                 <div class="col-sm-8">
                 <?php echo form_upload(array('name'=>'ufile','id'=>'ufile','class'=>'form-control'));?>
                 <!-- <span id='info'></span></label> -->
@@ -59,9 +58,9 @@
                 <label class="col-sm-2 control-label">Save</label>
                 <div class="col-sm-8 tutup">
                 <?php
-                //echo button('send_form(document.faddmenugrup,"cms/user/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+                echo button('send_form(document.faddmenugrup,"cms/user/show_editForm_user/","#divsubcontent")','Save','btn btn-success')." ";
                 ?>
-                <input onclick="save()" type="submit" value="Save" class="btn btn-success">
+                <!-- <input onclick="save()" type="submit" value="Save" class="btn btn-success"> -->
                 </div>
             </div>
         </form>
