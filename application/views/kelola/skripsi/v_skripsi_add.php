@@ -45,49 +45,10 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Gambar</label>
+            <label class="col-sm-4 control-label">Link File Abstrak, Cover, Lembar Pengesahan, dan Kartu DP </label>
             <div class="col-sm-8">
-            <?php echo form_upload(array('name'=>'gambar','id'=>'gambar','class'=>'form-control'));?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">File Abstrak</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'file_abstrak','class'=>'form-control'));?>
-            <?php echo form_error('file_abstrak');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Lembar Pengesahan</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'lembar_pengesahan','class'=>'form-control'));?>
-            <?php echo form_error('lembar_pengesahan');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Cover</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'cover','class'=>'form-control'));?>
-            <?php echo form_error('cover');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Kartu DP 1</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kartu_dp1','class'=>'form-control'));?>
-            <?php echo form_error('kartu_dp1');?>
-            <span id="check_data"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Kartu DP 2</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kartu_dp2','class'=>'form-control'));?>
-            <?php echo form_error('kartu_dp2');?>
+            <?php echo form_input(array('name'=>'link_file','id'=>'link_file','class'=>'form-control'));?>
+            <?php echo form_error('link_file');?>
             <span id="check_data"></span>
             </div>
         </div>
