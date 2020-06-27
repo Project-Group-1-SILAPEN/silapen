@@ -17,6 +17,12 @@ class User extends CI_Controller {
 		$this->load->view('cms/user/v_user_list',$data);
 	}
 
+	public function formadd($value='')
+	{
+		$this->fungsi->check_previleges('user');
+		$data['level']  = get_options($this->db->query('select id, level from master_level'),true);
+		$this->load->view('cms/user/v_user_addd',$data);
+	}
 	public function show_addForm()
 	{
 		$this->fungsi->check_previleges('user');
@@ -113,11 +119,12 @@ class User extends CI_Controller {
 		      	$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 		      	$datapost = array(
 				'nama'     => $this->input->post('nama'), 
+				'gambar'   => substr($upload_folder,2).$data['file_name'], 
 				'username' => $this->input->post('username'), 
 				'password' => $pass_en, 
+				're_password' => $pass_en,
 				'level'    => $this->input->post('level'), 
 				'bagian'   => $this->input->post('bagian'), 
-				'gambar'   => substr($upload_folder,2).$data['file_name'], 
 				'no_hp'    => $this->input->post('no_hp'), 
 				'alamat'   => $this->input->post('alamat'), 
 				);

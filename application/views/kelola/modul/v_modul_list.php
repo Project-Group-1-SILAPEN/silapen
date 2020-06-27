@@ -42,7 +42,7 @@
             <td align="center"><?=$row->link_modul?></td>
             <td align="center"><?=$row->deskripsi_modul?></td>
             <td align="center"><?=$row->dosen_pengarang?></td>
-            <td align="center"><?=$row->status?></td> 
+            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

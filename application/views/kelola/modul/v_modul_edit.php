@@ -52,11 +52,11 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Status</label>
             <div class="col-sm-8">
-            <select class="form-control">
-                    <option>tidak ada</option> 
-                    <option>ada</option>
-                  </select>
-                  <?php echo form_error('status');?>
+            <select name ='status'>
+          <div class="col-sm-8">
+          <option value ='ada'>Ada</option>
+          <option value ='tidak ada'>Tidak Ada</option>
+          </select>
             </div>   
         </div>
         <div class="form-group">
