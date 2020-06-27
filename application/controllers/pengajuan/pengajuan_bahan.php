@@ -96,11 +96,13 @@ class pengajuan_bahan extends CI_Controller {
 	
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_pengajuan_bahan->deleteData($id);
-				redirect('admin');
-				$this->load->view('pengajuan/pengajuan_bahan/v_pengajuan_bahan_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('pengajuan_bahan');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_pengajuan_bahan->deleteData($id);
+		$this->fungsi->run_js('load_silent("pengajuan/pengajuan_bahan","#content")');
+		$this->fungsi->message_box("Data pengajuan bahan berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus pengajuan bahan dengan id ".$id);
+	}		
 }

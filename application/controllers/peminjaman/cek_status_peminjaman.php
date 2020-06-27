@@ -95,11 +95,13 @@ class cek_status_peminjaman extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit status peminjaman dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_cek_status_peminjaman->deleteData($id);
-				redirect('admin');
-				$this->load->view('peminjaman/cek_status_peminjaman/v_cek_status_peminjaman_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('cek_status_peminjaman');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_cek_status_peminjaman->deleteData($id);
+		$this->fungsi->run_js('load_silent("peminjaman/cek_status_peminjaman","#content")');
+		$this->fungsi->message_box("Data status peminjaman berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus status peminjaman dengan id ".$id);
+	}		
 }

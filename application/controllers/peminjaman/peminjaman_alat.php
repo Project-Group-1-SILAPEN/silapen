@@ -95,11 +95,13 @@ class peminjaman_alat extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit Peminjaman Alat dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_peminjaman_alat->deleteData($id);
-				redirect('admin');
-				$this->load->view('peminjaman/peminjaman_alat/v_peminjaman_alat_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('peminjaman_alat');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_peminjaman_alat->deleteData($id);
+		$this->fungsi->run_js('load_silent("peminjaman/peminjaman_alat","#content")');
+		$this->fungsi->message_box("Data peminjaman alat berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus peminjaman alat dengan id ".$id);
+	}		
 }

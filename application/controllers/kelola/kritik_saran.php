@@ -95,11 +95,13 @@ class kritik_saran extends CI_Controller {
 	
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_kritik_saran->deleteData($id);
-				redirect('admin');
-				$this->load->view('kelola/kritik_saran/v_kritik_saran_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('kritik_saran');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_kritik_saran->deleteData($id);
+		$this->fungsi->run_js('load_silent("kelola/kritik_saran","#content")');
+		$this->fungsi->message_box("Data kritik dan saran berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus kritik dan saran dengan id ".$id);
+	}		
 }

@@ -95,11 +95,13 @@ class periode_pengajuan extends CI_Controller {
 	
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_periode_pengajuan->deleteData($id);
-				redirect('admin');
-				$this->load->view('pengajuan/periode_pengajuan/v_periode_pengajuan_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('periode_pengajuan');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_periode_pengajuan->deleteData($id);
+		$this->fungsi->run_js('load_silent("pengajuan/periode_pengajuan","#content")');
+		$this->fungsi->message_box("Data periode pengajuan berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus periode pengajuan dengan id ".$id);
+	}		
 }

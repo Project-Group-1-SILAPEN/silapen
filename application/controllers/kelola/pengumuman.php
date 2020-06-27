@@ -95,11 +95,13 @@ class pengumuman extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit pengumuman dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_pengumuman->deleteData($id);
-				redirect('admin');
-				$this->load->view('kelola/pengumuman/v_pengumuman_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('pengumuman');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_pengumuman->deleteData($id);
+		$this->fungsi->run_js('load_silent("kelola/pengumuman","#content")');
+		$this->fungsi->message_box("Data pengumuman berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus pengumuman dengan id ".$id);
+	}		
 }

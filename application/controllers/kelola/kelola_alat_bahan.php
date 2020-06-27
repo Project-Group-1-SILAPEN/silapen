@@ -95,11 +95,13 @@ class kelola_alat_bahan extends CI_Controller {
 			$this->fungsi->catat($datapost,"Kelola Alat dan Bahan dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_kelola_alat_bahan->deleteData($id);
-				redirect('admin');
-				$this->load->view('kelola/kelola_alat_bahan/v_kelola_alat_bahan_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('kelola_alat_bahan');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_kelola_alat_bahan->deleteData($id);
+		$this->fungsi->run_js('load_silent("kelola/kelola_alat_bahan","#content")');
+		$this->fungsi->message_box("Data alat atau bahan berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus alat atau bahan dengan id ".$id);
+	}		
 }

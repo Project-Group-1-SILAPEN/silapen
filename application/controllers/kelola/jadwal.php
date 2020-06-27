@@ -95,11 +95,13 @@ class jadwal extends CI_Controller {
 			$this->fungsi->catat($datapost,"Mengedit jadwal_lab dengan data sbb:",true);
 		}
 	}
-	public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_jadwal->deleteData($id);
-				redirect('admin');
-				$this->load->view('kelola/jadwal/v_jadwal_list');
-			}	
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('jadwal');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_jadwal->deleteData($id);
+		$this->fungsi->run_js('load_silent("kelola/jadwal","#content")');
+		$this->fungsi->message_box("Data jadwal berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus jadwal dengan id ".$id);
+	}		
 }
