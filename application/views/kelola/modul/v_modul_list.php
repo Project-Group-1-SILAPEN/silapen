@@ -39,7 +39,7 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->mata_kuliah?></td>
             <td align="center"><?=$row->nama_modul?></td>
-            <td align="center"><?=$row->link_modul?></td>
+            <td align="center"><?=$row->file_modul?></td>
             <td align="center"><?=$row->deskripsi_modul?></td>
             <td align="center"><?=$row->dosen_pengarang?></td>
             <td align="center"><?=$row->status?></td>
@@ -52,7 +52,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/modul/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus modul tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("kelola/modul/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 

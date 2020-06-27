@@ -44,10 +44,10 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/kelola_alat_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus kelola Alat dan Bahan tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("kelola/kelola_alat_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
-          <?php require ('application/views/kelolaalatbahan.php'); ?>
+          <?php require ('application/views/kelola_alat_bahan.php'); ?>
         <?php endforeach;?>
         </tbody>
             </table>

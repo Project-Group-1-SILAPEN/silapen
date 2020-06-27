@@ -45,7 +45,7 @@
                 # code...
               }
               ?>
-               <a href="<?= site_url('peminjaman/cek_status_peminjaman/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus status peminjaman ?')"><i class="fa fa-trash"></i></a>
+               <?php echo button('load_silent("peminjaman/cek_status_peminjaman/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 

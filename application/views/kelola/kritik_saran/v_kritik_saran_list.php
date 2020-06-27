@@ -50,7 +50,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/kritik_saran/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus kritik dan saran tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("kelola/kritik_saran/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 

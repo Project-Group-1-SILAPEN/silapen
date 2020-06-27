@@ -49,7 +49,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('peminjaman/peminjaman_bahan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data peminjaman bahan tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("peminjaman/peminjaman_bahan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 

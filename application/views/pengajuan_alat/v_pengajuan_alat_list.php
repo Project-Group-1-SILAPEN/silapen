@@ -64,7 +64,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('pengajuan/pengajuan_alat/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data pengajuan alat tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("pengajuan/pengajuan_alat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 

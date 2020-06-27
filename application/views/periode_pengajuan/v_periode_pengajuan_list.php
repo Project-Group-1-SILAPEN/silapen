@@ -54,7 +54,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('pengajuan/periode_pegajuan/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data periode pengajuan tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("pengajuan/periode_pengajuan/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 

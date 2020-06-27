@@ -46,7 +46,7 @@
                 # code...
               }
               ?>
-              <a href="<?= site_url('kelola/jadwal/delete/'.$row->id) ?>" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus jadwal tersebut ?')"><i class="fa fa-trash"></i></a>
+              <?php echo button('load_silent("kelola/jadwal/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
             </td>
           </tr>
 
