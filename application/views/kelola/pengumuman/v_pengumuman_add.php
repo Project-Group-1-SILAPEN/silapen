@@ -42,7 +42,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Kategori Pinjam</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'kategori_pinjam','class'=>'form-control'));?>
+            <?php echo form_input(array('type'=>'date','name'=>'kategori_pinjam','class'=>'form-control'));?>
             <?php echo form_error('kategori_pinjam');?>
             <span id="check_data"></span>
             </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pinjam</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_pinjam','class'=>'form-control'));?>
+            <?php echo form_input(array('type'=>'date','name'=>'tanggal_pinjam','class'=>'form-control'));?>
             <?php echo form_error('tanggal_pinjam');?>
             <span id="check_data"></span>
             </div>

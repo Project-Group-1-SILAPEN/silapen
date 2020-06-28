@@ -56,7 +56,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pendanaan Turun</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_pendanaan_turun','class'=>'form-control'));?>
+            <?php echo form_input(array('type'=>'date','name'=>'tanggal_pendanaan_turun','class'=>'form-control'));?>
             <?php echo form_error('tanggal_pendanaan_turun');?>
             <span id="check_data"></span>
             </div>
