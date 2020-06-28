@@ -9,7 +9,7 @@
           
           <p>
           
-          NTAR DULU YAA DISINYA WKWKWK
+          Akan diadakan upacara kemerdekaan 17 Aagustus 2020, tempat lokasi di depan lapangan rektorat pukul 08.00 wib
           
             </p>
         
@@ -20,14 +20,14 @@
         <h4><i class="icon fa fa-exclamation-triangle"></i> Peringatan </h4>
           
 
-          <p>APAAN SIIIII </p>
+          <p>Terdapat barang dan alat yang perlu di ganti pada lab ipa </p>
         </div>
         
        
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">PEMBERITAHUAN</h3>
+          <h3 class="box-title">Pemberitahuan</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
@@ -37,11 +37,11 @@
           </div>
         </div>
         <div class="box-body" style="">
-          tetap semangat ya,Yakin kamu orang kuat kamu orang tangguh,simin sayang banyak banyak sama kalian <3
+          Laboratorium akan tutup pada hari libur dan setiap sabtu minggu <3
         </div>
         <!-- /.box-body -->
         <div class="box-footer" style="">
-          simin SI 2018
+          Admin SILAPEN
         </div>
         <!-- /.box-footer-->
       </div>
