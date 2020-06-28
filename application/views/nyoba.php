@@ -1,5 +1,5 @@
 <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Kelola Alat Bahan</h3>
@@ -25,7 +25,7 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="box box-success">
             <div class="box-header with-border">
               <h3 class="box-title">Kelola Administrasi Lab</h3>
@@ -56,7 +56,7 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">kelola Jadwal, Modul, Skripsi</h3>
@@ -70,15 +70,12 @@
             <!-- /.box-header -->
             <div class="box-body">
             </a>
-              <i class="btn btn-app" 
-              <?php echo button('load_silent("kelola/jadwal","#content")','' ,'  ');?>  Kelola Jadwal </i>
-              </a>
-              <i class="btn btn-app" 
-              <?php echo button('load_silent("kelola/modul","#content")','' ,'  ');?>  Kelola Modul </i>
-              </a>
-              <i class="btn btn-app" 
-              <?php echo button('load_silent("kelola/skripsi","#content")','' ,'  ');?>  Kelola Skripsi </i>
-            </div>
+            <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;kelola/jadwal&quot;,&quot;#content&quot;)">  Kelola Jadwal <a class="fa fa-calendar"></a></i>
+            </a>
+            <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;kelola/modul&quot;,&quot;#content&quot;)">  Kelola Modul <a class="fa fa-book"></a></i>
+            </a>
+            <i class="btn btn-app" <a="" href="javascript:void(0)" onclick="load_silent(&quot;kelola/skripsi&quot;,&quot;#content&quot;)">  Kelola Skripsi <a class="fa fa-graduation-cap"></a></i>
+            </a>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
