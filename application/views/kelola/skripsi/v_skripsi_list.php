@@ -44,7 +44,7 @@
             <td align="center"><?=$row->dosen_pembimbing2?></td>
             <td align="center"><?=$row->link_file?></td>
             <td align="center"><?=$row->tahun_skripsi?></td>
-            <td align="center"><?=$row->status_skripsi?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status_skripsi?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

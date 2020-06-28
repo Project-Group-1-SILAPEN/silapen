@@ -63,8 +63,11 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Status Skripsi</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status_skripsi','class'=>'form-control'));?>
-            <?php echo form_error('status_skripsi');?>
+            <select name ='status_skripsi'>
+          <div class="col-sm-8">
+          <option value ='ada'>Ada</option>
+          <option value ='tidak ada'>Tidak Ada</option>
+          </select>
             <span id="check_data"></span>
             </div>
         </div>
