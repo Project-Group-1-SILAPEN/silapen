@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Kode Laboratorium/label>
+            <label class="col-sm-4 control-label">Kode Laboratorium</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'kode_laboratorium','value'=>$row->kode_laboratorium,'class'=>'form-control'));?>
             <?php echo form_error('kode_laboratorium');?>
