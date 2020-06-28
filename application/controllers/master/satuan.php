@@ -52,7 +52,7 @@ class satuan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('nama_satuan','keterangan','id_status'));
+			$datapost = get_post_data(array('id','nama_satuan','keterangan','id_status'));
 			$this->m_satuan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("master/satuan","#content")');
 			$this->fungsi->message_box("Data Master Satuan sukses disimpan...","success");

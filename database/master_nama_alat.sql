@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Jun 2020 pada 19.33
+-- Waktu pembuatan: 28 Jun 2020 pada 19.30
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -25,44 +25,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lab_pendanaan`
+-- Struktur dari tabel `master_nama_alat`
 --
 
-CREATE TABLE `lab_pendanaan` (
+CREATE TABLE `master_nama_alat` (
   `id` int(11) NOT NULL,
-  `sumber_pendanaan` varchar(225) NOT NULL,
-  `jumlah` int(225) NOT NULL,
-  `keterangan` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `kode` varchar(255) DEFAULT NULL,
+  `nama_alat` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data untuk tabel `lab_pendanaan`
+-- Dumping data untuk tabel `master_nama_alat`
 --
 
-INSERT INTO `lab_pendanaan` (`id`, `sumber_pendanaan`, `jumlah`, `keterangan`) VALUES
-(1, 'PT Djarum', 1000000000, 'Sumbangan untuk beasiswa pendidikan'),
-(2, 'PT Dirgantara', 200000000, 'Biaya 5 Mahasiswa terbaik periode 2019/2020'),
-(3, 'PT Datacom Sejahtera', 10000000, 'sumbangan beasiswa');
+INSERT INTO `master_nama_alat` (`id`, `kode`, `nama_alat`, `keterangan`) VALUES
+(1, 'MK01', 'Mikroskop', 'lihat'),
+(2, 'MK02', 'Mikroskop Besar', 'Mikroskop Besar'),
+(4, 'MK03', 'Preparat', 'Baru');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `lab_pendanaan`
+-- Indeks untuk tabel `master_nama_alat`
 --
-ALTER TABLE `lab_pendanaan`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `master_nama_alat`
+  ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT untuk tabel `lab_pendanaan`
+-- AUTO_INCREMENT untuk tabel `master_nama_alat`
 --
-ALTER TABLE `lab_pendanaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `master_nama_alat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

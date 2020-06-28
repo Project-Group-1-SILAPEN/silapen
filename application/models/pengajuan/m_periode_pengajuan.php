@@ -26,7 +26,7 @@ class M_periode_pengajuan extends CI_Model {
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('m_periode_pengajuan');
+        $this->db->delete('periode_pengajuan');
 	}
 
 }

@@ -46,9 +46,6 @@
             <span id="check_data"></span>
             </div>
         </div>
-
-     
-        </div>
         
      <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>

@@ -12,7 +12,7 @@
             <?php
               $sesi = from_session('level');
               if ($sesi == '1' || $sesi == '4' || $sesi == '6' || $sesi == '7'|| $sesi == '8') {
-                echo button('load_silent("kelola/kritik_saran/form/base","#modal")','Add New kritik saran','btn btn-success');
+                echo button('load_silent("kelola/kritik_saran/form/base","#modal")','Add New Kritik Saran','btn btn-success');
               } else {
                 # code...
               }

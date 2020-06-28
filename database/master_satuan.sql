@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Jun 2020 pada 19.33
+-- Waktu pembuatan: 28 Jun 2020 pada 19.32
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -25,33 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lab_pendanaan`
+-- Struktur dari tabel `master_satuan`
 --
 
-CREATE TABLE `lab_pendanaan` (
+CREATE TABLE `master_satuan` (
   `id` int(11) NOT NULL,
-  `sumber_pendanaan` varchar(225) NOT NULL,
-  `jumlah` int(225) NOT NULL,
+  `nama_satuan` varchar(225) NOT NULL,
   `keterangan` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `lab_pendanaan`
+-- Dumping data untuk tabel `master_satuan`
 --
 
-INSERT INTO `lab_pendanaan` (`id`, `sumber_pendanaan`, `jumlah`, `keterangan`) VALUES
-(1, 'PT Djarum', 1000000000, 'Sumbangan untuk beasiswa pendidikan'),
-(2, 'PT Dirgantara', 200000000, 'Biaya 5 Mahasiswa terbaik periode 2019/2020'),
-(3, 'PT Datacom Sejahtera', 10000000, 'sumbangan beasiswa');
+INSERT INTO `master_satuan` (`id`, `nama_satuan`, `keterangan`) VALUES
+(1, 'Pieces', ''),
+(2, 'Meter', ''),
+(3, 'Liter', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `lab_pendanaan`
+-- Indeks untuk tabel `master_satuan`
 --
-ALTER TABLE `lab_pendanaan`
+ALTER TABLE `master_satuan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -59,9 +58,9 @@ ALTER TABLE `lab_pendanaan`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `lab_pendanaan`
+-- AUTO_INCREMENT untuk tabel `master_satuan`
 --
-ALTER TABLE `lab_pendanaan`
+ALTER TABLE `master_satuan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
