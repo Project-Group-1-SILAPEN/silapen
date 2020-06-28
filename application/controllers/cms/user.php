@@ -22,7 +22,7 @@ class user extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('user');
 		$data['level']  = get_options($this->db->query('select id, level from master_level'),true);
-        $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+        $data['status'] = get_options($this->db->query('select id, nama_status from master_status'),true);
         $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 		$this->load->view('cms/user/v_user_addd',$data);
 	}
@@ -79,7 +79,7 @@ class user extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['level']  = get_options($this->db->query('select id, level from master_level where id !=1'),true);
-            $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+            $data['status'] = get_options($this->db->query('select id, nama_status from master_status'),true);
             $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 			$this->load->view('cms/user/v_user_addd',$data);
 		}
@@ -206,7 +206,7 @@ class user extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level where id !=1'),true);
-            $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+            $data['status'] = get_options($this->db->query('select id, nama_status from master_status'),true);
             $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 			$this->load->view('cms/user/v_user_editt',$data);
 		}
@@ -304,7 +304,7 @@ class user extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level'),true);
-            $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+            $data['status'] = get_options($this->db->query('select id, nama_status from master_status'),true);
             $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 			$this->load->view('cms/user/v_user_editt',$data);
 		}

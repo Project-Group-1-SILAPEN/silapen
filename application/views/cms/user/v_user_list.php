@@ -46,7 +46,7 @@
           <td align="center"><?=$avatar?></td>
           <td align="center"><?=$row->email?></td>
           <td align="center"><?=$row->level?></td>
-          <td align="center"><?=$row->status?></td>
+          <td align="center"><?=$row->nama_status?></td>
           <td align="center"><?=$row->no_hp?></td>
           <td align="center">
           <?php 

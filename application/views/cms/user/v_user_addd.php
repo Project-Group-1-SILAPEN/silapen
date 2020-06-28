@@ -131,6 +131,7 @@ function save()
                 email       : $("#email").val(),
                 password    : $("#password").val(),
                 level       : $("#level").val(),
+                status      : $("#status").val(),
                 no_hp       : $("#no_hp").val(),
                 
               },
