@@ -59,8 +59,11 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Status Skripsi/TA</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status_skripsi','value'=>$row->status_skripsi,'class'=>'form-control'));?>
-            <?php echo form_error('status_skripsi');?>
+            <select name ='status_skripsi'>
+          <div class="col-sm-8">
+          <option value ='Menunggu Konfirmasi'>Menunggu Konfirmasi</option>
+          <option value ='Sudah Dikonfirmasi'>Sudah Dikonfirmasi</option>
+          </select>
             </div>
         </div>
         <div class="form-group">
