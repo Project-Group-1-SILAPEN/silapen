@@ -4,30 +4,32 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">User</h3>
+            <h3 class="box-title">Kelola User</h3>
 
             <div class="box-tools pull-right">
-              <?php 
+            <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2' ) {
-                echo button('load_silent("cms/user/show_addForm/","#content")','Add New User','btn btn-success');
+              if ($sesi == '1' || $sesi == '2') {
+                echo button ('load_silent("cms/user/show_addForm/","#content")','Add New User','btn btn-success','data-toggle="tooltip" title="Add New User"');#
               } else {
                 # code...
               }
                 ?> 
             </div>
           </div>
+
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>Id</th>
+                <th>No</th>
                 <th>Nama</th>
-                <th>Gambar</th>
-                <th>Username</th>
-                <th>password</th>
+                <th>Nomor Induk</th>
+                <th>Jenis Kelamin</th>
+                <th>Picture</th>
+                <th>Email</th>
                 <th>Level</th>
-                <th>no HP</th>
-                <th>Alamat</th>
+                <th>Status</th>
+                <th>No HP</th>
                 <th>Act</th>
               </thead>
               <tbody>
@@ -37,25 +39,33 @@
           $avatar = parse_avatar($row->gambar,$row->nama,75,'');             
           ?>
           <tr>
-            <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->nama?></td>
-            <td align="center"><?=$avatar?></td>
-            <td align="center"><?=$row->username?></td>
-            <td align="center"><?=$row->password?></td>
-            <td align="center"><?=$row->level?></td>
-            <td align="center"><?=$row->no_hp?></td>
-            <td align="center"><?=$row->alamat?></td>
-            <td align="center">
-            <?php 
+          <td align="center"><?=$i++?></td>
+          <td align="center"><?=$row->nama?></td>
+          <td align="center"><?=$row->username?></td>
+          <td align="center"><?=$row->jenis_kelamin?></td>
+          <td align="center"><?=$avatar?></td>
+          <td align="center"><?=$row->email?></td>
+          <td align="center"><?=$row->level?></td>
+          <td align="center"><?=$row->status?></td>
+          <td align="center"><?=$row->no_hp?></td>
+          <td align="center">
+          <?php 
+           $sesi = from_session('level');
+           if ($sesi == '1' || $sesi == '2') {
+          echo button('load_silent("cms/user/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+        } else {
+          # code...
+        }
+          ?>
+            <?php
             $sesi = from_session('level');
             if ($sesi == '1' || $sesi == '2') {
-            echo button('load_silent("cms/user/show_editForm_user/'.$row->id.'","#content")','Edit','btn btn-info','data-toggle="tooltip" title="Edit User"');
-          } else {
-            # code...
-          }
-            ?> 
-            <?php echo button('load_silent("cms/user/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?> 
-						</td>
+             echo button('load_silent("cms/user/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+            } else {
+              # code...
+            }
+             ?>   
+            </td>
 					</tr>
 
 				<?php endforeach;?>

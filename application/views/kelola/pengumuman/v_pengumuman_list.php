@@ -43,7 +43,7 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->nama?></td>
             <td align="center"><?=$row->nomor_induk?></td>
-            <td align="center"><?=$row->status?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center"><?=$row->kategori_pinjam?></td>
             <td align="center"><?=$row->tanggal_pinjam?></td>
             <td align="center"><?=$row->tanggal_kembali?></td>

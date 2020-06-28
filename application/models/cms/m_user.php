@@ -24,12 +24,6 @@ class M_user extends CI_Model {
             $this->db->update('cms_user',$data);
         }
 	}
-	public function updateData($data='')
-	{
-		 $this->db->where('id',$data['id']);
-            $this->db->update('cms_user',$data);
-	}
-
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);

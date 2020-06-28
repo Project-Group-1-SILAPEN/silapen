@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class user extends CI_Controller {
 
 	public function __construct()
 	{
@@ -17,36 +17,40 @@ class User extends CI_Controller {
 		$this->load->view('cms/user/v_user_list',$data);
 	}
 
+
 	public function formadd($value='')
 	{
 		$this->fungsi->check_previleges('user');
 		$data['level']  = get_options($this->db->query('select id, level from master_level'),true);
+        $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+        $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 		$this->load->view('cms/user/v_user_addd',$data);
 	}
+
 	public function show_addForm()
 	{
 		$this->fungsi->check_previleges('user');
 		$this->load->library('form_validation');
 		$config = array(
-			array(
-				'field'	=> 'id',
-				'label' => 'id',
-				'rules' => 'required'
-			)	
 				array(
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
 					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'gambar',
-					'label' => 'Nama Komponen',
-					'rules' => ''
-				),
-				array(
 					'field'	=> 'username',
 					'label' => 'Kode Komponen',
 					'rules' => 'trim|required'
+                ),
+                array(
+                    'field'	=> 'jenis_kelamin',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
+                ),
+                array(
+					'field'	=> 'email',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'password',
@@ -54,22 +58,17 @@ class User extends CI_Controller {
 					'rules' => 'required'
 				),
 				array(
-					'field'	=> 'level',
-					'label' => 'Uraian Komponen',
-					'rules' => ''
-				),
-				array(
-					'field'	=> 'bagian',
-					'label' => 'Uraian Komponen',
-					'rules' => ''
-				),
-				array(
 					'field'	=> 'no_hp',
 					'label' => 'Nama Komponen',
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'alamat',
+					'field'	=> 'level',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
+				),
+				array(
+					'field'	=> 'status',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
 				)
@@ -80,6 +79,8 @@ class User extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['level']  = get_options($this->db->query('select id, level from master_level where id !=1'),true);
+            $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+            $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 			$this->load->view('cms/user/v_user_addd',$data);
 		}
 		else
@@ -97,7 +98,7 @@ class User extends CI_Controller {
 		    $this->load->library('upload', $config);
 		    $err = "";
 		    $msg = "";
-		    if ( ! $this->upload->do_upload('gambar'))
+		    if ( ! $this->upload->do_upload('ufile'))
 		    {
 		      $err = $this->upload->display_errors('<span class="error_string">','</span>');
 		    }
@@ -108,7 +109,7 @@ class User extends CI_Controller {
 		      // CREATE THUMBNAIL 100x100 - maintain aspect ratio
 		      /**********************/
 		      $config['image_library'] = 'gd2';
-		      $config['source_image'] = $upload_folder.$data['file'];
+		      $config['source_image'] = $upload_folder.$data['file_name'];
 		      $config['maintain_ratio'] = TRUE;
 		      $config['width'] = 100;
 		      $config['height'] = 100;
@@ -124,18 +125,15 @@ class User extends CI_Controller {
 		      	$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 		      	$datapost = array(
 				'nama'     => $this->input->post('nama'), 
-				'gambar'   => substr($upload_folder,2).$data['file_name'], 
-				'username' => $this->input->post('username'), 
+                'username' => $this->input->post('username'),
+                'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+                'email'   => $this->input->post('email'),
 				'password' => $pass_en, 
-				're_password' => $pass_en,
 				'level'    => $this->input->post('level'), 
-				'bagian'   => $this->input->post('bagian'), 
-<<<<<<< HEAD
-=======
-				'gambar'   => substr($upload_folder,2).$data['file'], 
->>>>>>> fc664561c636a3438abe68163a8f56121fab275f
+				'status'   => $this->input->post('status'), 
+				'gambar'   => substr($upload_folder,2).$data['file_name'], 
 				'no_hp'    => $this->input->post('no_hp'), 
-				'alamat'   => $this->input->post('alamat'), 
+				 
 				);
 		        $this->m_user->insertData($datapost);
 				$this->fungsi->catat($datapost,"Menambah Master user dengan data sbb:",true);
@@ -167,6 +165,16 @@ class User extends CI_Controller {
 					'field'	=> 'username',
 					'label' => 'Kode Komponen',
 					'rules' => 'trim|required'
+                ),
+                array(
+					'field'	=> 'jenis_kelamin',
+					'label' => 'Uraian Komponen',
+                    'rules' => ''
+                ),
+                array(
+					'field'	=> 'email',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'password',
@@ -182,12 +190,14 @@ class User extends CI_Controller {
 					'field'	=> 'level',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
-				),
-				array(
-					'field'	=> 'alamat',
+                ),
+                array(
+					'field'	=> 'status',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
 				)
+				
+				
 			);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -196,8 +206,9 @@ class User extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level where id !=1'),true);
-			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_edit_user',$data);
+            $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+            $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
+			$this->load->view('cms/user/v_user_editt',$data);
 		}
 		else
 		{
@@ -207,9 +218,10 @@ class User extends CI_Controller {
 				'nama'     => $this->input->post('nama'), 
 				'username' => $this->input->post('username'), 
 				'level'    => $this->input->post('level'),
-				'bagian'   => $this->input->post('bagian'),
-				'no_hp'    => $this->input->post('no_hp'), 
-				'alamat'   => $this->input->post('alamat'), 
+				'status'   => $this->input->post('status'),
+                'no_hp'    => $this->input->post('no_hp'),
+                'jenis_kelamin'    => $this->input->post('jenis_kelamin'),
+                'email'    => $this->input->post('email'),
 				);
 			} else {
 				$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
@@ -219,9 +231,10 @@ class User extends CI_Controller {
 				'username' => $this->input->post('username'), 
 				'password' => $pass_en, 
 				'level'    => $this->input->post('level'), 
-				'bagian'   => $this->input->post('bagian'), 
+				'status'   => $this->input->post('status'), 
 				'no_hp'    => $this->input->post('no_hp'), 
-				'alamat'   => $this->input->post('alamat'), 
+				'jenis_kelamin'    => $this->input->post('jenis_kelamin'),
+                'email'    => $this->input->post('email'),
 				);
 			}
 			
@@ -252,6 +265,16 @@ class User extends CI_Controller {
 					'field'	=> 'username',
 					'label' => 'Kode Komponen',
 					'rules' => 'trim|required'
+                ),
+                array(
+					'field'	=> 'jenis_kelamin',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
+                ),
+                array(
+					'field'	=> 'email',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'password',
@@ -269,12 +292,7 @@ class User extends CI_Controller {
 					'rules' => ''
 				),
 				array(
-					'field'	=> 'bagian',
-					'label' => 'Uraian Komponen',
-					'rules' => ''
-				),
-				array(
-					'field'	=> 'alamat',
+					'field'	=> 'status',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
 				)
@@ -286,8 +304,9 @@ class User extends CI_Controller {
 		{
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
 			$data['level']=get_options($this->db->query('select id, level from master_level'),true);
-			$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
-			$this->load->view('cms/user/v_user_edit_user',$data);
+            $data['status'] = get_options($this->db->query('select id, status from master_status'),true);
+            $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
+			$this->load->view('cms/user/v_user_editt',$data);
 		}
 		else
 		{
@@ -331,25 +350,27 @@ class User extends CI_Controller {
 					$datapost = array(
 					'id'       => $this->input->post('id'),
 					'nama'     => $this->input->post('nama'), 
-					'username' => $this->input->post('username'), 
+                    'username' => $this->input->post('username'),
+                    'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+                    'email'    => $this->input->post('email'),
 					'level'    => $this->input->post('level'), 
-					'bagian'   => $this->input->post('bagian'), 
+					'status'   => $this->input->post('status'), 
 					'gambar'   => substr($upload_folder,2).$data['file_name'], 
 					'no_hp'    => $this->input->post('no_hp'), 
-					'alamat'   => $this->input->post('alamat'), 
 					);
 				} else {
 					$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 					$datapost = array(
 					'id'       => $this->input->post('id'),
 					'nama'     => $this->input->post('nama'), 
-					'username' => $this->input->post('username'), 
+                    'username' => $this->input->post('username'),
+                    'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+                    'email'    => $this->input->post('email'),
 					'password' => $pass_en, 
 					'level'    => $this->input->post('level'), 
-					'bagian'   => $this->input->post('bagian'), 
+					'status'   => $this->input->post('status'), 
 					'gambar'   => substr($upload_folder,2).$data['file_name'],  
 					'no_hp'    => $this->input->post('no_hp'), 
-					'alamat'   => $this->input->post('alamat'), 
 					);
 				}
 				$this->m_user->insertData($datapost,false);
@@ -483,7 +504,7 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			$upload_folder = get_upload_folder('./files/');
+			$upload_folder = get_upload_folder('./file/');
 
 			$config['upload_path']   = $upload_folder;
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
@@ -550,7 +571,6 @@ class User extends CI_Controller {
 
 		}
 	}
-
 	public function delete($id)
 	{
 		$this->fungsi->check_previleges('user');
@@ -558,27 +578,7 @@ class User extends CI_Controller {
 		$this->m_user->deleteData($id);
 		$this->fungsi->run_js('load_silent("cms/user","#content")');
 		$this->fungsi->message_box("Data Master user berhasil dihapus...","notice");
-		$this->fungsi->catat("Menghapus user dengan id ".$id);
+		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
 	}
-	private function _uploadImage()
-	{
-		$config['upload_path']          = './silapen/file/';
-		$config['allowed_types']        = 'gif|jpg|jpeg|png';
-		$config['file_name']            = $this->file;
-		$config['overwrite']			= true;
-		$config['max_size']             = 1024; // 1MB
-		// $config['max_width']            = 1024;
-		// $config['max_height']           = 768;
-	
-		$this->load->library('upload', $config);
-	
-		if ($this->upload->do_upload('file')) {
-			return $this->upload->data("file_name");
-		}
-		
-		return "default.jpg";
-	}	
-}
 
-/* End of file user.php */
-/* Location: ./application/controllers/cms/user.php */
+}

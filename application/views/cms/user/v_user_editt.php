@@ -6,7 +6,7 @@
       <div class="col-lg-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">From Add User</h3>
+                <h3 class="box-title">From Edite User</h3>
                 <?php if (from_session('level')<=2) {?>
                 <div class="box-tools pull-right">
                   <?php echo button('load_silent("cms/user/","#content")','Back to List user','btn btn-danger','data-toggle="tooltip" title="Back List user"');?> 
@@ -24,19 +24,19 @@
                 <?php echo form_input(array('name'=>'nama','id'=>'nama','value'=>$row->nama,'class'=>'form-control'));?>
                 <?php echo form_error('nama');?>
                 </div>
-                <?php }?>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="userfile">Picture</label>
-                <div class="col-sm-8">
-                <?php echo form_upload(array('name'=>'ufile','id'=>'ufile','class'=>'form-control'));?>
-                <!-- <span id='info'></span></label> -->
-                </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Username</label>
+                <label class="col-sm-2 control-label">Nomor Induk</label>
                 <div class="col-sm-8">
                 <?php echo form_input(array('name'=>'username','id'=>'username','value'=>$row->username,'class'=>'form-control'));?>
                 <?php echo form_error('username');?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Jenis Kelamin</label>
+                <div class="col-sm-8">
+                  <?php echo form_dropdown('jenis_kelamin',$jenis_kelamin,$row->jenis_kelamin,'id="jenis_kelamin" class="form-control select2"');?>
+                  <?php echo form_error('jenis_kelamin', '<span class="error-span">', '</span>'); ?>
                 </div>
             </div>
             <div class="form-group">
@@ -55,11 +55,27 @@
                   <?php echo form_error('level', '<span class="error-span">', '</span>'); ?>
                 </div>
             </div>
+            
+            <?php }?>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Bagian</label>
+                <label class="col-sm-2 control-label">Status</label>
                 <div class="col-sm-8">
-                  <?php echo form_dropdown('bagian',$bagian,$row->bagian,'id="bagian" class="form-control select2"');?>
-                  <?php echo form_error('bagian', '<span class="error-span">', '</span>'); ?>
+                  <?php echo form_dropdown('status',$status,$row->status,'id="status" class="form-control select2"');?>
+                  <?php echo form_error('status', '<span class="error-span">', '</span>'); ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="userfile">Picture</label>
+                <div class="col-sm-8">
+                <?php echo form_upload(array('name'=>'ufile','id'=>'ufile','class'=>'form-control'));?>
+                <!-- <span id='info'></span></label> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-8">
+                <?php echo form_input(array('name'=>'email','id'=>'email','value'=>$row->email,'class'=>'form-control'));?>
+                <?php echo form_error('email');?>
                 </div>
             </div>
             <div class="form-group">
@@ -70,17 +86,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Alamat</label>
-                <div class="col-sm-8">
-                <?php echo form_input(array('name'=>'alamat','id'=>'alamat','value'=>$row->alamat,'class'=>'form-control'));?>
-                <?php echo form_error('alamat');?>
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="col-sm-2 control-label">Save</label>
                 <div class="col-sm-8 tutup">
                 <?php
-                echo button('send_form(document.faddmenugrup,"cms/user/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
+                //echo button('send_form(document.faddmenugrup,"cms/user/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
                 ?>
                 <input onclick="save()" type="submit" value="Save" class="btn btn-success">
                 </div>
@@ -113,13 +122,15 @@ function save()
         url: "<?= site_url('cms/user/show_editForm/"+ida+"')?>",
         dataType:'json',
         data: {
-            id        : $("#id").val(),
+            id          : $("#id").val(),
             nama        : $("#nama").val(),
             username    : $("#username").val(),
+            jenis_kelamin   : $("#jenis_kelamin").val(),
+            email       : $("#email").val(),
             password    : $("#password").val(),
             level       : $("#level").val(),
+            status      : $("#status").val(),
             no_hp       : $("#no_hp").val(),
-            alamat      : $("#alamat").val(),
           
         },
         success   : function(data)
@@ -137,13 +148,15 @@ function save()
             fileElementId:'ufile',
             dataType: 'json',
             data: {
-                id       : $("#id").val(),
-                nama        : $("#nama").val(),
-                username    : $("#username").val(),
-                password    : $("#password").val(),
-                level       : $("#level").val(),
-                no_hp       : $("#no_hp").val(),
-                alamat      : $("#alamat").val(),
+            id          : $("#id").val(),
+            nama        : $("#nama").val(),
+            username    : $("#username").val(),
+            jenis_kelamin   : $("#jenis_kelamin").val(),
+            email       : $("#email").val(),
+            password    : $("#password").val(),
+            level       : $("#level").val(),
+            status      : $("#status").val(),
+            no_hp       : $("#no_hp").val(),
               },
             success: function (data)
             {
