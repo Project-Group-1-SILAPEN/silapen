@@ -1,7 +1,7 @@
 <div class="col-md-12">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Tentang Laboratorium</h3>
+              <h3 class="box-title"> Laboratorium</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -13,21 +13,21 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active">
-                    <img src="http://placehold.it/1252x500/39CCCC/ffffff&amp;text=laboratorium+ini+adalah" alt="First slide">
+                    <img src="http://placehold.it/1252x500/39CCCC/ffffff&amp;text=Selamat+Datang+di+SILAPEN" alt="First slide">
 
                     <div class="carousel-caption">
                       First Slide
                     </div>
                   </div>
                   <div class="item">
-                    <img src="http://placehold.it/1252x500/3c8dbc/ffffff&amp;text=ini+lab+kelompok+satu" alt="Second slide">
+                    <img src="http://placehold.it/1252x500/3c8dbc/ffffff&amp;text=Laboratorium+terpadu+terintegrasi+berstandar+nasional" alt="Second slide">
 
                     <div class="carousel-caption">
                       Second Slide
                     </div>
                   </div>
                   <div class="item">
-                    <img src="http://placehold.it/1252x500/f39c12/ffffff&amp;text=semangat+semuaaaaaa" alt="Third slide">
+                    <img src="http://placehold.it/1252x500/f39c12/ffffff&amp;text=Untuk+mewujudkan+pendidikan+yang+lebih+maju" alt="Third slide">
 
                     <div class="carousel-caption">
                       Third Slide
