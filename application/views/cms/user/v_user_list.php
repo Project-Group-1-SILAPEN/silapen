@@ -23,7 +23,7 @@
               <thead>
                 <th>No</th>
                 <th>Nama</th>
-                <th>Nomor Induk</th>
+                <th>Username</th>
                 <th>Jenis Kelamin</th>
                 <th>Picture</th>
                 <th>Email</th>
@@ -46,7 +46,11 @@
           <td align="center"><?=$avatar?></td>
           <td align="center"><?=$row->email?></td>
           <td align="center"><?=$row->level?></td>
+<<<<<<< HEAD
           <td align="center"><span class="badge bg-green"><?=$row->status?></td>
+=======
+          <td align="center"><?=$row->nama_status?></td>
+>>>>>>> dbb8e23709b59ac7b800e06b0fdfe66db9915388
           <td align="center"><?=$row->no_hp?></td>
           <td align="center">
           <?php 

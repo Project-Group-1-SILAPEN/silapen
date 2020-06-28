@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Nomor Induk</label>
+                <label class="col-sm-2 control-label">Username</label>
                 <div class="col-sm-8">
                 <?php echo form_input(array('name'=>'username','id'=>'username','class'=>'form-control'));?>
                 <?php echo form_error('username');?>
@@ -131,6 +131,7 @@ function save()
                 email       : $("#email").val(),
                 password    : $("#password").val(),
                 level       : $("#level").val(),
+                status      : $("#status").val(),
                 no_hp       : $("#no_hp").val(),
                 
               },
