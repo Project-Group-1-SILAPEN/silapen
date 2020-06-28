@@ -23,7 +23,7 @@
               <thead>
                 <th>No</th>
                 <th>Nama</th>
-                <th>Nomor Induk</th>
+                <th>Username</th>
                 <th>Jenis Kelamin</th>
                 <th>Picture</th>
                 <th>Email</th>
