@@ -51,7 +51,7 @@
             <?php echo form_input(array('name'=>'keterangan','class'=>'form-control'));?>
             <?php echo form_error('keterangan');?>
             <span id="check_data"></span>
-            </div></div>
+            </div>
         
         </div>
         <div class="form-group">
@@ -61,7 +61,6 @@
             echo button('send_form(document.faddmenugrup,"kelola/laboratorium/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";
             ?>
             </div>
-        </div>
     </form>
 </div>
 

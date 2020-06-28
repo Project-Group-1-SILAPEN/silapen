@@ -18,7 +18,7 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Pengiriman</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tgl_pengiriman','value'=>$row->tgl_pengiriman,'class'=>'form-control'));?>
+            <?php echo form_input(array('type'=>'date','name'=>'tgl_pengiriman','value'=>$row->tgl_pengiriman,'class'=>'form-control'));?>
             <?php echo form_error('tgl_pengiriman');?>
             <span id="check_data"></span>
             </div>

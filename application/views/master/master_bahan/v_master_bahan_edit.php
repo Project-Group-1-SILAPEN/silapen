@@ -45,7 +45,7 @@
             <?php echo form_input(array('name'=>'tahun','value'=>$row->tahun,'class'=>'form-control'));?>
             <?php echo form_error('tahun');?>
             </div>
-        </div>
+            </div>
 
 <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>

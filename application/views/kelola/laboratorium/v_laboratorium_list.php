@@ -1,4 +1,5 @@
 <?php require ('application/views/kotak.php'); ?>
+<?php require ('application/views/lab.php'); ?>
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
     <div class="row" id="form_pembelian">
@@ -54,7 +55,7 @@
             </td>
           </tr>
           
-          <?php require ('application/views/lab.php'); ?>
+          
         <?php endforeach;?>
         </tbody>
             </table>

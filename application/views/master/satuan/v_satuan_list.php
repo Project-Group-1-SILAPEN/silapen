@@ -21,7 +21,7 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+                <th>Id</th>
                 <th>Nama Satuan</th>
                 <th>Keterangan</th>
                 <th>Act</th>
