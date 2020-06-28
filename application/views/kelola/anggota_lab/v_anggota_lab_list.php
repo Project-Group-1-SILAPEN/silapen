@@ -36,7 +36,7 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->id_anggota?></td>
             <td align="center"><?=$row->nama_anggota?></td>
-            <td align="center"><?=$row->status?></td>
+            <td align="center"><span class="badge bg-green"><?=$row->status?></td>
             <td align="center">
             <?php
               $sesi = from_session('level');

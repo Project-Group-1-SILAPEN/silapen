@@ -31,9 +31,11 @@
         <div class="form-group">
             <label class="col-sm-4 control-label">Status</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'status','class'=>'form-control'));?>
-            <?php echo form_error('status');?>
-            <span id="check_data"></span>
+            <select name ='status'>
+          <div class="col-sm-8">
+          <option value ='aktif'>Aktif</option>
+          <option value ='tidak aktif'>Tidak Aktif</option>
+          </select>
             </div></div>
         
         </div>
