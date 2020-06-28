@@ -65,8 +65,8 @@
             <div class="col-sm-8">
             <select name ='status_skripsi'>
           <div class="col-sm-8">
-          <option value ='ada'>Ada</option>
-          <option value ='tidak ada'>Tidak Ada</option>
+          <option value ='Menunggu Konfirmasi'>Menunggu Konfirmasi</option>
+          <option value ='Sudah Dikonfirmasi'>Sudah Dikonfirmasi</option>
           </select>
             <span id="check_data"></span>
             </div>

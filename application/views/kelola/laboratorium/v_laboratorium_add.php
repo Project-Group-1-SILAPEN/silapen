@@ -52,7 +52,10 @@
             <?php echo form_error('keterangan');?>
             <span id="check_data"></span>
             </div>
+<<<<<<< HEAD
         
+=======
+>>>>>>> 7d07127c63de622e0d2dac92933da1b432ff3564
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
