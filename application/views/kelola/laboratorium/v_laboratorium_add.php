@@ -51,8 +51,7 @@
             <?php echo form_input(array('name'=>'keterangan','class'=>'form-control'));?>
             <?php echo form_error('keterangan');?>
             <span id="check_data"></span>
-            </div></div>
-        
+            </div>
         </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Save</label>
