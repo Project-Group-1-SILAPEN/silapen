@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2020 at 11:23 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Waktu pembuatan: 28 Jun 2020 pada 19.30
+-- Versi server: 10.1.32-MariaDB
+-- Versi PHP: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_mata_kuliah`
+-- Struktur dari tabel `master_mata_kuliah`
 --
 
 CREATE TABLE `master_mata_kuliah` (
@@ -34,31 +36,34 @@ CREATE TABLE `master_mata_kuliah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `master_mata_kuliah`
+-- Dumping data untuk tabel `master_mata_kuliah`
 --
 
 INSERT INTO `master_mata_kuliah` (`id`, `nama_mk`, `jml_sks`, `keterangan`) VALUES
-(113, 'RPL', 3, 'Rekayasa Perangkat Lunak');
+(113, 'RPL', 3, ''),
+(114, 'Manajemen Sains', 2, '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `master_mata_kuliah`
+-- Indeks untuk tabel `master_mata_kuliah`
 --
 ALTER TABLE `master_mata_kuliah`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `master_mata_kuliah`
+-- AUTO_INCREMENT untuk tabel `master_mata_kuliah`
 --
 ALTER TABLE `master_mata_kuliah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

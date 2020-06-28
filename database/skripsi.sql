@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2020 pada 18.48
+-- Waktu pembuatan: 28 Jun 2020 pada 19.20
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
@@ -34,22 +34,18 @@ CREATE TABLE `skripsi` (
   `nama_penulis` varchar(255) NOT NULL,
   `dosen_pembimbing1` varchar(255) NOT NULL,
   `dosen_pembimbing2` varchar(255) NOT NULL,
-  `gambar` varchar(255) NOT NULL,
-  `file_abstrak` varchar(255) NOT NULL,
-  `lembar_pengesahan` varchar(255) NOT NULL,
-  `cover` varchar(255) NOT NULL,
-  `kartu_dp1` varchar(255) NOT NULL,
-  `kartu_dp2` varchar(255) NOT NULL,
+  `link_file` varchar(255) NOT NULL,
   `tahun_skripsi` varchar(255) NOT NULL,
-  `status_skripsi` varchar(255) NOT NULL
+  `status_skripsi` enum('Menunggu Konfirmasi','Sudah Dikonfirmasi') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `skripsi`
 --
 
-INSERT INTO `skripsi` (`id`, `judul_skripsi`, `nama_penulis`, `dosen_pembimbing1`, `dosen_pembimbing2`, `gambar`, `file_abstrak`, `lembar_pengesahan`, `cover`, `kartu_dp1`, `kartu_dp2`, `tahun_skripsi`, `status_skripsi`) VALUES
-(1, 'Pengembangan Sistem Informasi', 'Lila', 'Pak Kholiq', '-', '-', '-', '-', '-', '-', '-', '2012', 'Mantap');
+INSERT INTO `skripsi` (`id`, `judul_skripsi`, `nama_penulis`, `dosen_pembimbing1`, `dosen_pembimbing2`, `link_file`, `tahun_skripsi`, `status_skripsi`) VALUES
+(1, 'Pengembangan Teknologi Informasi', 'Keesha Alice', 'Pak Kholiq', 'Bu Endang', 'https://docs.google.com/spreadsheets/d/1f5yI5pRnt_WBj4-3RVaraLrYvkl9lOQDRb5QqXwwELo/edit#gid=0', '2018', 'Menunggu Konfirmasi'),
+(2, 'Pengembangan AI', 'Avilia Claudia', 'Bu Devi', 'Pak Subhan', 'https://docs.google.com/spreadsheets/d/1f5yI5pRnt_WBj4-3RVaraLrYvkl9lOQDRb5QqXwwELo/edit#gid=0', '2021', 'Sudah Dikonfirmasi');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +65,7 @@ ALTER TABLE `skripsi`
 -- AUTO_INCREMENT untuk tabel `skripsi`
 --
 ALTER TABLE `skripsi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

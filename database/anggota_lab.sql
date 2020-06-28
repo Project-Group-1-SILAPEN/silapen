@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2020 at 05:17 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Waktu pembuatan: 28 Jun 2020 pada 19.29
+-- Versi server: 10.1.32-MariaDB
+-- Versi PHP: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `anggota_lab`
+-- Struktur dari tabel `anggota_lab`
 --
 
 CREATE TABLE `anggota_lab` (
@@ -36,31 +36,40 @@ CREATE TABLE `anggota_lab` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `anggota_lab`
+-- Dumping data untuk tabel `anggota_lab`
 --
 
 INSERT INTO `anggota_lab` (`id`, `id_anggota`, `nama_anggota`, `status`) VALUES
-(1, '4612418018', 'ulfatun niswah D', 'aktif');
+(1, '001Agt', 'Ulfatun Nniswah', 'aktif'),
+(2, '002Agt', 'Ryanis Naufalia', 'aktif'),
+(3, '003Agt', 'Cholilah Lateefa', 'aktif'),
+(4, '004Agt', 'Jovian Allaver', 'aktif'),
+(5, '005Agt', 'Ervin Brilian', 'aktif'),
+(6, '006Agt', 'Jevon Miller', 'aktif'),
+(7, '007Agt', 'Gladien Arvie', 'aktif'),
+(8, '008Agt', 'Rosaline Eva', 'aktif'),
+(9, '009Agt', 'Avilia Claudia', 'aktif'),
+(10, '010Agt', 'Keesha Alice', 'aktif');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `anggota_lab`
+-- Indeks untuk tabel `anggota_lab`
 --
 ALTER TABLE `anggota_lab`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `anggota_lab`
+-- AUTO_INCREMENT untuk tabel `anggota_lab`
 --
 ALTER TABLE `anggota_lab`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

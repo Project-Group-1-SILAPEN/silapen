@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2020 at 06:42 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Waktu pembuatan: 28 Jun 2020 pada 19.23
+-- Versi server: 10.1.32-MariaDB
+-- Versi PHP: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `periode_pengajuan`
+-- Struktur dari tabel `periode_pengajuan`
 --
 
 CREATE TABLE `periode_pengajuan` (
@@ -40,30 +40,29 @@ CREATE TABLE `periode_pengajuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `periode_pengajuan`
+-- Dumping data untuk tabel `periode_pengajuan`
 --
 
 INSERT INTO `periode_pengajuan` (`id`, `id_pengajuan`, `semester`, `bulan`, `tahun_pengajuan`, `sumber_pendanaan`, `tanggal_pendanaan_turun`, `pajak`) VALUES
-(1, '12w', '2', '12', 0000, 'aku', '2020-06-09', '12'),
-(2, '12w', '2', '12', 0000, 'qwer', '2020-06-02', '12'),
-(3, 'eeee', 'ddd', 'juni', 0000, 'eee', '0000-00-00', 'ee');
+(1, '001Pngj', '4', 'Juni', 2020, 'PT Djarum', '2020-09-19', '10%'),
+(2, '002Pngj', '2', 'Juni', 2020, 'PT Djarum', '2020-10-08', '10%');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `periode_pengajuan`
+-- Indeks untuk tabel `periode_pengajuan`
 --
 ALTER TABLE `periode_pengajuan`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `periode_pengajuan`
+-- AUTO_INCREMENT untuk tabel `periode_pengajuan`
 --
 ALTER TABLE `periode_pengajuan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

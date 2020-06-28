@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2020 at 05:29 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Waktu pembuatan: 28 Jun 2020 pada 19.23
+-- Versi server: 10.1.32-MariaDB
+-- Versi PHP: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lab_kritik_saran`
+-- Struktur dari tabel `lab_kritik_saran`
 --
 
 CREATE TABLE `lab_kritik_saran` (
@@ -36,32 +38,35 @@ CREATE TABLE `lab_kritik_saran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `lab_kritik_saran`
+-- Dumping data untuk tabel `lab_kritik_saran`
 --
 
 INSERT INTO `lab_kritik_saran` (`id`, `pengirim`, `tgl_pengiriman`, `lab_tujuan`, `kritik`, `saran`) VALUES
-(1, 'Mustafa', '2020-06-05', 'lab 1', 'banyak alat dan bahan yang dipinjam dari lab tidak dikembalikan tepat waktu', 'sebaiknya diterapkan sanksi bagi mahasiswa yang terlambat mengembalikan pinjaman alat atau bahan'),
-(2, 'Nur', '2020-06-09', 'lab 3', 'kurang bersih', 'harus rajin dibersihkan');
+(1, 'Rosaline Eva', '2020-06-05', 'Laboratorium Biologi', 'banyak alat dan bahan yang dipinjam dari lab tidak dikembalikan tepat waktu', 'sebaiknya diterapkan sanksi bagi mahasiswa yang terlambat mengembalikan pinjaman alat atau bahan'),
+(2, 'Gladien Arvie', '2020-06-09', 'Laboratorium Kimia', 'Kurang bersih', 'Harus rajin dibersihkan'),
+(3, 'Jevon Miller', '2020-07-15', 'Laboratorium Rekayasa Perangkat Lunak', 'Kurang jumlah komputer dan WIFI lemah', 'Jumlah komputer sebaiknya diperanyak untuk menduknung kegiatan praktikum RPL dan Wifi pada ruangan tersebut di up agar tidak lemot saat praktikum berlangsung');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `lab_kritik_saran`
+-- Indeks untuk tabel `lab_kritik_saran`
 --
 ALTER TABLE `lab_kritik_saran`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `lab_kritik_saran`
+-- AUTO_INCREMENT untuk tabel `lab_kritik_saran`
 --
 ALTER TABLE `lab_kritik_saran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

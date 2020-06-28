@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2020 pada 06.39
+-- Waktu pembuatan: 28 Jun 2020 pada 19.19
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
@@ -32,8 +32,17 @@ CREATE TABLE `jadwal` (
   `id` int(11) NOT NULL,
   `nama_jadwal` varchar(255) NOT NULL,
   `file_jadwal` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` enum('Ada','Tidak Ada') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `jadwal`
+--
+
+INSERT INTO `jadwal` (`id`, `nama_jadwal`, `file_jadwal`, `status`) VALUES
+(1, 'UTS', 'uts.pdf', 'Ada'),
+(2, 'UAS', 'uas.pdf', 'Ada'),
+(3, 'UH1', 'uh1.pdf', 'Ada');
 
 --
 -- Indexes for dumped tables
@@ -53,7 +62,7 @@ ALTER TABLE `jadwal`
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

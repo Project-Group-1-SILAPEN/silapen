@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Jun 2020 pada 19.19
+-- Waktu pembuatan: 28 Jun 2020 pada 19.23
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -25,35 +25,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `laboratorium`
+-- Struktur dari tabel `peminjaman_alat`
 --
 
-CREATE TABLE `laboratorium` (
+CREATE TABLE `peminjaman_alat` (
   `id` int(11) NOT NULL,
-  `kode_laboratorium` varchar(225) NOT NULL,
-  `nama_laboratorium` varchar(225) NOT NULL,
-  `jenis_laboratorium` varchar(225) NOT NULL,
-  `kondisi` varchar(225) NOT NULL,
-  `keterangan` varchar(225) NOT NULL
+  `nama_alat` varchar(225) NOT NULL,
+  `nama_peminjam` varchar(225) NOT NULL,
+  `tanggal_pinjam` date NOT NULL,
+  `satuan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `laboratorium`
+-- Dumping data untuk tabel `peminjaman_alat`
 --
 
-INSERT INTO `laboratorium` (`id`, `kode_laboratorium`, `nama_laboratorium`, `jenis_laboratorium`, `kondisi`, `keterangan`) VALUES
-(1, 'LAB001', 'Laboratorium Biologi', 'Praktikum', 'Baik', 'Gedung D3'),
-(2, 'LAB004', 'Laboratorium Kimia', 'Praktikum', 'Baik', 'Gedung D8'),
-(3, 'LAB 002', 'Laboratorium Jaringan Komputer', 'Komputer', 'Baik', 'Gedung D2');
+INSERT INTO `peminjaman_alat` (`id`, `nama_alat`, `nama_peminjam`, `tanggal_pinjam`, `satuan`) VALUES
+(1, 'Mouse', 'Ladaishea Keana', '2020-06-29', 3),
+(2, 'Keyboard', 'Avandy Abasha', '2020-07-01', 1),
+(3, 'Speaker', 'Devian Julian', '2020-07-03', 3);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `laboratorium`
+-- Indeks untuk tabel `peminjaman_alat`
 --
-ALTER TABLE `laboratorium`
+ALTER TABLE `peminjaman_alat`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -61,10 +60,10 @@ ALTER TABLE `laboratorium`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `laboratorium`
+-- AUTO_INCREMENT untuk tabel `peminjaman_alat`
 --
-ALTER TABLE `laboratorium`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `peminjaman_alat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

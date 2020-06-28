@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2020 at 11:20 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Waktu pembuatan: 28 Jun 2020 pada 19.29
+-- Versi server: 10.1.32-MariaDB
+-- Versi PHP: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sionlab`
+-- Database: `silapen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipe_lab`
+-- Struktur dari tabel `tipe_lab`
 --
 
 CREATE TABLE `tipe_lab` (
@@ -36,32 +36,32 @@ CREATE TABLE `tipe_lab` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tipe_lab`
+-- Dumping data untuk tabel `tipe_lab`
 --
 
 INSERT INTO `tipe_lab` (`id`, `kode`, `nama_tipe_lab`, `keterangan`) VALUES
-(1, 'ipa1', 'ipa', 'baik'),
-(2, 'ilkom1', 'ilkom', 'baik');
+(1, '001TL', 'Praktikum', ''),
+(2, '002TL', 'Komputer', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tipe_lab`
+-- Indeks untuk tabel `tipe_lab`
 --
 ALTER TABLE `tipe_lab`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tipe_lab`
+-- AUTO_INCREMENT untuk tabel `tipe_lab`
 --
 ALTER TABLE `tipe_lab`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

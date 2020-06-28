@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Jun 2020 pada 19.29
+-- Waktu pembuatan: 28 Jun 2020 pada 19.30
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -25,45 +25,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peminjaman_bahan`
+-- Struktur dari tabel `master_nama_alat`
 --
 
-CREATE TABLE `peminjaman_bahan` (
+CREATE TABLE `master_nama_alat` (
   `id` int(11) NOT NULL,
-  `nama_bahan` varchar(255) NOT NULL,
-  `nama_peminjam` varchar(255) NOT NULL,
-  `tanggal_pinjam` date NOT NULL,
-  `satuan` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `kode` varchar(255) DEFAULT NULL,
+  `nama_alat` varchar(255) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data untuk tabel `peminjaman_bahan`
+-- Dumping data untuk tabel `master_nama_alat`
 --
 
-INSERT INTO `peminjaman_bahan` (`id`, `nama_bahan`, `nama_peminjam`, `tanggal_pinjam`, `satuan`) VALUES
-(3, 'Skripsi Ilmu Komputer', 'Cholilah Lateefa', '2020-06-03', 1),
-(123, 'Skripsi Sistem Informasi', 'Ervin Brilian', '2020-06-03', 3),
-(1234, 'Skripsi Teknologi Informasi', 'Jovian Allaver', '2020-06-03', 1);
+INSERT INTO `master_nama_alat` (`id`, `kode`, `nama_alat`, `keterangan`) VALUES
+(1, 'MK01', 'Mikroskop', 'lihat'),
+(2, 'MK02', 'Mikroskop Besar', 'Mikroskop Besar'),
+(4, 'MK03', 'Preparat', 'Baru');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `peminjaman_bahan`
+-- Indeks untuk tabel `master_nama_alat`
 --
-ALTER TABLE `peminjaman_bahan`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `master_nama_alat`
+  ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT untuk tabel `peminjaman_bahan`
+-- AUTO_INCREMENT untuk tabel `master_nama_alat`
 --
-ALTER TABLE `peminjaman_bahan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1235;
+ALTER TABLE `master_nama_alat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
