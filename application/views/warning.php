@@ -9,7 +9,7 @@
           
           <p>
           
-          NTAR DULU YAA DISINYA WKWKWK
+          Semua lab akan ditutup jam 18.00
           
             </p>
         
@@ -20,7 +20,7 @@
         <h4><i class="icon fa fa-exclamation-triangle"></i> Peringatan </h4>
           
 
-          <p>APAAN SIIIII </p>
+          <p>harap perhatikan barang bawaan anda sebelum meninggalkan lab </p>
         </div>
         
        

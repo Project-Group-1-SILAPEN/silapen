@@ -26,7 +26,7 @@ class M_pengajuan_bahan extends CI_Model {
 	public function deleteData($id='')
 	{
 		$this->db->where('id', $id);
-        $this->db->delete('m_pengajuan_bahan');
+        $this->db->delete('pengajuan_bahan');
 	}
 
 }
